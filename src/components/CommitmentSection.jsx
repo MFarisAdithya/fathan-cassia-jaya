@@ -8,68 +8,64 @@ export default function CommitmentSection() {
   const t = TRANSLATIONS[lang] || TRANSLATIONS.in;
 
   const icons = [
-    <ShieldCheck className="w-6 h-6 text-[#A65F3F]" />,
-    <RefreshCw className="w-6 h-6 text-[#A65F3F]" />,
-    <Scale className="w-6 h-6 text-[#A65F3F]" />,
-    <Camera className="w-6 h-6 text-[#A65F3F]" />,
+    <ShieldCheck className="w-5 h-5 text-[#6F7652] dark:text-[#A66A3F] group-hover:text-white transition-colors" />,
+    <RefreshCw className="w-5 h-5 text-[#6F7652] dark:text-[#A66A3F] group-hover:text-white transition-colors" />,
+    <Scale className="w-5 h-5 text-[#6F7652] dark:text-[#A66A3F] group-hover:text-white transition-colors" />,
+    <Camera className="w-5 h-5 text-[#6F7652] dark:text-[#A66A3F] group-hover:text-white transition-colors" />,
   ];
 
   return (
-    <section className="bg-gradient-to-b from-[#F5EFE5] via-[#EFE7DA]/50 to-[#F5EFE5] dark:from-[#18120E] dark:via-[#1D1611] dark:to-[#18120E] text-[#3A2A20] dark:text-[#F5EFE5] py-20 lg:py-28 relative overflow-hidden border-b border-[#C9A77A]/25 dark:border-[#C9A77A]/15 grain-overlay vignette corner-accent-tr divider-line-top transition-colors duration-300">
-      {/* Background Ambient Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#C9A77A]/12 dark:bg-[#C9A77A]/06 rounded-full blur-3xl pointer-events-none" />
-
-      {/* Decorative Corner Shapes */}
-      <div className="absolute top-0 left-0 w-40 h-40 border-l border-t border-[#C9A77A]/15 rounded-tl-3xl pointer-events-none z-0" />
-      <div className="absolute bottom-0 right-0 w-40 h-40 border-r border-b border-[#C9A77A]/15 rounded-br-3xl pointer-events-none z-0" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
+    <section className="bg-[#E8DFD1]/40 dark:bg-[#140E0A] text-[#2C241D] dark:text-[#F5F1E8] py-24 lg:py-32 relative overflow-hidden border-b border-[#2C241D]/08 dark:border-[#E8DFD1]/10 grain-overlay transition-colors duration-300">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center space-y-4">
-          <div className="font-heading inline-flex items-center space-x-2 bg-[#A65F3F]/10 dark:bg-[#A65F3F]/20 border border-[#A65F3F]/20 text-[#A65F3F] dark:text-[#F3C06B] px-4 py-1.5 rounded-xl text-xs uppercase tracking-widest font-semibold">
-            <ShieldCheck className="w-4 h-4" />
-            <span>{t.commitment.badge}</span>
+          <div className="flex items-center justify-center space-x-3">
+            <span className="font-body text-xs font-semibold text-[#A66A3F] tracking-widest">10</span>
+            <span className="w-6 h-[1px] bg-[#A66A3F]/50" />
+            <span className="font-body text-[11px] uppercase tracking-[0.25em] text-[#6F7652] dark:text-[#A66A3F] font-semibold">
+              {t.commitment.badge}
+            </span>
           </div>
 
-          <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#3A2A20] dark:text-[#F5EFE5] leading-tight">
+          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-medium text-[#2C241D] dark:text-[#F5F1E8] leading-[1.2]">
             {t.commitment.title}
           </h2>
 
-          <p className="font-body text-base sm:text-lg text-[#806653] dark:text-[#D1C0B0] font-normal leading-relaxed max-w-2xl mx-auto">
+          <div className="w-12 h-[1px] bg-[#A66A3F] mx-auto" />
+
+          <p className="font-body text-base sm:text-lg text-[#2C241D]/75 dark:text-[#E8DFD1]/85 font-normal leading-relaxed max-w-2xl mx-auto">
             {t.commitment.subtitle}
           </p>
         </div>
 
         {/* 4 Guarantees Grid (2x2) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mt-16 max-w-5xl mx-auto">
           {t.commitment.items.map((item, idx) => (
             <div
               key={item.id}
-              className="bg-white dark:bg-[#231B15] rounded-2xl p-8 border border-[#C9A77A]/35 dark:border-[#C9A77A]/20 shadow-card dark:shadow-dark-card hover:shadow-card-hover transition-all duration-300 space-y-4 group hover:-translate-y-1 relative overflow-hidden"
+              className="bg-white dark:bg-[#241C16] rounded-xl p-8 border border-[#2C241D]/08 dark:border-[#E8DFD1]/12 shadow-sm hover:shadow-card hover:border-[#A66A3F]/40 transition-all duration-300 space-y-4 group hover:-translate-y-1 relative overflow-hidden"
             >
               <div className="flex items-center justify-between">
-                <div className="w-12 h-12 rounded-xl bg-[#F5EFE5] dark:bg-[#1A130E] border border-[#C9A77A]/30 dark:border-[#C9A77A]/20 flex items-center justify-center group-hover:bg-[#A65F3F] group-hover:text-white transition-colors">
-                  <div className="group-hover:text-white transition-colors">
-                    {icons[idx]}
-                  </div>
+                <div className="w-11 h-11 rounded-lg bg-[#E8DFD1]/40 dark:bg-[#191410] border border-[#2C241D]/08 dark:border-[#E8DFD1]/15 flex items-center justify-center group-hover:bg-[#A66A3F] transition-colors">
+                  {icons[idx]}
                 </div>
-                <span className="font-heading text-xs font-semibold uppercase tracking-wider text-[#A65F3F] dark:text-[#F3C06B] bg-[#A65F3F]/10 dark:bg-[#A65F3F]/20 px-3 py-1 rounded-full border border-[#A65F3F]/20">
+                <span className="font-body text-[10px] font-semibold uppercase tracking-wider text-[#6F7652] dark:text-[#A66A3F] bg-[#E8DFD1]/40 dark:bg-[#191410] px-2.5 py-1 rounded border border-[#2C241D]/06 dark:border-[#E8DFD1]/10">
                   {item.badge}
                 </span>
               </div>
 
               <div className="space-y-2">
-                <h3 className="font-heading text-lg font-semibold text-[#3A2A20] dark:text-[#F5EFE5] group-hover:text-[#A65F3F] dark:group-hover:text-[#F3C06B] transition-colors">
+                <h3 className="font-heading text-lg font-medium text-[#2C241D] dark:text-[#F5F1E8] group-hover:text-[#A66A3F] transition-colors">
                   {item.title}
                 </h3>
-                <p className="font-body text-xs sm:text-sm text-[#806653] dark:text-[#D1C0B0] leading-relaxed font-normal">
+                <p className="font-body text-xs sm:text-sm text-[#2C241D]/75 dark:text-[#E8DFD1]/80 leading-relaxed font-normal">
                   {item.description}
                 </p>
               </div>
 
-              <div className="pt-2 flex items-center space-x-2 text-xs font-heading text-[#A65F3F] dark:text-[#F3C06B] font-semibold">
-                <CheckCircle2 className="w-4 h-4 text-[#A65F3F] dark:text-[#F3C06B]" />
+              <div className="pt-3 border-t border-[#2C241D]/06 dark:border-[#E8DFD1]/10 flex items-center space-x-2 text-xs font-body text-[#6F7652] dark:text-[#A66A3F] font-medium">
+                <CheckCircle2 className="w-4 h-4 text-[#A66A3F]" />
                 <span>{lang === 'en' ? '100% Fully Guaranteed' : 'Terjamin 100% Resmi'}</span>
               </div>
             </div>
@@ -77,15 +73,15 @@ export default function CommitmentSection() {
         </div>
 
         {/* Bottom Guarantee Banner */}
-        <div className="mt-12 text-center max-w-2xl mx-auto bg-[#3A2A20] dark:bg-[#150F0B] text-[#F5EFE5] p-6 rounded-2xl border border-[#C9A77A]/30 dark:border-[#C9A77A]/20 shadow-xl">
-          <p className="font-body text-xs sm:text-sm text-[#F5EFE5]/90 font-normal leading-relaxed">
+        <div className="mt-12 text-center max-w-2xl mx-auto bg-[#2C241D] dark:bg-[#150F0B] text-[#F5F1E8] p-6 rounded-xl border border-[#2C241D]/20 shadow-md">
+          <p className="font-body text-xs sm:text-sm text-[#F5F1E8]/90 font-normal leading-relaxed">
             {lang === 'en' ? (
               <>
-                *All trade guarantees listed apply officially to all spice commodity procurement transactions at <strong className="font-heading text-[#C9A77A] font-semibold">UD Fathan Cassia Jaya</strong>.
+                *All trade guarantees listed apply officially to all spice commodity procurement transactions at <strong className="font-heading text-[#A66A3F] font-semibold">UD Fathan Cassia Jaya</strong>.
               </>
             ) : (
               <>
-                *Semua garansi tercantum berlaku resmi untuk seluruh transaksi pengadaan komoditas rempah di <strong className="font-heading text-[#C9A77A] font-semibold">UD Fathan Cassia Jaya</strong>.
+                *Semua garansi tercantum berlaku resmi untuk seluruh transaksi pengadaan komoditas rempah di <strong className="font-heading text-[#A66A3F] font-semibold">UD Fathan Cassia Jaya</strong>.
               </>
             )}
           </p>

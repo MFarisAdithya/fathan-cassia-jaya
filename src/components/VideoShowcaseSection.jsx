@@ -40,29 +40,24 @@ export default function VideoShowcaseSection() {
   };
 
   return (
-    <section className="bg-[#1F1712] dark:bg-[#110C09] text-[#F5EFE5] py-20 lg:py-28 relative overflow-hidden grain-overlay-light vignette-dark border-y border-[#C9A77A]/25 dark:border-[#C9A77A]/15 transition-colors duration-300">
-      {/* Ambient Radial Glows */}
-      <div className="absolute top-0 right-1/4 w-[600px] h-[600px] bg-[#A65F3F]/12 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] bg-[#C9A77A]/10 rounded-full blur-3xl pointer-events-none" />
-
-      {/* Decorative Geometric Line Accents */}
-      <div className="absolute top-0 right-0 w-64 h-64 border-r border-t border-[#C9A77A]/15 pointer-events-none z-0" />
-      <div className="absolute bottom-0 left-0 w-64 h-64 border-l border-b border-[#C9A77A]/15 pointer-events-none z-0" />
-
+    <section className="bg-[#E8DFD1]/40 dark:bg-[#1E1712] text-[#2C241D] dark:text-[#F5F1E8] py-24 lg:py-32 relative overflow-hidden grain-overlay border-b border-[#2C241D]/08 dark:border-[#E8DFD1]/10 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
         
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center space-y-4 mb-12 sm:mb-16">
-          <div className="font-heading inline-flex items-center space-x-2 bg-[#C9A77A]/15 border border-[#C9A77A]/30 text-[#C9A77A] px-4 py-1.5 rounded-full text-xs uppercase tracking-widest font-semibold">
-            <span className="w-2 h-2 rounded-full bg-[#A65F3F] animate-pulse" />
-            <span>{t.videoShowcase.badge}</span>
+          <div className="flex items-center justify-center space-x-3">
+            <span className="font-body text-xs font-semibold text-[#A66A3F] tracking-widest">02</span>
+            <span className="w-6 h-[1px] bg-[#A66A3F]/50" />
+            <span className="font-body text-[11px] uppercase tracking-[0.25em] text-[#6F7652] dark:text-[#A66A3F] font-semibold">
+              {t.videoShowcase.badge}
+            </span>
           </div>
 
-          <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#F5EFE5] leading-tight">
+          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-medium text-[#2C241D] dark:text-[#F5F1E8] leading-[1.2]">
             {t.videoShowcase.title}
           </h2>
 
-          <p className="font-body text-base sm:text-lg text-[#F5EFE5]/80 leading-relaxed font-normal max-w-2xl mx-auto">
+          <p className="font-body text-base sm:text-lg text-[#2C241D]/80 dark:text-[#E8DFD1]/80 leading-relaxed font-normal max-w-2xl mx-auto">
             {t.videoShowcase.description}
           </p>
         </div>
@@ -75,20 +70,20 @@ export default function VideoShowcaseSection() {
             
             {/* Top Status Header */}
             <div className="flex items-center justify-between mb-3 px-1">
-              <div className="inline-flex items-center space-x-2 text-xs font-heading font-medium text-[#C9A77A]">
-                <span className="w-2 h-2 rounded-full bg-[#A65F3F] animate-ping" />
-                <span>{t.videoShowcase.badge}</span>
+              <div className="inline-flex items-center space-x-2 text-xs font-body font-medium text-[#6F7652] dark:text-[#A66A3F]">
+                <span className="w-2 h-2 rounded-full bg-[#A66A3F] animate-ping" />
+                <span className="uppercase tracking-wider">{t.videoShowcase.badge}</span>
               </div>
-              <span className="text-[11px] font-heading text-[#F5EFE5]/60">
+              <span className="text-[11px] font-body text-[#2C241D]/60 dark:text-[#F5F1E8]/60">
                 UD Fathan Cassia Jaya
               </span>
             </div>
 
             {/* Video Card Container */}
-            <div className="rounded-2xl sm:rounded-3xl overflow-hidden border border-[#C9A77A]/30 dark:border-[#C9A77A]/20 shadow-2xl bg-[#140D08]">
+            <div className="rounded-xl overflow-hidden border border-[#2C241D]/15 dark:border-[#E8DFD1]/15 shadow-card bg-[#191410]">
               
               {/* Outer Aspect Box */}
-              <div className="relative w-full bg-[#140D08] flex items-center justify-center min-h-[360px] sm:min-h-[480px] lg:min-h-[520px]">
+              <div className="relative w-full bg-[#191410] flex items-center justify-center min-h-[360px] sm:min-h-[480px] lg:min-h-[520px]">
                 
                 {/* Background Ambient Video Blur */}
                 <video
@@ -97,7 +92,7 @@ export default function VideoShowcaseSection() {
                   loop
                   muted
                   playsInline
-                  className="absolute inset-0 w-full h-full object-cover blur-2xl opacity-35 pointer-events-none scale-110"
+                  className="absolute inset-0 w-full h-full object-cover blur-2xl opacity-25 pointer-events-none scale-110"
                 />
 
                 {/* Main Video */}
@@ -108,16 +103,16 @@ export default function VideoShowcaseSection() {
                   loop
                   muted={isMuted}
                   playsInline
-                  className="relative z-10 max-h-[500px] lg:max-h-[550px] w-auto max-w-full object-contain mx-auto rounded-lg shadow-2xl"
+                  className="relative z-10 max-h-[500px] lg:max-h-[550px] w-auto max-w-full object-contain mx-auto rounded shadow-xl"
                 />
               </div>
 
               {/* Dedicated Control Bar BELOW Video */}
-              <div className="bg-[#1F1712] dark:bg-[#150F0B] p-3 sm:p-4 border-t border-[#C9A77A]/25 flex items-center justify-between">
+              <div className="bg-[#241C16] p-3 sm:p-4 border-t border-[#E8DFD1]/10 flex items-center justify-between text-[#F5F1E8]">
                 <div className="flex items-center space-x-3">
                   <button
                     onClick={togglePlay}
-                    className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-[#A65F3F] hover:bg-[#8e4f33] text-white flex items-center justify-center transition-all shadow-md active:scale-95 cursor-pointer"
+                    className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-[#A66A3F] hover:bg-[#8e5831] text-white flex items-center justify-center transition-all shadow-xs active:scale-95 cursor-pointer"
                     title={isPlaying ? 'Pause Video' : 'Play Video'}
                   >
                     {isPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4 ml-0.5" />}
@@ -125,7 +120,7 @@ export default function VideoShowcaseSection() {
 
                   <button
                     onClick={toggleMute}
-                    className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-[#2A1D15] dark:bg-[#201712] hover:bg-[#3A2A20] text-[#C9A77A] border border-[#C9A77A]/30 flex items-center justify-center transition-all active:scale-95 cursor-pointer"
+                    className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-[#191410] hover:bg-[#2C241D] text-[#E8DFD1] border border-[#E8DFD1]/20 flex items-center justify-center transition-all active:scale-95 cursor-pointer"
                     title={isMuted ? 'Unmute' : 'Mute'}
                   >
                     {isMuted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4" />}
@@ -133,7 +128,7 @@ export default function VideoShowcaseSection() {
 
                   <div className="flex items-center space-x-2 pl-1">
                     <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                    <span className="font-heading text-xs text-[#F5EFE5]/90 font-medium">
+                    <span className="font-body text-xs text-[#F5F1E8]/90 font-medium">
                       {isPlaying ? (lang === 'en' ? 'Playing Warehouse Preview' : 'Memutar Video Operasional') : (lang === 'en' ? 'Video Paused' : 'Video Di-pause')}
                     </span>
                   </div>
@@ -142,7 +137,7 @@ export default function VideoShowcaseSection() {
                 <div className="flex items-center space-x-2">
                   <button
                     onClick={handleFullscreen}
-                    className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-[#2A1D15] dark:bg-[#201712] hover:bg-[#3A2A20] text-[#C9A77A] border border-[#C9A77A]/30 flex items-center justify-center transition-all active:scale-95 cursor-pointer"
+                    className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-[#191410] hover:bg-[#2C241D] text-[#E8DFD1] border border-[#E8DFD1]/20 flex items-center justify-center transition-all active:scale-95 cursor-pointer"
                     title="Fullscreen"
                   >
                     <Maximize2 className="w-4 h-4" />
@@ -159,15 +154,15 @@ export default function VideoShowcaseSection() {
             {t.videoShowcase.features.map((feat, idx) => (
               <div
                 key={idx}
-                className="bg-[#2A1D15]/80 dark:bg-[#18110C]/90 backdrop-blur-md p-6 rounded-2xl border border-[#C9A77A]/25 space-y-3 hover:border-[#A65F3F] transition-all"
+                className="bg-[#F5F1E8] dark:bg-[#241C16] p-6 rounded-xl border border-[#2C241D]/08 dark:border-[#E8DFD1]/10 space-y-2.5 shadow-card hover:border-[#A66A3F]/50 transition-all"
               >
-                <div className="w-10 h-10 rounded-xl bg-[#A65F3F]/20 border border-[#A65F3F]/40 flex items-center justify-center text-[#C9A77A]">
+                <div className="w-10 h-10 rounded-lg bg-[#A66A3F]/15 border border-[#A66A3F]/30 flex items-center justify-center text-[#A66A3F]">
                   {idx === 0 ? <ShieldCheck className="w-5 h-5" /> : idx === 1 ? <Truck className="w-5 h-5" /> : <CheckCircle2 className="w-5 h-5" />}
                 </div>
-                <h3 className="font-heading text-base font-semibold text-[#F5EFE5]">
+                <h3 className="font-heading text-base font-semibold text-[#2C241D] dark:text-[#F5F1E8]">
                   {feat.title}
                 </h3>
-                <p className="font-body text-xs text-[#F5EFE5]/75 leading-relaxed font-normal">
+                <p className="font-body text-xs text-[#2C241D]/75 dark:text-[#E8DFD1]/75 leading-relaxed font-normal">
                   {feat.desc}
                 </p>
               </div>
@@ -179,7 +174,7 @@ export default function VideoShowcaseSection() {
                 href={getWhatsAppUrl(lang === 'en' ? "Hello UD Fathan Cassia Jaya, I watched your warehouse video and would like to request spice samples and a quote." : "Halo UD Fathan Cassia Jaya, saya telah melihat video produk Anda dan ingin menanyakan sampel fisik & penawaran komoditas.")}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-heading w-full inline-flex items-center justify-center space-x-2 bg-[#A65F3F] hover:bg-[#8e4f33] text-white py-3.5 px-4 rounded-xl text-xs font-semibold uppercase tracking-wider transition-all shadow-md"
+                className="font-body w-full inline-flex items-center justify-center space-x-2 bg-[#2C241D] hover:bg-[#A66A3F] text-[#F5F1E8] dark:bg-[#A66A3F] dark:hover:bg-[#8e5831] py-3.5 px-4 rounded-lg text-xs font-semibold uppercase tracking-wider transition-all shadow-xs"
               >
                 <span>{lang === 'en' ? 'Request Specific Sample Video' : 'Minta Video Sampel Spesifik'}</span>
               </a>

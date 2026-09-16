@@ -18,7 +18,7 @@ import Footer from './components/Footer';
 
 function MainContent() {
   return (
-    <div className="min-h-screen bg-[#F5EFE5] dark:bg-[#120E0B] text-[#3A2A20] dark:text-[#F5EFE5] font-sans selection:bg-[#A65F3F] selection:text-white transition-colors duration-300">
+    <div className="min-h-screen bg-[#F5F1E8] dark:bg-[#191410] text-[#2C241D] dark:text-[#F5F1E8] font-sans selection:bg-[#A66A3F] selection:text-white transition-colors duration-300">
       <Navbar />
       <main>
         <HeroSection />

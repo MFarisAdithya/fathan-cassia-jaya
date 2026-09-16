@@ -8,92 +8,86 @@ export default function ProductsSection() {
   const t = TRANSLATIONS[lang] || TRANSLATIONS.in;
 
   return (
-    <section id="produk" className="bg-gradient-to-b from-[#F5EFE5] via-[#EFE7DA] to-[#F5EFE5] dark:from-[#18120E] dark:via-[#1F1712] dark:to-[#18120E] text-[#3A2A20] dark:text-[#F5EFE5] py-20 lg:py-28 relative overflow-hidden border-b border-[#C9A77A]/25 dark:border-[#C9A77A]/15 grain-overlay vignette corner-accent-tr divider-line-top transition-colors duration-300">
-      {/* Background Ambient Glows */}
-      <div className="absolute top-1/3 left-10 w-96 h-96 bg-[#A65F3F]/08 dark:bg-[#A65F3F]/05 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-10 right-10 w-96 h-96 bg-[#C9A77A]/12 dark:bg-[#C9A77A]/06 rounded-full blur-3xl pointer-events-none" />
-
-      {/* Decorative Corner Shapes */}
-      <div className="absolute top-0 left-0 w-40 h-40 border-l border-t border-[#C9A77A]/15 rounded-tl-3xl pointer-events-none z-0" />
-      <div className="absolute bottom-0 right-0 w-40 h-40 border-r border-b border-[#C9A77A]/15 rounded-br-3xl pointer-events-none z-0" />
-
+    <section id="produk" className="bg-[#E8DFD1]/40 dark:bg-[#1E1712] text-[#2C241D] dark:text-[#F5F1E8] py-24 lg:py-32 relative overflow-hidden border-b border-[#2C241D]/08 dark:border-[#E8DFD1]/10 grain-overlay transition-colors duration-300">
       <div className="max-w-7xl 2xl:max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
         
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center space-y-4">
-          <div className="font-heading inline-flex items-center space-x-2 bg-[#A65F3F]/10 dark:bg-[#A65F3F]/20 border border-[#A65F3F]/20 text-[#A65F3F] dark:text-[#F3C06B] px-4 py-1.5 rounded-xl text-xs uppercase tracking-widest font-semibold">
-            <PackageCheck className="w-3.5 h-3.5" />
-            <span>{t.products.badge}</span>
+          <div className="flex items-center justify-center space-x-3">
+            <span className="font-body text-xs font-semibold text-[#A66A3F] tracking-widest">04</span>
+            <span className="w-6 h-[1px] bg-[#A66A3F]/50" />
+            <span className="font-body text-[11px] uppercase tracking-[0.25em] text-[#6F7652] dark:text-[#A66A3F] font-semibold">
+              {t.products.badge}
+            </span>
           </div>
 
-          <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#3A2A20] dark:text-[#F5EFE5] leading-tight">
+          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-medium text-[#2C241D] dark:text-[#F5F1E8] leading-[1.2]">
             {t.products.title}
           </h2>
 
-          <p className="font-body text-base sm:text-lg text-[#806653] dark:text-[#D1C0B0] leading-relaxed max-w-2xl mx-auto font-normal">
+          <p className="font-body text-base sm:text-lg text-[#2C241D]/80 dark:text-[#E8DFD1]/80 leading-relaxed max-w-2xl mx-auto font-normal">
             {t.products.subtitle}
           </p>
         </div>
 
         {/* Products Grid - 6x2 Balanced Layout (6 Atas - 6 Bawah) */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3.5 sm:gap-4 lg:gap-3 xl:gap-4 mt-12">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 sm:gap-5 lg:gap-4 xl:gap-5 mt-14">
           {t.products.list.map((prod) => (
             <div
               key={prod.id}
-              className="bg-white dark:bg-[#231B15] rounded-xl overflow-hidden border border-[#C9A77A]/30 dark:border-[#C9A77A]/20 shadow-card dark:shadow-dark-card hover:shadow-card-hover transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1"
+              className="bg-white dark:bg-[#241C16] rounded-xl overflow-hidden border border-[#2C241D]/08 dark:border-[#E8DFD1]/10 shadow-card hover:shadow-card-hover transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1"
             >
               <div>
-                {/* Compact Image Container */}
-                <div className="relative h-32 sm:h-36 overflow-hidden bg-[#3A2A20]">
+                {/* Large Product Studio Image */}
+                <div className="relative h-40 sm:h-44 lg:h-48 overflow-hidden bg-[#E8DFD1]/50 dark:bg-[#191410]">
                   <img
                     src={prod.image}
                     alt={prod.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#3A2A20]/80 via-transparent to-transparent opacity-60" />
                   
-                  {/* Number Badge */}
-                  <div className="absolute top-2.5 left-2.5 bg-[#3A2A20]/85 backdrop-blur-md text-[#C9A77A] px-2 py-0.5 rounded font-heading text-[10px] font-mono font-semibold border border-[#C9A77A]/30">
+                  {/* Subtle Number Badge */}
+                  <div className="absolute top-2.5 left-2.5 bg-[#F5F1E8]/90 dark:bg-[#191410]/90 text-[#2C241D] dark:text-[#E8DFD1] px-2 py-0.5 rounded font-body text-[10px] font-mono font-medium border border-[#2C241D]/10">
                     {prod.id}
                   </div>
 
-                  {/* Category Tag */}
+                  {/* Subtle Category Tag */}
                   {prod.tag && (
-                    <div className="absolute top-2.5 right-2.5 bg-[#A65F3F]/90 backdrop-blur-md text-white px-2 py-0.5 rounded font-heading text-[9px] sm:text-[10px] font-medium tracking-wide truncate max-w-[85px] sm:max-w-[95px]">
+                    <div className="absolute top-2.5 right-2.5 bg-[#6F7652]/90 text-white px-2 py-0.5 rounded font-body text-[9px] font-medium tracking-wide uppercase truncate max-w-[85px] sm:max-w-[95px]">
                       {prod.tag}
                     </div>
                   )}
                 </div>
 
-                {/* Compact Content */}
-                <div className="p-3 sm:p-3.5 space-y-2">
-                  <h3 className="font-heading text-xs sm:text-sm font-semibold text-[#3A2A20] dark:text-[#F5EFE5] group-hover:text-[#A65F3F] dark:group-hover:text-[#F3C06B] transition-colors leading-snug min-h-[2.5rem] flex items-center">
+                {/* Minimal Product Information */}
+                <div className="p-3.5 sm:p-4 space-y-2">
+                  <h3 className="font-heading text-sm sm:text-base font-semibold text-[#2C241D] dark:text-[#F5F1E8] group-hover:text-[#A66A3F] transition-colors leading-snug min-h-[2.5rem] flex items-center">
                     {prod.name}
                   </h3>
 
-                  {/* Compact Price Tag */}
-                  <div className="inline-flex items-baseline space-x-1 bg-[#F5EFE5] dark:bg-[#1A130E] px-2 py-0.5 rounded-lg border border-[#C9A77A]/30 dark:border-[#C9A77A]/20">
-                    <span className="font-heading text-xs sm:text-sm font-bold text-[#A65F3F] dark:text-[#F3C06B]">
+                  {/* Clean Price Tag */}
+                  <div className="flex items-baseline space-x-1 pt-0.5">
+                    <span className="font-heading text-sm sm:text-base font-semibold text-[#A66A3F] dark:text-[#C47F4E]">
                       {prod.price}
                     </span>
-                    <span className="font-body text-[10px] font-medium text-[#806653] dark:text-[#C9A77A]">
+                    <span className="font-body text-[10px] font-medium text-[#6F7652] dark:text-[#E8DFD1]/70">
                       {prod.unit}
                     </span>
                   </div>
 
-                  <p className="font-body text-[11px] text-[#806653] dark:text-[#D1C0B0] leading-relaxed font-normal line-clamp-2 pt-0.5">
+                  <p className="font-body text-[11px] text-[#2C241D]/70 dark:text-[#E8DFD1]/70 leading-relaxed font-normal line-clamp-2">
                     {prod.description}
                   </p>
                 </div>
               </div>
 
-              {/* Action Button */}
-              <div className="p-3 sm:p-3.5 pt-0">
+              {/* Minimal Action Button */}
+              <div className="p-3.5 sm:p-4 pt-0">
                 <a
                   href={getWhatsAppUrl(prod.waMessage)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-heading w-full inline-flex items-center justify-center space-x-1 bg-[#F5EFE5] dark:bg-[#1A130E] hover:bg-[#A65F3F] dark:hover:bg-[#A65F3F] text-[#3A2A20] dark:text-[#F5EFE5] hover:text-white border border-[#C9A77A]/40 dark:border-[#C9A77A]/30 hover:border-[#A65F3F] py-2 px-1.5 rounded-lg text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider transition-all duration-300 shadow-xs"
+                  className="font-body w-full inline-flex items-center justify-center space-x-1.5 bg-[#F5F1E8] hover:bg-[#2C241D] text-[#2C241D] hover:text-[#F5F1E8] dark:bg-[#191410] dark:hover:bg-[#A66A3F] dark:text-[#F5F1E8] dark:hover:text-white border border-[#2C241D]/15 dark:border-[#E8DFD1]/15 py-2 px-2 rounded-lg text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider transition-all duration-200 shadow-xs"
                 >
                   <MessageCircle className="w-3 h-3 sm:w-3.5 sm:h-3.5 flex-shrink-0" />
                   <span className="truncate">{t.products.askStockBtn}</span>
@@ -105,7 +99,7 @@ export default function ProductsSection() {
         </div>
 
         {/* Note Below Catalog */}
-        <div className="font-body mt-12 text-center text-xs text-[#806653] dark:text-[#C9A77A] font-normal">
+        <div className="font-body mt-14 text-center text-xs text-[#2C241D]/60 dark:text-[#E8DFD1]/60 font-normal">
           {t.products.priceNote}
         </div>
 

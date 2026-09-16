@@ -329,20 +329,20 @@ export const FAQS = [
 export const TESTIMONIALS = [
   {
     id: 1,
-    name: "Hendra Wijaya",
-    role: "Procurement Manager",
-    company: "PT Sinar Pangan Nusantara (Jakarta)",
-    tag: "Industri Makanan",
+    name: "Edy Priyanto Utomo",
+    role: "Distributor Industri Rempah",
+    company: "Dwi Sejahtera Nusantara",
+    tag: "Distributor Rempah",
     rating: 5,
     isAnonymous: false,
     content: "Pasokan kayu manis dan cengkeh dari UD Fathan Cassia Jaya selalu konsisten dari segi tingkat pengeringan dan kebersihannya. Komunikasi mengenai spesifikasi produk sangat responsif sebelum barang dikirim."
   },
   {
     id: 2,
-    name: "Dra. Rina Kusumawatty",
-    role: "Kepala Pengadaan Bahan Baku",
-    company: "CV Herbal Alami Sejahtera (Jawa Tengah)",
-    tag: "Herbal & Farmasi",
+    name: "Nur Solichah",
+    role: "Distributor Industri Rempah",
+    company: "Natural Java Spice",
+    tag: "Distributor Rempah",
     rating: 5,
     isAnonymous: false,
     content: "Biji pala dan cabe jamu yang dikirim kualitasnya sangat baik untuk standar bahan baku herbal kami. Pengiriman partai sedang maupun besar selalu sesuai dengan kesepakatan awal."

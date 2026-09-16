@@ -8,14 +8,14 @@ export default function HeroSection() {
   const t = TRANSLATIONS[lang] || TRANSLATIONS.in;
 
   return (
-    <section className="relative bg-[#3A2A20] dark:bg-[#140E0A] text-[#F5EFE5] pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden grain-overlay-light vignette-dark transition-colors duration-300">
+    <section className="relative bg-[#2C241D] dark:bg-[#140E0A] text-[#F5F1E8] pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden grain-overlay-light vignette-dark transition-colors duration-300">
       {/* Subtle Ambient Background Gradients */}
-      <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-[#A65F3F]/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-96 h-96 bg-[#C9A77A]/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-[#A66A3F]/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-96 h-96 bg-[#6F7652]/10 rounded-full blur-3xl pointer-events-none" />
 
       {/* Subtle Geometric Corner Lines */}
-      <div className="absolute top-0 right-0 w-48 h-48 border-r border-t border-[#C9A77A]/10 pointer-events-none z-0" />
-      <div className="absolute bottom-0 left-0 w-48 h-48 border-l border-b border-[#C9A77A]/10 pointer-events-none z-0" />
+      <div className="absolute top-0 right-0 w-48 h-48 border-r border-t border-[#E8DFD1]/10 pointer-events-none z-0" />
+      <div className="absolute bottom-0 left-0 w-48 h-48 border-l border-b border-[#E8DFD1]/10 pointer-events-none z-0" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
@@ -24,29 +24,29 @@ export default function HeroSection() {
           <div className="lg:col-span-7 space-y-7 text-left">
             
             {/* Small Label */}
-            <div className="inline-flex items-center space-x-2 bg-[#C9A77A]/15 border border-[#C9A77A]/25 rounded-lg px-3.5 py-1.5 font-heading">
-              <span className="text-xs font-medium tracking-wide text-[#C9A77A]">
+            <div className="inline-flex items-center space-x-2 bg-[#6F7652]/20 border border-[#6F7652]/35 rounded-full px-4 py-1.5">
+              <span className="text-[11px] font-body font-semibold tracking-[0.2em] text-[#E8DFD1] uppercase">
                 {t.hero.badge}
               </span>
             </div>
 
-            {/* Dominant Hero Headline — Plus Jakarta Sans Weight 600 */}
-            <h1 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-semibold leading-[1.2] text-[#F5EFE5] tracking-tight max-w-2xl">
+            {/* Dominant Hero Headline — Playfair Display Serif */}
+            <h1 className="font-heading text-3xl sm:text-5xl lg:text-6xl font-medium leading-[1.18] text-[#F5F1E8] tracking-tight max-w-2xl">
               {t.hero.headline}
             </h1>
 
             {/* Body Text — Manrope Weight 400 */}
-            <p className="font-body text-base sm:text-lg text-[#F5EFE5]/85 leading-[1.7] max-w-xl font-normal">
+            <p className="font-body text-base sm:text-lg text-[#E8DFD1]/85 leading-relaxed max-w-xl font-normal">
               {t.hero.description}
             </p>
 
-            {/* CTA Buttons — Plus Jakarta Sans Weight 600, Medium Border Radius */}
-            <div className="font-heading flex flex-col sm:flex-row items-stretch sm:items-center space-y-4 sm:space-y-0 sm:space-x-4 pt-2">
+            {/* CTA Buttons */}
+            <div className="font-body flex flex-col sm:flex-row items-stretch sm:items-center space-y-4 sm:space-y-0 sm:space-x-4 pt-2">
               <a
                 href={getWhatsAppUrl(t.hero.waMessage)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center space-x-2.5 bg-[#A65F3F] hover:bg-[#8e4f33] text-white px-7 py-4 rounded-xl font-semibold text-xs tracking-wider uppercase transition-all shadow-sm"
+                className="inline-flex items-center justify-center space-x-2.5 bg-[#A66A3F] hover:bg-[#8e5831] text-[#F5F1E8] px-7 py-3.5 rounded-lg font-semibold text-xs tracking-wider uppercase transition-all shadow-xs"
               >
                 <MessageCircle className="w-4 h-4" />
                 <span>{t.hero.requestQuoteBtn}</span>
@@ -54,18 +54,18 @@ export default function HeroSection() {
 
               <a
                 href="#produk"
-                className="inline-flex items-center justify-center space-x-2 bg-transparent hover:bg-white/5 text-[#F5EFE5] border border-[#C9A77A]/30 hover:border-[#C9A77A] px-6 py-4 rounded-xl font-semibold text-xs tracking-wider transition-all"
+                className="inline-flex items-center justify-center space-x-2 bg-transparent hover:bg-white/5 text-[#F5F1E8] border border-[#E8DFD1]/30 hover:border-[#E8DFD1] px-6 py-3.5 rounded-lg font-medium text-xs tracking-wider transition-all"
               >
                 <span>{t.hero.seeProductsBtn}</span>
-                <ArrowRight className="w-4 h-4 text-[#C9A77A]" />
+                <ArrowRight className="w-4 h-4 text-[#E8DFD1]/80" />
               </a>
             </div>
 
-            {/* Trust Pills — Manrope Weight 400 */}
-            <div className="font-body pt-6 border-t border-white/10 flex flex-wrap items-center gap-y-2 gap-x-6 text-xs text-[#C9A77A]">
+            {/* Trust Pills */}
+            <div className="font-body pt-6 border-t border-[#E8DFD1]/15 flex flex-wrap items-center gap-y-2 gap-x-6 text-xs text-[#E8DFD1]/85">
               {t.hero.trustPills.map((pill, idx) => (
                 <div key={idx} className="flex items-center space-x-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#A65F3F]" />
+                  <CheckCircle2 className="w-4 h-4 text-[#A66A3F]" />
                   <span>{pill}</span>
                 </div>
               ))}
