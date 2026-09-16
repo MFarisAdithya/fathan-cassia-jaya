@@ -6,6 +6,10 @@
 // Global WhatsApp Variable - All CTAs connect to this number
 export const WHATSAPP_NUMBER = "6285267774103";
 
+import { TRANSLATIONS } from './translations';
+
+export { TRANSLATIONS };
+
 /**
  * Generate formatted WhatsApp link with auto-populated message
  * @param {string} customMessage 
@@ -17,7 +21,8 @@ export const getWhatsAppUrl = (customMessage = "Halo UD Fathan Cassia Jaya, saya
 
 export const SITE_INFO = {
   name: "UD FATHAN CASSIA JAYA",
-  logoUrl: "./images/logo.png",
+  logoUrl: "./images/brand_logo.jpg",
+  heroLogoUrl: "./images/logo.png",
   subtitle: "Supplier & Pedagang Komoditas Rempah",
   tagline: "Beragam Rempah. Beragam Kebutuhan. Satu Solusi.",
   heroDescription: "UD Fathan Cassia Jaya menyediakan berbagai komoditas rempah untuk memenuhi kebutuhan perusahaan, industri, distributor, pedagang, dan berbagai sektor usaha.",
@@ -38,102 +43,122 @@ export const PRODUCTS = [
   {
     id: "01",
     name: "Kayu Manis KA Asalan",
-    price: "Rp 35.000",
+    price: "Rp 34.000",
     unit: "/ kg",
     tag: "Komoditas Utama",
     description: "Kayu manis grade KA asalan beraroma khas yang kuat, cocok untuk industri makanan, ekstraksi, dan herbal.",
-    image: "./images/kayu_manis.jpg",
-    waMessage: "Halo UD Fathan Cassia Jaya, saya ingin menanyakan ketersediaan dan pemesanan Kayu Manis KA Asalan (Rp 35.000/kg)."
+    image: "./images/kayu_manis_ka_asalan.jpg",
+    waMessage: "Halo UD Fathan Cassia Jaya, saya ingin menanyakan ketersediaan dan pemesanan Kayu Manis KA Asalan (Rp 34.000/kg)."
   },
   {
     id: "02",
     name: "Kayu Manis KB Asalan",
-    price: "Rp 33.000",
+    price: "Rp 28.000",
     unit: "/ kg",
     tag: "Komoditas Utama",
     description: "Kayu manis grade KB asalan pilihan dengan kualitas dan aroma ekonomis yang stabil untuk industri bumbu dan pasokan pasar.",
-    image: "./images/kayu_manis.jpg",
-    waMessage: "Halo UD Fathan Cassia Jaya, saya ingin menanyakan ketersediaan dan pemesanan Kayu Manis KB Asalan (Rp 33.000/kg)."
+    image: "./images/kayu_manis_kb_asalan.jpg",
+    waMessage: "Halo UD Fathan Cassia Jaya, saya ingin menanyakan ketersediaan dan pemesanan Kayu Manis KB Asalan (Rp 28.000/kg)."
   },
   {
     id: "03",
+    name: "Cassia Broken KB VO 1,5",
+    price: "Rp 32.000",
+    unit: "/ kg",
+    tag: "Olahan Cassia",
+    description: "Pecahan kayu manis grade KB kadar VO 1,5% berkualitas untuk bahan baku giling bubuk, bumbu, dan ekstraksi.",
+    image: "./images/kayu_manis_broken_kb.jpg",
+    waMessage: "Halo UD Fathan Cassia Jaya, saya ingin menanyakan ketersediaan dan pemesanan Cassia Broken KB VO 1,5 (Rp 32.000/kg)."
+  },
+  {
+    id: "04",
+    name: "Cassia Broken KA VO 2,5",
+    price: "Rp 38.000",
+    unit: "/ kg",
+    tag: "Olahan Cassia",
+    description: "Pecahan kayu manis grade KA pilihan kadar VO 2,5% dengan aroma lebih pekat untuk kebutuhan industri premium.",
+    image: "./images/kayu_manis_broken_ka.jpg",
+    waMessage: "Halo UD Fathan Cassia Jaya, saya ingin menanyakan ketersediaan dan pemesanan Cassia Broken KA VO 2,5 (Rp 38.000/kg)."
+  },
+  {
+    id: "05",
     name: "Kayu Manis Stick 8cm",
     price: "Rp 80.000",
     unit: "/ kg",
     tag: "Olahan Rapi",
     description: "Kayu manis potong rapi ukuran 8cm, ideal untuk kemasan retail premium, HOREKA, dan ekspor.",
-    image: "./images/kayu_manis_stick.jpg",
+    image: "./images/kayu_manis_stick_8cm.jpg",
     waMessage: "Halo UD Fathan Cassia Jaya, saya ingin menanyakan ketersediaan dan pemesanan Kayu Manis Stick 8cm (Rp 80.000/kg)."
   },
   {
-    id: "04",
+    id: "06",
     name: "Kayu Manis Longstick",
     price: "Rp 60.000",
     unit: "/ kg",
     tag: "Grade Super",
     description: "Batang kayu manis panjang utuh kualitas pilihan untuk industri minuman, dekorasi kuliner, dan pengolahan khusus.",
-    image: "./images/kayu_manis.jpg",
+    image: "./images/kayu_manis_longstick.jpg",
     waMessage: "Halo UD Fathan Cassia Jaya, saya ingin menanyakan ketersediaan dan pemesanan Kayu Manis Longstick (Rp 60.000/kg)."
   },
   {
-    id: "05",
+    id: "07",
     name: "Cengkeh",
     price: "Rp 135.000",
     unit: "/ kg",
     tag: "Rempah Aromatic",
     description: "Cengkeh kering pilihan kadar air terukur dengan aroma tajam dan minyak atsiri tinggi untuk industri dan bumbu.",
-    image: "./images/cengkeh.jpg",
+    image: "./images/cengkeh_katalog.jpg",
     waMessage: "Halo UD Fathan Cassia Jaya, saya ingin menanyakan ketersediaan dan pemesanan Cengkeh (Rp 135.000/kg)."
   },
   {
-    id: "06",
+    id: "08",
     name: "Lada Hitam",
     price: "Rp 105.000",
     unit: "/ kg",
     tag: "Bumbu Utama",
     description: "Biji lada hitam utuh bersih dengan kepedasan dan aroma mantap untuk industri olahan makanan.",
-    image: "./images/lada.jpg",
+    image: "./images/lada_hitam.jpg",
     waMessage: "Halo UD Fathan Cassia Jaya, saya ingin menanyakan ketersediaan dan pemesanan Lada Hitam (Rp 105.000/kg)."
   },
   {
-    id: "07",
+    id: "09",
     name: "Mace / Bunga Pala",
     price: "Rp 340.000",
     unit: "/ kg",
     tag: "Komoditas Premium",
     description: "Bunga pala (mace) kering super warna kemerahan dengan aroma eksotis untuk industri rempah premium & farmasi.",
-    image: "./images/mace_bunga_pala.jpg",
+    image: "./images/mace_bunga_pala_katalog.jpg",
     waMessage: "Halo UD Fathan Cassia Jaya, saya ingin menanyakan ketersediaan dan pemesanan Mace / Bunga Pala (Rp 340.000/kg)."
   },
   {
-    id: "08",
+    id: "10",
     name: "Biji Pala",
-    price: "Rp 65.000",
+    price: "Rp 120.000",
     unit: "/ kg",
     tag: "Rempah Nusantara",
     description: "Biji pala utuh kering berkualitas untuk bahan baku olahan makanan, minyak atsiri, dan pasokan grosir.",
-    image: "./images/pala.jpg",
-    waMessage: "Halo UD Fathan Cassia Jaya, saya ingin menanyakan ketersediaan dan pemesanan Biji Pala (Rp 65.000/kg)."
+    image: "./images/biji_pala.jpg",
+    waMessage: "Halo UD Fathan Cassia Jaya, saya ingin menanyakan ketersediaan dan pemesanan Biji Pala (Rp 120.000/kg)."
   },
   {
-    id: "09",
+    id: "11",
     name: "Kapulaga",
-    price: "Rp 80.000",
+    price: "Rp 90.000",
     unit: "/ kg",
     tag: "Herbal & Kuliner",
     description: "Kapulaga kering dengan polong padat dan aroma harum wangi untuk industri herbal, jamu, dan kuliner.",
-    image: "./images/kapulaga.jpg",
-    waMessage: "Halo UD Fathan Cassia Jaya, saya ingin menanyakan ketersediaan dan pemesanan Kapulaga (Rp 80.000/kg)."
+    image: "./images/kapulaga_katalog.jpg",
+    waMessage: "Halo UD Fathan Cassia Jaya, saya ingin menanyakan ketersediaan dan pemesanan Kapulaga (Rp 90.000/kg)."
   },
   {
-    id: "10",
+    id: "12",
     name: "Cabe Jamu",
-    price: "Rp 90.000",
+    price: "Rp 95.000",
     unit: "/ kg",
     tag: "Bahan Jamu Herbal",
     description: "Cabe jawa / cabe jamu kering kualitas bagus untuk bahan baku industri jamu tradisional dan kesehatan.",
-    image: "./images/cabe_jawa.jpg",
-    waMessage: "Halo UD Fathan Cassia Jaya, saya ingin menanyakan ketersediaan dan pemesanan Cabe Jamu (Rp 90.000/kg)."
+    image: "./images/cabe_jawa_katalog.jpg",
+    waMessage: "Halo UD Fathan Cassia Jaya, saya ingin menanyakan ketersediaan dan pemesanan Cabe Jamu (Rp 95.000/kg)."
   }
 ];
 
