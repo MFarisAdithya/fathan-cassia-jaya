@@ -9,6 +9,11 @@ export default function ProductsSection() {
 
   return (
     <section id="produk" className="bg-[#E8DFD1]/40 dark:bg-[#1E1712] text-[#2C241D] dark:text-[#F5F1E8] py-24 lg:py-32 relative overflow-hidden border-b border-[#2C241D]/08 dark:border-[#E8DFD1]/10 grain-overlay transition-colors duration-300">
+      {/* Ambient Warm Spice Glow Orbs */}
+      <div className="absolute top-1/3 -left-20 w-[550px] h-[550px] bg-gradient-to-r from-[#A66A3F]/20 via-[#E28743]/15 to-transparent rounded-full blur-3xl pointer-events-none z-0" />
+      <div className="absolute bottom-10 -right-20 w-[600px] h-[600px] bg-gradient-to-l from-[#D97706]/18 via-[#C47F4E]/12 to-transparent rounded-full blur-3xl pointer-events-none z-0" />
+      <div className="absolute top-2/3 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-gradient-to-t from-[#A66A3F]/15 via-[#6F7652]/10 to-transparent rounded-full blur-3xl pointer-events-none z-0" />
+
       <div className="max-w-7xl 2xl:max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
         
         {/* Section Header */}

@@ -13,6 +13,10 @@ export default function HeroSection() {
       <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-[#A66A3F]/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-96 h-96 bg-[#6F7652]/10 rounded-full blur-3xl pointer-events-none" />
 
+      {/* Ambient Warm Spice Orbs */}
+      <div className="absolute top-1/4 left-10 w-[450px] h-[450px] bg-gradient-to-tr from-[#A66A3F]/25 via-[#E28743]/18 to-transparent rounded-full blur-3xl pointer-events-none z-0" />
+      <div className="absolute bottom-10 right-10 w-[400px] h-[400px] bg-gradient-to-bl from-[#D97706]/20 via-[#A66A3F]/15 to-transparent rounded-full blur-3xl pointer-events-none z-0" />
+
       {/* Subtle Geometric Corner Lines */}
       <div className="absolute top-0 right-0 w-48 h-48 border-r border-t border-[#E8DFD1]/10 pointer-events-none z-0" />
       <div className="absolute bottom-0 left-0 w-48 h-48 border-l border-b border-[#E8DFD1]/10 pointer-events-none z-0" />
