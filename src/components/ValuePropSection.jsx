@@ -15,7 +15,7 @@ export default function ValuePropSection() {
   ];
 
   return (
-    <section id="keunggulan" className="bg-[#F5F1E8] dark:bg-[#191410] text-[#2C241D] dark:text-[#F5F1E8] py-24 lg:py-32 relative overflow-hidden border-b border-[#2C241D]/08 dark:border-[#E8DFD1]/10 grain-overlay transition-colors duration-300">
+    <section id="keunggulan" className="bg-[#F5F1E8] dark:bg-[#191410] text-[#2C241D] dark:text-[#F5F1E8] py-16 sm:py-20 lg:py-24 relative overflow-hidden border-b border-[#2C241D]/08 dark:border-[#E8DFD1]/10 grain-overlay transition-colors duration-300">
       {/* Ambient Warm Spice Glow Orbs */}
       <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[480px] h-[480px] bg-gradient-to-tr from-[#A66A3F]/20 via-[#E28743]/12 to-transparent rounded-full blur-3xl pointer-events-none z-0" />
       <div className="absolute bottom-0 right-1/4 w-[420px] h-[420px] bg-gradient-to-bl from-[#D97706]/16 via-[#C47F4E]/12 to-transparent rounded-full blur-3xl pointer-events-none z-0" />

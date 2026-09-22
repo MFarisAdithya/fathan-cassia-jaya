@@ -8,7 +8,7 @@ export default function FinalCtaSection() {
   const t = TRANSLATIONS[lang] || TRANSLATIONS.in;
 
   return (
-    <section id="kontak" className="relative bg-[#2C241D] dark:bg-[#140E0A] text-[#F5F1E8] py-24 lg:py-36 overflow-hidden border-t border-[#2C241D]/20 grain-overlay-light transition-colors duration-300">
+    <section id="kontak" className="relative bg-[#2C241D] dark:bg-[#140E0A] text-[#F5F1E8] py-20 sm:py-24 lg:py-28 overflow-hidden border-t border-[#2C241D]/20 grain-overlay-light transition-colors duration-300">
       
       {/* Background Subtle Ambience */}
       <div className="absolute inset-0 z-0 pointer-events-none">

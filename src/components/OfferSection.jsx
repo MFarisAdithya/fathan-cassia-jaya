@@ -8,7 +8,7 @@ export default function OfferSection() {
   const t = TRANSLATIONS[lang] || TRANSLATIONS.in;
 
   return (
-    <section className="bg-[#F5F1E8] dark:bg-[#191410] text-[#2C241D] dark:text-[#F5F1E8] py-24 lg:py-32 relative overflow-hidden border-b border-[#2C241D]/08 dark:border-[#E8DFD1]/10 grain-overlay transition-colors duration-300">
+    <section className="bg-[#F5F1E8] dark:bg-[#191410] text-[#2C241D] dark:text-[#F5F1E8] py-16 sm:py-20 lg:py-24 relative overflow-hidden border-b border-[#2C241D]/08 dark:border-[#E8DFD1]/10 grain-overlay transition-colors duration-300">
       {/* Ambient Warm Spice Glow Orbs */}
       <div className="absolute top-1/3 right-1/4 w-[500px] h-[500px] bg-gradient-to-bl from-[#A66A3F]/22 via-[#D97706]/15 to-transparent rounded-full blur-3xl pointer-events-none z-0" />
       <div className="absolute bottom-10 left-10 w-[420px] h-[420px] bg-gradient-to-tr from-[#E28743]/18 via-[#C47F4E]/10 to-transparent rounded-full blur-3xl pointer-events-none z-0" />

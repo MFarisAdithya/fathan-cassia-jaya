@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, MessageCircle, ArrowRight, Sun, Moon, Globe } from 'lucide-react';
+import { Menu, X, MessageCircle, ArrowRight, ArrowUp, Sun, Moon, Globe } from 'lucide-react';
 import { getWhatsAppUrl, SITE_INFO, TRANSLATIONS } from '../config/siteConfig';
 import { useApp } from '../context/AppContext';
 
@@ -10,6 +10,8 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('');
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const [showBackToTop, setShowBackToTop] = useState(false);
 
   const navLinks = [
     { name: t.nav.about, href: '#tentang', id: 'tentang' },
@@ -22,17 +24,37 @@ export default function Navbar() {
     { name: t.nav.contact, href: '#kontak', id: 'kontak' },
   ];
 
+  const handleNavClick = (e, href) => {
+    e.preventDefault();
+    const targetId = href.replace('#', '');
+    if (!targetId) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+    const targetEl = document.getElementById(targetId);
+    if (targetEl) {
+      const yOffset = -72;
+      const y = targetEl.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+    setIsOpen(false);
+  };
+
   useEffect(() => {
     let ticking = false;
 
     const updateScroll = () => {
       const scrollY = window.scrollY;
+      const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = totalScroll > 0 ? Math.min(100, Math.max(0, (scrollY / totalScroll) * 100)) : 0;
+      setScrollProgress(progress);
       setScrolled(scrollY > 20);
+      setShowBackToTop(scrollY > 350);
 
       // If user reaches near bottom of page, activate last link (kontak)
       const isBottom = window.innerHeight + scrollY >= (document.documentElement.scrollHeight - 80);
       if (isBottom) {
-        setActiveSection('kontak');
+        setActiveSection((prev) => (prev !== 'kontak' ? 'kontak' : prev));
         ticking = false;
         return;
       }
@@ -53,7 +75,7 @@ export default function Navbar() {
         }
       }
 
-      setActiveSection(currentSection);
+      setActiveSection((prev) => (prev !== currentSection ? currentSection : prev));
       ticking = false;
     };
 
@@ -108,7 +130,8 @@ export default function Navbar() {
                   <a
                     key={link.id}
                     href={link.href}
-                    className={`font-body text-[11px] xl:text-xs font-medium px-2.5 xl:px-3 py-1.5 rounded-lg transition-colors duration-150 whitespace-nowrap ${
+                    onClick={(e) => handleNavClick(e, link.href)}
+                    className={`font-body text-[11px] xl:text-xs font-medium px-2.5 xl:px-3 py-1.5 rounded-lg transition-colors duration-150 whitespace-nowrap cursor-pointer ${
                       isActive
                         ? 'bg-[#2C241D] text-[#F5F1E8] dark:bg-[#A66A3F] dark:text-white shadow-xs font-semibold'
                         : 'text-[#2C241D]/75 dark:text-[#F5F1E8]/75 hover:text-[#2C241D] dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/5'
@@ -277,8 +300,8 @@ export default function Navbar() {
                   <a
                     key={link.id}
                     href={link.href}
-                    onClick={() => setIsOpen(false)}
-                    className={`font-body text-sm font-medium py-2.5 px-4 rounded-lg transition-colors flex items-center justify-between ${
+                    onClick={(e) => handleNavClick(e, link.href)}
+                    className={`font-body text-sm font-medium py-2.5 px-4 rounded-lg transition-colors flex items-center justify-between cursor-pointer ${
                       isActive
                         ? 'bg-[#2C241D] text-[#F5F1E8] dark:bg-[#A66A3F] dark:text-white font-medium'
                         : 'text-[#2C241D] dark:text-[#F5F1E8] hover:text-[#A66A3F] hover:bg-black/5 dark:hover:bg-white/5'
@@ -304,7 +327,29 @@ export default function Navbar() {
             </div>
           </div>
         )}
+
+        {/* Real-time Scroll & Reading Progress Bar */}
+        <div className="absolute bottom-0 left-0 right-0 h-[2.5px] bg-black/5 dark:bg-white/5 overflow-hidden">
+          <div
+            className="h-full bg-gradient-to-r from-[#A66A3F] via-[#E28743] to-[#C47F4E] transition-all duration-75 ease-out"
+            style={{ width: `${scrollProgress}%` }}
+          />
+        </div>
       </header>
+
+      {/* Floating Back to Top Button with Progress Percentage */}
+      {showBackToTop && (
+        <button
+          type="button"
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          className="fixed bottom-20 md:bottom-6 right-4 md:right-6 z-40 flex items-center space-x-2 bg-[#2C241D]/92 dark:bg-[#A66A3F]/92 hover:bg-[#A66A3F] dark:hover:bg-[#8e5831] text-[#F5F1E8] px-3.5 py-2 rounded-full shadow-xl backdrop-blur-md border border-white/15 transition-all duration-300 hover:scale-105 cursor-pointer text-xs font-body font-semibold group"
+          aria-label="Kembali ke atas"
+          title="Kembali ke atas"
+        >
+          <ArrowUp className="w-3.5 h-3.5 text-white group-hover:-translate-y-0.5 transition-transform" />
+          <span className="text-[11px] font-mono tracking-tight">{Math.round(scrollProgress)}%</span>
+        </button>
+      )}
 
       {/* Floating Bottom WhatsApp CTA Bar for Mobile Users */}
       <div className="md:hidden fixed bottom-4 left-4 right-4 z-40">
