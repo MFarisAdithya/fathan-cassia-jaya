@@ -8,10 +8,10 @@ export default function ValuePropSection() {
   const t = TRANSLATIONS[lang] || TRANSLATIONS.in;
 
   const icons = [
-    <Layers className="w-5 h-5 text-[#6F7652] dark:text-[#A66A3F] group-hover:text-white transition-colors" />,
-    <Building2 className="w-5 h-5 text-[#6F7652] dark:text-[#A66A3F] group-hover:text-white transition-colors" />,
-    <ShieldCheck className="w-5 h-5 text-[#6F7652] dark:text-[#A66A3F] group-hover:text-white transition-colors" />,
-    <MessageSquareText className="w-5 h-5 text-[#6F7652] dark:text-[#A66A3F] group-hover:text-white transition-colors" />,
+    <Layers className="w-5 h-5 text-[#6F7652] dark:text-[#A66A3F] transition-colors" />,
+    <Building2 className="w-5 h-5 text-[#6F7652] dark:text-[#A66A3F] transition-colors" />,
+    <ShieldCheck className="w-5 h-5 text-[#6F7652] dark:text-[#A66A3F] transition-colors" />,
+    <MessageSquareText className="w-5 h-5 text-[#6F7652] dark:text-[#A66A3F] transition-colors" />,
   ];
 
   return (
@@ -51,7 +51,7 @@ export default function ValuePropSection() {
               className="glass-panel glass-panel-hover p-8 rounded-xl space-y-6 group"
             >
               <div className="flex items-center justify-between">
-                <div className="w-11 h-11 rounded-lg glass-badge flex items-center justify-center group-hover:bg-[#A66A3F] group-hover:border-[#A66A3F] transition-colors">
+                <div className="w-11 h-11 rounded-lg glass-badge glass-badge-interactive flex items-center justify-center">
                   {icons[idx]}
                 </div>
                 <span className="font-heading text-2xl font-medium text-[#2C241D]/25 dark:text-[#F5F1E8]/25 group-hover:text-[#A66A3F] transition-colors">

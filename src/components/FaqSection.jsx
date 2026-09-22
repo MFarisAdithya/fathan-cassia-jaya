@@ -60,7 +60,7 @@ export default function FaqSection() {
                     <span>{faq.question}</span>
                   </span>
 
-                  <div className={`w-8 h-8 rounded-full glass-badge flex items-center justify-center text-[#6F7652] dark:text-[#A66A3F] shrink-0 transition-transform duration-300 ${isOpen ? 'rotate-180 bg-[#A66A3F] text-white dark:bg-[#A66A3F] dark:text-white' : ''}`}>
+                  <div className={`w-8 h-8 rounded-full glass-badge glass-badge-interactive flex items-center justify-center text-[#6F7652] dark:text-[#A66A3F] shrink-0 transition-transform duration-300 ${isOpen ? 'rotate-180 active' : ''}`}>
                     <ChevronDown className="w-4 h-4" />
                   </div>
                 </button>

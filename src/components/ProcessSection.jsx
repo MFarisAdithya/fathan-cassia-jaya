@@ -45,7 +45,7 @@ export default function ProcessSection() {
                     <span className="font-heading text-3xl sm:text-4xl font-medium text-[#A66A3F]">
                       {step.step}
                     </span>
-                    <div className="w-8 h-8 rounded-full glass-badge flex items-center justify-center text-[#6F7652] dark:text-[#A66A3F] group-hover:bg-[#A66A3F] group-hover:text-white transition-colors">
+                    <div className="w-8 h-8 rounded-full glass-badge glass-badge-interactive flex items-center justify-center text-[#6F7652] dark:text-[#A66A3F]">
                       <CheckCircle2 className="w-4 h-4" />
                     </div>
                   </div>

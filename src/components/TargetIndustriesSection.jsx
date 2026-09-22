@@ -8,10 +8,10 @@ export default function TargetIndustriesSection() {
   const t = TRANSLATIONS[lang] || TRANSLATIONS.in;
 
   const icons = [
-    <Utensils className="w-5 h-5 text-[#6F7652] dark:text-[#A66A3F] group-hover:text-white transition-colors" />,
-    <HeartPulse className="w-5 h-5 text-[#6F7652] dark:text-[#A66A3F] group-hover:text-white transition-colors" />,
-    <Network className="w-5 h-5 text-[#6F7652] dark:text-[#A66A3F] group-hover:text-white transition-colors" />,
-    <Store className="w-5 h-5 text-[#6F7652] dark:text-[#A66A3F] group-hover:text-white transition-colors" />,
+    <Utensils className="w-5 h-5 text-[#6F7652] dark:text-[#A66A3F] transition-colors" />,
+    <HeartPulse className="w-5 h-5 text-[#6F7652] dark:text-[#A66A3F] transition-colors" />,
+    <Network className="w-5 h-5 text-[#6F7652] dark:text-[#A66A3F] transition-colors" />,
+    <Store className="w-5 h-5 text-[#6F7652] dark:text-[#A66A3F] transition-colors" />,
   ];
 
   return (
@@ -47,7 +47,7 @@ export default function TargetIndustriesSection() {
               className="glass-panel glass-panel-hover p-8 rounded-xl space-y-5 flex flex-col justify-between group"
             >
               <div className="space-y-4">
-                <div className="w-11 h-11 rounded-lg glass-badge flex items-center justify-center group-hover:bg-[#A66A3F] group-hover:border-[#A66A3F] transition-colors">
+                <div className="w-11 h-11 rounded-lg glass-badge glass-badge-interactive flex items-center justify-center">
                   {icons[idx]}
                 </div>
 

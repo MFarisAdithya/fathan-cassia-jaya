@@ -333,6 +333,48 @@
     inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
+/* Interactive glass badge: highlights to warm spice with white icon on hover/active */
+.glass-badge-interactive {
+  transition: background-color 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              color 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.group:hover .glass-badge-interactive,
+.glass-badge-interactive:hover,
+.glass-badge-interactive.active {
+  background: #A66A3F !important;
+  background-color: #A66A3F !important;
+  border-color: #A66A3F !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 16px -2px rgba(166, 106, 63, 0.45) !important;
+}
+
+.group:hover .glass-badge-interactive svg,
+.glass-badge-interactive:hover svg,
+.glass-badge-interactive.active svg {
+  color: #FFFFFF !important;
+  stroke: #FFFFFF !important;
+}
+
+.dark .group:hover .glass-badge-interactive,
+.dark .glass-badge-interactive:hover,
+.dark .glass-badge-interactive.active {
+  background: #A66A3F !important;
+  background-color: #A66A3F !important;
+  border-color: #C47F4E !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 20px -2px rgba(196, 127, 78, 0.5) !important;
+}
+
+.dark .group:hover .glass-badge-interactive svg,
+.dark .glass-badge-interactive:hover svg,
+.dark .glass-badge-interactive.active svg {
+  color: #FFFFFF !important;
+  stroke: #FFFFFF !important;
+}
+
 .ambient-glow-spice {
   position: absolute;
   border-radius: 9999px;
