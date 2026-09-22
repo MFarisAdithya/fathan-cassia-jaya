@@ -19,8 +19,6 @@ export default function FinalCtaSection() {
         
         {/* Section Header */}
         <div className="flex items-center justify-center space-x-3">
-          <span className="font-body text-xs font-semibold text-[#A66A3F] tracking-widest">12</span>
-          <span className="w-6 h-[1px] bg-[#A66A3F]/50" />
           <span className="font-body text-[11px] uppercase tracking-[0.25em] text-[#C9A77A] font-semibold">
             {t.finalCta.badge}
           </span>

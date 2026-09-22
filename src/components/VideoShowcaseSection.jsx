@@ -46,8 +46,6 @@ export default function VideoShowcaseSection() {
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center space-y-4 mb-12 sm:mb-16">
           <div className="flex items-center justify-center space-x-3">
-            <span className="font-body text-xs font-semibold text-[#A66A3F] tracking-widest">02</span>
-            <span className="w-6 h-[1px] bg-[#A66A3F]/50" />
             <span className="font-body text-[11px] uppercase tracking-[0.25em] text-[#6F7652] dark:text-[#A66A3F] font-semibold">
               {t.videoShowcase.badge}
             </span>
