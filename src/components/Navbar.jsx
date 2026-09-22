@@ -23,51 +23,61 @@ export default function Navbar() {
   ];
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 20) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+    let ticking = false;
+
+    const updateScroll = () => {
+      const scrollY = window.scrollY;
+      setScrolled(scrollY > 20);
 
       // If user reaches near bottom of page, activate last link (kontak)
-      const isBottom = window.innerHeight + window.scrollY >= (document.documentElement.scrollHeight - 80);
+      const isBottom = window.innerHeight + scrollY >= (document.documentElement.scrollHeight - 80);
       if (isBottom) {
         setActiveSection('kontak');
+        ticking = false;
         return;
       }
 
-      // Robust scrollspy by checking viewport position
+      // Fast scrollspy check
+      const sectionIds = ['tentang', 'produk', 'keunggulan', 'proses', 'industri', 'testimoni', 'faq', 'kontak'];
       let currentSection = '';
-      for (let i = navLinks.length - 1; i >= 0; i--) {
-        const link = navLinks[i];
-        const element = document.getElementById(link.id);
+      const triggerPoint = 180;
+
+      for (let i = sectionIds.length - 1; i >= 0; i--) {
+        const element = document.getElementById(sectionIds[i]);
         if (element) {
-          const rect = element.getBoundingClientRect();
-          if (rect.top <= 180) {
-            currentSection = link.id;
+          const top = element.getBoundingClientRect().top;
+          if (top <= triggerPoint) {
+            currentSection = sectionIds[i];
             break;
           }
         }
       }
 
       setActiveSection(currentSection);
+      ticking = false;
+    };
+
+    const handleScroll = () => {
+      if (!ticking) {
+        ticking = true;
+        window.requestAnimationFrame(updateScroll);
+      }
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll();
+    updateScroll();
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [lang]);
+  }, []);
 
   return (
     <>
       {/* Permanent Fixed Header Navbar */}
       <header
         style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 99999 }}
-        className={`transition-all duration-300 py-3 sm:py-3.5 border-b backdrop-blur-md ${
+        className={`transition-colors duration-150 py-3 sm:py-3.5 border-b backdrop-blur-md ${
           scrolled
-            ? 'bg-[#F5F1E8]/92 dark:bg-[#191410]/95 border-[#2C241D]/10 dark:border-[#E8DFD1]/10 shadow-xs'
-            : 'bg-[#F5F1E8]/80 dark:bg-[#191410]/85 border-[#2C241D]/08 dark:border-[#E8DFD1]/08'
+            ? 'bg-[#F5F1E8]/95 dark:bg-[#191410]/95 border-[#2C241D]/10 dark:border-[#E8DFD1]/10 shadow-xs'
+            : 'bg-[#F5F1E8]/85 dark:bg-[#191410]/85 border-[#2C241D]/08 dark:border-[#E8DFD1]/08'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -78,7 +88,7 @@ export default function Navbar() {
               <img
                 src={SITE_INFO.logoUrl}
                 alt={t.siteInfo.name}
-                className="w-10 h-10 sm:w-11 sm:h-11 rounded-lg object-cover border border-[#2C241D]/15 dark:border-[#E8DFD1]/20 shadow-xs group-hover:scale-105 transition-transform shrink-0"
+                className="w-10 h-10 sm:w-11 sm:h-11 rounded-lg object-cover border border-[#2C241D]/15 dark:border-[#E8DFD1]/20 shadow-xs shrink-0"
               />
               <div className="flex flex-col shrink-0">
                 <span className="font-heading text-sm sm:text-base xl:text-lg font-semibold tracking-wide text-[#2C241D] dark:text-[#F5F1E8] group-hover:text-[#A66A3F] transition-colors leading-tight whitespace-nowrap">
@@ -98,7 +108,7 @@ export default function Navbar() {
                   <a
                     key={link.id}
                     href={link.href}
-                    className={`font-body text-[11px] xl:text-xs font-medium px-2.5 xl:px-3 py-1.5 rounded-lg transition-all duration-200 whitespace-nowrap ${
+                    className={`font-body text-[11px] xl:text-xs font-medium px-2.5 xl:px-3 py-1.5 rounded-lg transition-colors duration-150 whitespace-nowrap ${
                       isActive
                         ? 'bg-[#2C241D] text-[#F5F1E8] dark:bg-[#A66A3F] dark:text-white shadow-xs font-semibold'
                         : 'text-[#2C241D]/75 dark:text-[#F5F1E8]/75 hover:text-[#2C241D] dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/5'

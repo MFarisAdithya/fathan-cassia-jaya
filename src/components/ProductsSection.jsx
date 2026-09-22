@@ -44,11 +44,12 @@ export default function ProductsSection() {
             >
               <div>
                 {/* Large Product Studio Image */}
-                <div className="relative h-40 sm:h-44 lg:h-48 overflow-hidden bg-[#E8DFD1]/30 dark:bg-[#191410]/50">
+                <div className="relative h-40 sm:h-44 lg:h-48 overflow-hidden bg-[#E8DFD1]/30 dark:bg-[#191410]/50 rounded-t-xl">
                   <img
                     src={prod.image}
                     alt={prod.name}
-                    className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-500"
+                    className="w-full h-full object-cover transition-opacity duration-300 group-hover:opacity-90"
+                    loading="lazy"
                   />
                   
                   {/* Subtle Number Badge */}

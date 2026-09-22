@@ -19,14 +19,14 @@ export default function BrandStorySection() {
                 <img
                   src="./images/about_warehouse_raw.jpg"
                   alt={lang === 'en' ? 'UD Fathan Cassia Jaya Raw Material Storage' : 'Gudang Bahan Baku UD Fathan Cassia Jaya'}
-                  className="w-full h-64 sm:h-80 object-cover hover:scale-103 transition-transform duration-700"
+                  className="w-full h-64 sm:h-80 object-cover transition-opacity duration-300 hover:opacity-90"
                 />
               </div>
               <div className="rounded-xl overflow-hidden shadow-card border border-[#2C241D]/10 dark:border-[#E8DFD1]/15">
                 <img
                   src="./images/about_warehouse_processing.jpg"
                   alt={lang === 'en' ? 'Warehouse Processing Facility' : 'Fasilitas Pengolahan & Sortir Gudang'}
-                  className="w-full h-44 object-cover hover:scale-103 transition-transform duration-700"
+                  className="w-full h-44 object-cover transition-opacity duration-300 hover:opacity-90"
                 />
               </div>
             </div>
@@ -36,14 +36,14 @@ export default function BrandStorySection() {
                 <img
                   src="./images/about_spices_assortment.jpg"
                   alt={lang === 'en' ? 'Indonesian Spice Commodities Assortment' : 'Koleksi Aneka Rempah Unggulan Nusantara'}
-                  className="w-full h-44 object-cover hover:scale-103 transition-transform duration-700"
+                  className="w-full h-44 object-cover transition-opacity duration-300 hover:opacity-90"
                 />
               </div>
               <div className="rounded-xl overflow-hidden shadow-card border border-[#2C241D]/10 dark:border-[#E8DFD1]/15">
                 <img
                   src="./images/about_warehouse_storage.jpg"
                   alt={lang === 'en' ? 'Finished Spice Stock Ready for Shipment' : 'Stok Karung Rempah Siap Kirim'}
-                  className="w-full h-64 sm:h-80 object-cover hover:scale-103 transition-transform duration-700"
+                  className="w-full h-64 sm:h-80 object-cover transition-opacity duration-300 hover:opacity-90"
                 />
               </div>
             </div>
