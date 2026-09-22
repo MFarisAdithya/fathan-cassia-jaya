@@ -37,14 +37,14 @@ export default function OfferSection() {
           {t.offer.items.map((offer) => (
             <div
               key={offer.num}
-              className="bg-white dark:bg-[#241C16] p-8 rounded-xl border border-[#2C241D]/08 dark:border-[#E8DFD1]/12 shadow-sm hover:shadow-card hover:border-[#A66A3F]/40 transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1"
+              className="glass-panel glass-panel-hover p-8 rounded-xl flex flex-col justify-between group"
             >
               <div className="space-y-6">
                 <div className="flex items-center justify-between border-b border-[#2C241D]/06 dark:border-[#E8DFD1]/10 pb-4">
                   <span className="font-heading text-2xl font-medium text-[#A66A3F]">
                     {offer.num}
                   </span>
-                  <span className="font-body text-[11px] font-semibold tracking-wider text-[#6F7652] dark:text-[#A66A3F] uppercase bg-[#E8DFD1]/40 dark:bg-[#191410] px-2.5 py-1 rounded border border-[#2C241D]/06 dark:border-[#E8DFD1]/10">
+                  <span className="font-body text-[11px] font-semibold tracking-wider text-[#6F7652] dark:text-[#A66A3F] uppercase glass-badge px-2.5 py-1 rounded">
                     {lang === 'en' ? `Tier ${offer.num}` : `Skema ${offer.num}`}
                   </span>
                 </div>
@@ -77,7 +77,7 @@ export default function OfferSection() {
         </div>
 
         {/* Bottom Transparency Card */}
-        <div className="mt-12 bg-white/80 dark:bg-[#241C16]/80 backdrop-blur-sm p-6 rounded-xl border border-[#2C241D]/08 dark:border-[#E8DFD1]/12 text-center max-w-2xl mx-auto shadow-sm">
+        <div className="mt-12 glass-panel p-6 rounded-xl text-center max-w-2xl mx-auto">
           <p className="font-body text-xs text-[#2C241D]/70 dark:text-[#E8DFD1]/70 leading-relaxed font-normal">
             {lang === 'en' ? (
               <>

@@ -44,13 +44,13 @@ export default function CommitmentSection() {
           {t.commitment.items.map((item, idx) => (
             <div
               key={item.id}
-              className="bg-white dark:bg-[#241C16] rounded-xl p-8 border border-[#2C241D]/08 dark:border-[#E8DFD1]/12 shadow-sm hover:shadow-card hover:border-[#A66A3F]/40 transition-all duration-300 space-y-4 group hover:-translate-y-1 relative overflow-hidden"
+              className="glass-panel glass-panel-hover rounded-xl p-8 space-y-4 group relative overflow-hidden"
             >
               <div className="flex items-center justify-between">
-                <div className="w-11 h-11 rounded-lg bg-[#E8DFD1]/40 dark:bg-[#191410] border border-[#2C241D]/08 dark:border-[#E8DFD1]/15 flex items-center justify-center group-hover:bg-[#A66A3F] transition-colors">
+                <div className="w-11 h-11 rounded-lg glass-badge flex items-center justify-center group-hover:bg-[#A66A3F] transition-colors">
                   {icons[idx]}
                 </div>
-                <span className="font-body text-[10px] font-semibold uppercase tracking-wider text-[#6F7652] dark:text-[#A66A3F] bg-[#E8DFD1]/40 dark:bg-[#191410] px-2.5 py-1 rounded border border-[#2C241D]/06 dark:border-[#E8DFD1]/10">
+                <span className="font-body text-[10px] font-semibold uppercase tracking-wider text-[#6F7652] dark:text-[#A66A3F] glass-badge px-2.5 py-1 rounded">
                   {item.badge}
                 </span>
               </div>

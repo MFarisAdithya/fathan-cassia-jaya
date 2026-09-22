@@ -37,7 +37,7 @@ export default function TestimonialsSection() {
           {t.testimonials.items.map((item) => (
             <div
               key={item.id}
-              className="bg-white dark:bg-[#241C16] rounded-xl p-8 border border-[#2C241D]/08 dark:border-[#E8DFD1]/12 shadow-sm hover:shadow-card hover:border-[#A66A3F]/40 flex flex-col justify-between space-y-6 transition-all duration-300 group hover:-translate-y-1"
+              className="glass-panel glass-panel-hover rounded-xl p-8 flex flex-col justify-between space-y-6 group"
             >
               <div className="space-y-4">
                 {/* Header: Rating & Tag */}
@@ -47,7 +47,7 @@ export default function TestimonialsSection() {
                       <Star key={i} className="w-4 h-4 fill-[#A66A3F] text-[#A66A3F]" />
                     ))}
                   </div>
-                  <span className="font-body text-[10px] tracking-wider uppercase px-2.5 py-1 rounded bg-[#E8DFD1]/50 dark:bg-[#191410] text-[#6F7652] dark:text-[#A66A3F] border border-[#2C241D]/06 dark:border-[#E8DFD1]/10 font-semibold">
+                  <span className="glass-badge font-body text-[10px] tracking-wider uppercase px-2.5 py-1 rounded text-[#6F7652] dark:text-[#A66A3F] font-semibold">
                     {item.tag}
                   </span>
                 </div>
@@ -62,7 +62,7 @@ export default function TestimonialsSection() {
 
               {/* Author Info */}
               <div className="pt-4 border-t border-[#2C241D]/06 dark:border-[#E8DFD1]/10 flex items-center space-x-3 text-xs font-body">
-                <div className="w-10 h-10 rounded-lg bg-[#E8DFD1]/40 dark:bg-[#191410] flex items-center justify-center text-[#6F7652] dark:text-[#A66A3F] border border-[#2C241D]/08 dark:border-[#E8DFD1]/15">
+                <div className="w-10 h-10 rounded-lg glass-badge flex items-center justify-center text-[#6F7652] dark:text-[#A66A3F]">
                   {item.isAnonymous ? <UserCheck className="w-5 h-5" /> : <Building2 className="w-5 h-5" />}
                 </div>
                 <div>

@@ -49,7 +49,7 @@ export default function BrandStorySection() {
             </div>
 
             {/* Subtle Overlay Badge */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#F5F1E8]/95 dark:bg-[#241C16]/95 backdrop-blur-md px-5 py-2.5 rounded-lg border border-[#2C241D]/12 dark:border-[#E8DFD1]/20 text-center shadow-card">
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 glass-badge px-5 py-2.5 rounded-lg text-center">
               <span className="font-body text-[10px] text-[#2C241D] dark:text-[#E8DFD1] font-semibold tracking-[0.2em] uppercase">
                 {lang === 'en' ? 'Authentic Spice Commodities' : 'Komoditas Rempah Nusantara'}
               </span>
@@ -76,7 +76,7 @@ export default function BrandStorySection() {
               {t.brandStory.p1}
             </p>
 
-            <div className="bg-[#E8DFD1]/50 dark:bg-[#241C16] p-6 rounded-xl border border-[#2C241D]/08 dark:border-[#E8DFD1]/10 space-y-2">
+            <div className="glass-panel p-6 rounded-xl space-y-2">
               <h4 className="font-body text-xs font-semibold text-[#6F7652] dark:text-[#A66A3F] uppercase tracking-wider">
                 {t.brandStory.addressLabel}
               </h4>

@@ -44,10 +44,10 @@ export default function ValuePropSection() {
           {t.valueProp.items.map((item, idx) => (
             <div
               key={item.num}
-              className="bg-white dark:bg-[#241C16] border border-[#2C241D]/08 dark:border-[#E8DFD1]/12 p-8 rounded-xl hover:border-[#A66A3F]/40 dark:hover:border-[#A66A3F]/60 transition-all duration-300 space-y-6 group hover:-translate-y-1 shadow-sm hover:shadow-card"
+              className="glass-panel glass-panel-hover p-8 rounded-xl space-y-6 group"
             >
               <div className="flex items-center justify-between">
-                <div className="w-11 h-11 rounded-lg bg-[#E8DFD1]/40 dark:bg-[#191410] flex items-center justify-center border border-[#2C241D]/08 dark:border-[#E8DFD1]/15 group-hover:bg-[#A66A3F] group-hover:border-[#A66A3F] transition-colors">
+                <div className="w-11 h-11 rounded-lg glass-badge flex items-center justify-center group-hover:bg-[#A66A3F] group-hover:border-[#A66A3F] transition-colors">
                   {icons[idx]}
                 </div>
                 <span className="font-heading text-2xl font-medium text-[#2C241D]/25 dark:text-[#F5F1E8]/25 group-hover:text-[#A66A3F] transition-colors">

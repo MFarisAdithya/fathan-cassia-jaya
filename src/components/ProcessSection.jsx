@@ -38,14 +38,14 @@ export default function ProcessSection() {
             {t.process.items.map((step, idx) => (
               <div
                 key={step.step}
-                className="bg-white dark:bg-[#241C16] p-8 rounded-xl border border-[#2C241D]/08 dark:border-[#E8DFD1]/12 shadow-sm hover:shadow-card hover:border-[#A66A3F]/40 transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1 space-y-6"
+                className="glass-panel glass-panel-hover p-8 rounded-xl flex flex-col justify-between group space-y-6"
               >
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
                     <span className="font-heading text-3xl sm:text-4xl font-medium text-[#A66A3F]">
                       {step.step}
                     </span>
-                    <div className="w-8 h-8 rounded-full bg-[#F5F1E8] dark:bg-[#191410] flex items-center justify-center text-[#6F7652] dark:text-[#A66A3F] border border-[#2C241D]/08 dark:border-[#E8DFD1]/15 group-hover:bg-[#A66A3F] group-hover:text-white transition-colors">
+                    <div className="w-8 h-8 rounded-full glass-badge flex items-center justify-center text-[#6F7652] dark:text-[#A66A3F] group-hover:bg-[#A66A3F] group-hover:text-white transition-colors">
                       <CheckCircle2 className="w-4 h-4" />
                     </div>
                   </div>

@@ -35,11 +35,11 @@ export default function ProductsSection() {
           {t.products.list.map((prod) => (
             <div
               key={prod.id}
-              className="bg-white dark:bg-[#241C16] rounded-xl overflow-hidden border border-[#2C241D]/08 dark:border-[#E8DFD1]/10 shadow-card hover:shadow-card-hover transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1"
+              className="glass-panel glass-panel-hover rounded-xl overflow-hidden flex flex-col justify-between group"
             >
               <div>
                 {/* Large Product Studio Image */}
-                <div className="relative h-40 sm:h-44 lg:h-48 overflow-hidden bg-[#E8DFD1]/50 dark:bg-[#191410]">
+                <div className="relative h-40 sm:h-44 lg:h-48 overflow-hidden bg-[#E8DFD1]/30 dark:bg-[#191410]/50">
                   <img
                     src={prod.image}
                     alt={prod.name}
@@ -47,7 +47,7 @@ export default function ProductsSection() {
                   />
                   
                   {/* Subtle Number Badge */}
-                  <div className="absolute top-2.5 left-2.5 bg-[#F5F1E8]/90 dark:bg-[#191410]/90 text-[#2C241D] dark:text-[#E8DFD1] px-2 py-0.5 rounded font-body text-[10px] font-mono font-medium border border-[#2C241D]/10">
+                  <div className="absolute top-2.5 left-2.5 glass-badge px-2 py-0.5 rounded font-body text-[10px] font-mono font-medium text-[#2C241D] dark:text-[#E8DFD1]">
                     {prod.id}
                   </div>
 

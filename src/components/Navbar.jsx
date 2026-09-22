@@ -295,6 +295,27 @@ export default function Navbar() {
           </div>
         )}
       </header>
+
+      {/* Floating Bottom WhatsApp CTA Bar for Mobile Users */}
+      <div className="md:hidden fixed bottom-4 left-4 right-4 z-40">
+        <a
+          href={getWhatsAppUrl(t.hero.waMessage)}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center justify-between bg-[#2C241D] dark:bg-[#A66A3F] text-[#F5F1E8] px-5 py-3.5 rounded-xl shadow-xl active:scale-98 transition-transform border border-white/10"
+        >
+          <div className="flex items-center space-x-3">
+            <div className="bg-white/10 p-2 rounded-lg">
+              <MessageCircle className="w-4 h-4 text-[#F5F1E8]" />
+            </div>
+            <div className="text-left font-body">
+              <div className="text-[10px] uppercase tracking-wider text-[#F5F1E8]/70 font-medium">UD Fathan Cassia Jaya</div>
+              <div className="text-xs font-semibold text-[#F5F1E8]">{t.nav.requestQuote}</div>
+            </div>
+          </div>
+          <ArrowRight className="w-4 h-4 text-[#F5F1E8]/90" />
+        </a>
+      </div>
     </>
   );
 }

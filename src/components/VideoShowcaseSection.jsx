@@ -154,7 +154,7 @@ export default function VideoShowcaseSection() {
             {t.videoShowcase.features.map((feat, idx) => (
               <div
                 key={idx}
-                className="bg-[#F5F1E8] dark:bg-[#241C16] p-6 rounded-xl border border-[#2C241D]/08 dark:border-[#E8DFD1]/10 space-y-2.5 shadow-card hover:border-[#A66A3F]/50 transition-all"
+                className="glass-panel glass-panel-hover p-6 rounded-xl space-y-2.5"
               >
                 <div className="w-10 h-10 rounded-lg bg-[#A66A3F]/15 border border-[#A66A3F]/30 flex items-center justify-center text-[#A66A3F]">
                   {idx === 0 ? <ShieldCheck className="w-5 h-5" /> : idx === 1 ? <Truck className="w-5 h-5" /> : <CheckCircle2 className="w-5 h-5" />}

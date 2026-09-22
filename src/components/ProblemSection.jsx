@@ -34,11 +34,11 @@ export default function ProblemSection() {
           {t.problem.items.map((item) => (
             <div
               key={item.id}
-              className="bg-white/95 dark:bg-[#241C16] p-8 rounded-xl border border-[#2C241D]/08 dark:border-[#E8DFD1]/10 shadow-card hover:shadow-card-hover transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1"
+              className="glass-panel glass-panel-hover p-8 rounded-xl flex flex-col justify-between group"
             >
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <span className="font-body text-xs text-[#A66A3F] tracking-widest uppercase font-semibold bg-[#A66A3F]/10 px-3 py-1 rounded-md">
+                  <span className="font-body text-xs text-[#A66A3F] tracking-widest uppercase font-semibold glass-badge px-3 py-1 rounded-md">
                     {lang === 'en' ? `CHALLENGE ${item.id}` : `TANTANGAN ${item.id}`}
                   </span>
                 </div>

@@ -44,10 +44,10 @@ export default function TargetIndustriesSection() {
           {t.targetIndustries.items.map((ind, idx) => (
             <div
               key={ind.title}
-              className="bg-white dark:bg-[#241C16] p-8 rounded-xl border border-[#2C241D]/08 dark:border-[#E8DFD1]/12 shadow-sm hover:shadow-card hover:border-[#A66A3F]/40 transition-all duration-300 space-y-5 flex flex-col justify-between group hover:-translate-y-1"
+              className="glass-panel glass-panel-hover p-8 rounded-xl space-y-5 flex flex-col justify-between group"
             >
               <div className="space-y-4">
-                <div className="w-11 h-11 rounded-lg bg-[#E8DFD1]/40 dark:bg-[#191410] flex items-center justify-center border border-[#2C241D]/08 dark:border-[#E8DFD1]/15 group-hover:bg-[#A66A3F] group-hover:border-[#A66A3F] transition-colors">
+                <div className="w-11 h-11 rounded-lg glass-badge flex items-center justify-center group-hover:bg-[#A66A3F] group-hover:border-[#A66A3F] transition-colors">
                   {icons[idx]}
                 </div>
 

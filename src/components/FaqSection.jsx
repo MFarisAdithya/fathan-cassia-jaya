@@ -44,8 +44,8 @@ export default function FaqSection() {
             return (
               <div
                 key={idx}
-                className={`bg-white dark:bg-[#241C16] rounded-xl border border-[#2C241D]/08 dark:border-[#E8DFD1]/12 overflow-hidden transition-all duration-300 ${
-                  isOpen ? 'shadow-card border-[#A66A3F]/40 dark:border-[#A66A3F]/50' : 'shadow-sm hover:border-[#A66A3F]/25'
+                className={`glass-panel rounded-xl overflow-hidden transition-all duration-300 ${
+                  isOpen ? 'border-[#A66A3F]/40 dark:border-[#A66A3F]/50 shadow-card-hover' : 'hover:border-[#A66A3F]/30'
                 }`}
               >
                 <button
@@ -54,13 +54,13 @@ export default function FaqSection() {
                   aria-expanded={isOpen}
                 >
                   <span className="font-heading text-base sm:text-lg font-medium text-[#2C241D] dark:text-[#F5F1E8] flex items-center space-x-3">
-                    <span className="text-[#A66A3F] text-xs font-semibold bg-[#E8DFD1]/40 dark:bg-[#191410] px-2.5 py-0.5 rounded border border-[#2C241D]/06 dark:border-[#E8DFD1]/10 font-body">
+                    <span className="text-[#A66A3F] text-xs font-semibold glass-badge px-2.5 py-0.5 rounded font-body">
                       Q{idx + 1}
                     </span>
                     <span>{faq.question}</span>
                   </span>
 
-                  <div className={`w-8 h-8 rounded-full bg-[#E8DFD1]/40 dark:bg-[#191410] flex items-center justify-center text-[#6F7652] dark:text-[#A66A3F] shrink-0 transition-transform duration-300 ${isOpen ? 'rotate-180 bg-[#A66A3F] text-white dark:bg-[#A66A3F] dark:text-white' : ''}`}>
+                  <div className={`w-8 h-8 rounded-full glass-badge flex items-center justify-center text-[#6F7652] dark:text-[#A66A3F] shrink-0 transition-transform duration-300 ${isOpen ? 'rotate-180 bg-[#A66A3F] text-white dark:bg-[#A66A3F] dark:text-white' : ''}`}>
                     <ChevronDown className="w-4 h-4" />
                   </div>
                 </button>
