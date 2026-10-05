@@ -65,6 +65,7 @@ export const TRANSLATIONS = {
       ]
     },
     problem: {
+      badge: "Tantangan & Solusi",
       title: "Apakah Bisnis Anda Sering Mengalami Ini?",
       items: [
         {
@@ -507,6 +508,7 @@ export const TRANSLATIONS = {
       ]
     },
     problem: {
+      badge: "Challenges & Solutions",
       title: "Does Your Business Often Experience This?",
       items: [
         {
