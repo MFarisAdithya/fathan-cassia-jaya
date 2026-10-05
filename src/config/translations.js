@@ -411,7 +411,7 @@ export const TRANSLATIONS = {
         },
         {
           question: "Apakah bisa menanyakan ketersediaan produk?",
-          answer: "Bisa. Hubungi kami melalui WhatsApp (+62 852-6777-4103) untuk menanyakan stok terkini, grade, dan kebutuhan yang diperlukan secara cepat."
+          answer: "Bisa. Hubungi kami melalui WhatsApp (+62 823 7417 3430) untuk menanyakan stok terkini, grade, dan kebutuhan yang diperlukan secara cepat."
         },
         {
           question: "Apakah bisa membeli dalam jumlah besar?",
@@ -854,7 +854,7 @@ export const TRANSLATIONS = {
         },
         {
           question: "Can we inquire about immediate stock availability?",
-          answer: "Absolutely. Contact our team via WhatsApp (+62 852-6777-4103) for real-time stock levels, current harvest grades, and prompt spot pricing."
+          answer: "Absolutely. Contact our team via WhatsApp (+62 823 7417 3430) for real-time stock levels, current harvest grades, and prompt spot pricing."
         },
         {
           question: "Are bulk and multi-ton volume orders supported?",

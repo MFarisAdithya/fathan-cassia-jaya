@@ -4,7 +4,7 @@
  */
 
 // Global WhatsApp Variable - All CTAs connect to this number
-export const WHATSAPP_NUMBER = "6285267774103";
+export const WHATSAPP_NUMBER = "6282374173430";
 
 import { TRANSLATIONS } from './translations';
 
@@ -32,7 +32,7 @@ export const SITE_INFO = {
     "Komunikasi Langsung"
   ],
   placeholders: {
-    whatsapp: "+62 852-6777-4103",
+    whatsapp: "+62 823 7417 3430",
     email: "erwantoaja43@gmail.com",
     address: "Jl. P. Tirtayasa, Campang Raya, Kec. Tanjungkarang Timur, Kota Bandar Lampung, Lampung 35244",
     facebook: "UD Fathan Cassia Jaya"
@@ -310,7 +310,7 @@ export const FAQS = [
   },
   {
     question: "Apakah bisa menanyakan ketersediaan produk?",
-    answer: "Bisa. Hubungi kami melalui WhatsApp (+62 852-6777-4103) untuk menanyakan jenis rempah dan kebutuhan yang diperlukan."
+    answer: "Bisa. Hubungi kami melalui WhatsApp (+62 823 7417 3430) untuk menanyakan jenis rempah dan kebutuhan yang diperlukan."
   },
   {
     question: "Apakah bisa membeli dalam jumlah besar?",
