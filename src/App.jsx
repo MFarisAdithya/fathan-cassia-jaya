@@ -22,9 +22,9 @@ function MainContent() {
       <Navbar />
       <main>
         <HeroSection />
+        <ProblemSection />
         <BrandStorySection />
         <VideoShowcaseSection />
-        <ProblemSection />
         <ProductsSection />
         <ValuePropSection />
         <ProcessSection />
