@@ -65,31 +65,24 @@ export const TRANSLATIONS = {
       ]
     },
     problem: {
-      badge: "Kebutuhan Anda, Solusi Kami",
-      title: "Kami Solusinya!!",
-      subtitle: "Menjawab ragam kebutuhan rempah Anda dengan pasokan alami berkualitas, harga langsung petani, dan garansi transaksi yang amanah.",
-      bannerHeadline: "Kami Solusinya!!",
-      bannerDesc: "Apapun kebutuhan rempah bisnis Anda, konsultasikan langsung bersama UD Fathan Cassia Jaya untuk mendapatkan pasokan terpercaya, kualitas terjamin, dan penawaran harga terbaik langsung dari gudang.",
+      title: "Apakah Bisnis Anda Sering Mengalami Ini?",
       items: [
         {
           id: "01",
-          badge: "Alami & Berkhasiat",
-          title: "Butuh rempah alami untuk kesehatan?",
-          description: "Kami menyediakan rempah pilihan 100% alami dan murni tanpa campuran bahan kimia maupun pengawet. Kaya minyak atsiri dan nutrisi hayati untuk industri jamu, suplemen herbal, farmasi, hingga konsumsi harian."
+          question: "Butuh rempah alami untuk kesehatan?"
         },
         {
           id: "02",
-          badge: "Harga Tangan Pertama",
-          title: "Mau beli rempah dengan harga yang murah?",
-          description: "Dapatkan harga tangan pertama langsung dari sentra petani dan gudang pengolahan kami di Jawa Timur tanpa perantara panjang. Jauh lebih hemat, bersahabat, dan kompetitif untuk eceran, grosir, maupun industri besar."
+          question: "Mau beli rempah dengan harga yang murah?"
         },
         {
           id: "03",
-          badge: "Garansi Kualitas",
-          title: "Takut kualitas rempah tidak sesuai harapan?",
-          description: "Kami terapkan transparansi penuh: dokumentasi foto/video stok asli sebelum kirim, sortasi kadar air & kebersihan ketat, timbangan jujur akurat, serta garansi tukar/retur jika kondisi rempah tidak sesuai kesepakatan."
+          question: "Takut kualitas rempah tidak sesuai harapan?"
         }
-      ]
+      ],
+      solutionHeadline: "KAMI ADALAH SOLUSINYA!",
+      solutionDesc: "Kami menyediakan aneka komoditas rempah alami berkualitas langsung dari sentra petani dengan harga terbaik dan jaminan kualitas transparan.",
+      ctaBtn: "Konsultasi Gratis Sekarang"
     },
     products: {
       badge: "Katalog Komoditas Rempah",
@@ -514,31 +507,24 @@ export const TRANSLATIONS = {
       ]
     },
     problem: {
-      badge: "Your Needs, Our Solution",
-      title: "We Are Your Solution!!",
-      subtitle: "Addressing your spice sourcing challenges with pure natural quality, direct farmer pricing, and dependable trade guarantees.",
-      bannerHeadline: "We Are Your Solution!!",
-      bannerDesc: "Whatever your business needs, consult directly with UD Fathan Cassia Jaya for verified quality, fair pricing, and reliable spice supply straight from the warehouse.",
+      title: "Does Your Business Often Experience This?",
       items: [
         {
           id: "01",
-          badge: "Pure & Beneficial",
-          title: "Need natural spices for health?",
-          description: "We provide 100% natural, unadulterated spices free from chemicals and artificial preservatives. Rich in essential oils and bioactives for herbal medicine, health supplements, pharmaceuticals, and daily wellness."
+          question: "Need 100% natural spices for health & wellness?"
         },
         {
           id: "02",
-          badge: "Direct Farm Pricing",
-          title: "Looking for spices at affordable prices?",
-          description: "Access direct first-hand wholesale pricing straight from local farmer centers and our primary processing facility in East Java without middleman markups. Highly competitive for retailers, distributors, and industrial buyers."
+          question: "Looking to buy spices at direct farmer prices?"
         },
         {
           id: "03",
-          badge: "Quality Guarantee",
-          title: "Worried the spice quality won't meet expectations?",
-          description: "We provide 100% transparency: verified pre-dispatch photo/video documentation, standardized sorting for moisture & purity, calibrated weighing accuracy, and a clear exchange/refund policy if standards differ."
+          question: "Worried the spice quality won't meet expectations?"
         }
-      ]
+      ],
+      solutionHeadline: "WE ARE YOUR SOLUTION!",
+      solutionDesc: "We provide high-grade natural Indonesian spices directly from farmer centers with competitive pricing and full quality transparency.",
+      ctaBtn: "Free Consultation on WhatsApp"
     },
     products: {
       badge: "Spice Commodities Catalog",
