@@ -65,24 +65,29 @@ export const TRANSLATIONS = {
       ]
     },
     problem: {
-      badge: "Tantangan Pengadaan",
-      title: "Setiap Industri Memiliki Kebutuhan Rempah yang Spesifik",
-      subtitle: "Kami memahami bahwa kebutuhan bisnis Anda tidak selalu seragam dan memerlukan pasokan yang fleksibel.",
+      badge: "Kebutuhan Anda, Solusi Kami",
+      title: "Kami Solusinya!!",
+      subtitle: "Menjawab ragam kebutuhan rempah Anda dengan pasokan alami berkualitas, harga langsung petani, dan garansi transaksi yang amanah.",
+      bannerHeadline: "Kami Solusinya!!",
+      bannerDesc: "Apapun kebutuhan rempah bisnis Anda, konsultasikan langsung bersama UD Fathan Cassia Jaya untuk mendapatkan pasokan terpercaya, kualitas terjamin, dan penawaran harga terbaik langsung dari gudang.",
       items: [
         {
           id: "01",
-          title: "Jenis rempah yang dibutuhkan tidak selalu sama",
-          description: "Setiap industri memiliki spesifikasi varietas, aroma, dan bentuk rempah yang berbeda sesuai lini produksi mereka."
+          badge: "Alami & Berkhasiat",
+          title: "Butuh rempah alami untuk kesehatan?",
+          description: "Kami menyediakan rempah pilihan 100% alami dan murni tanpa campuran bahan kimia maupun pengawet. Kaya minyak atsiri dan nutrisi hayati untuk industri jamu, suplemen herbal, farmasi, hingga konsumsi harian."
         },
         {
           id: "02",
-          title: "Jumlah kebutuhan bisnis dapat berbeda-beda",
-          description: "Kebutuhan pasokan dapat menyesuaikan volume produksi, baik untuk partai sedang maupun pemesanan jumlah besar."
+          badge: "Harga Tangan Pertama",
+          title: "Mau beli rempah dengan harga yang murah?",
+          description: "Dapatkan harga tangan pertama langsung dari sentra petani dan gudang pengolahan kami di Jawa Timur tanpa perantara panjang. Jauh lebih hemat, bersahabat, dan kompetitif untuk eceran, grosir, maupun industri besar."
         },
         {
           id: "03",
-          title: "Kualitas dan spesifikasi perlu disesuaikan",
-          description: "Standar kadar air, kebersihan, dan tingkat grade perlu didiskusikan agar hasil akhir olahan sesuai harapan."
+          badge: "Garansi Kualitas",
+          title: "Takut kualitas rempah tidak sesuai harapan?",
+          description: "Kami terapkan transparansi penuh: dokumentasi foto/video stok asli sebelum kirim, sortasi kadar air & kebersihan ketat, timbangan jujur akurat, serta garansi tukar/retur jika kondisi rempah tidak sesuai kesepakatan."
         }
       ]
     },
@@ -509,24 +514,29 @@ export const TRANSLATIONS = {
       ]
     },
     problem: {
-      badge: "Procurement Challenges",
-      title: "Every Industry Demands Specific Spice Standards",
-      subtitle: "We understand that your business requirements vary and demand flexible, reliable raw material supplies.",
+      badge: "Your Needs, Our Solution",
+      title: "We Are Your Solution!!",
+      subtitle: "Addressing your spice sourcing challenges with pure natural quality, direct farmer pricing, and dependable trade guarantees.",
+      bannerHeadline: "We Are Your Solution!!",
+      bannerDesc: "Whatever your business needs, consult directly with UD Fathan Cassia Jaya for verified quality, fair pricing, and reliable spice supply straight from the warehouse.",
       items: [
         {
           id: "01",
-          title: "Spice specifications vary per product line",
-          description: "Every food manufacturer or herbal processor requires exact moisture content, aromatic profile, and visual cut."
+          badge: "Pure & Beneficial",
+          title: "Need natural spices for health?",
+          description: "We provide 100% natural, unadulterated spices free from chemicals and artificial preservatives. Rich in essential oils and bioactives for herbal medicine, health supplements, pharmaceuticals, and daily wellness."
         },
         {
           id: "02",
-          title: "Volume requirements fluctuate dynamically",
-          description: "Supply demands adjust to seasonal production cycles, from medium trial batches to multi-ton bulk shipments."
+          badge: "Direct Farm Pricing",
+          title: "Looking for spices at affordable prices?",
+          description: "Access direct first-hand wholesale pricing straight from local farmer centers and our primary processing facility in East Java without middleman markups. Highly competitive for retailers, distributors, and industrial buyers."
         },
         {
           id: "03",
-          title: "Consistent grading is essential for yield",
-          description: "Moisture levels, volatile oil content, and purity must be verified upfront to ensure optimal final product standards."
+          badge: "Quality Guarantee",
+          title: "Worried the spice quality won't meet expectations?",
+          description: "We provide 100% transparency: verified pre-dispatch photo/video documentation, standardized sorting for moisture & purity, calibrated weighing accuracy, and a clear exchange/refund policy if standards differ."
         }
       ]
     },

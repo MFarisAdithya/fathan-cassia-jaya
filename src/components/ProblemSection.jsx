@@ -1,6 +1,7 @@
 import React from 'react';
-import { TRANSLATIONS } from '../config/siteConfig';
+import { getWhatsAppUrl, TRANSLATIONS } from '../config/siteConfig';
 import { useApp } from '../context/AppContext';
+import { CheckCircle2, MessageCircle, ArrowRight } from 'lucide-react';
 
 export default function ProblemSection() {
   const { lang } = useApp();
@@ -27,27 +28,36 @@ export default function ProblemSection() {
           </p>
         </div>
 
-        {/* 3 Pain Point Cards */}
+        {/* 3 Question & Solution Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
           {t.problem.items.map((item) => (
             <div
               key={item.id}
               className="glass-panel glass-panel-hover p-8 rounded-xl flex flex-col justify-between group"
             >
-              <div className="space-y-4">
+              <div className="space-y-5">
                 <div className="flex items-center justify-between">
-                  <span className="font-body text-xs text-[#A66A3F] tracking-widest uppercase font-semibold glass-badge px-3 py-1 rounded-md">
-                    {lang === 'en' ? `CHALLENGE ${item.id}` : `TANTANGAN ${item.id}`}
+                  <span className="font-body text-xs text-[#A66A3F] tracking-wider uppercase font-semibold glass-badge px-3 py-1 rounded-md">
+                    {item.badge}
+                  </span>
+                  <span className="font-mono text-xs font-semibold text-[#6F7652] dark:text-[#A66A3F]">
+                    {item.id}
                   </span>
                 </div>
 
                 <h3 className="font-heading text-xl font-medium text-[#2C241D] dark:text-[#F5F1E8] leading-snug group-hover:text-[#A66A3F] transition-colors">
-                  {item.title}
+                  "{item.title}"
                 </h3>
 
-                <p className="font-body text-sm text-[#2C241D]/75 dark:text-[#E8DFD1]/75 leading-relaxed font-normal">
-                  {item.description}
-                </p>
+                <div className="pt-4 border-t border-[#2C241D]/08 dark:border-[#E8DFD1]/10 space-y-2">
+                  <div className="flex items-center space-x-1.5 text-xs font-semibold text-[#A66A3F]">
+                    <CheckCircle2 className="w-4 h-4 text-[#A66A3F] shrink-0" />
+                    <span className="uppercase tracking-wider font-body">{lang === 'en' ? 'Our Answer & Solution' : 'Jawaban & Solusi Kami'}</span>
+                  </div>
+                  <p className="font-body text-sm text-[#2C241D]/80 dark:text-[#E8DFD1]/80 leading-relaxed font-normal">
+                    {item.description}
+                  </p>
+                </div>
               </div>
 
               <div className="pt-6 mt-6 border-t border-[#2C241D]/08 dark:border-[#E8DFD1]/10">
@@ -57,19 +67,29 @@ export default function ProblemSection() {
           ))}
         </div>
 
-        {/* Bottom Editorial Banner Copy */}
-        <div className="mt-14 max-w-2xl mx-auto bg-[#2C241D] dark:bg-[#140E0A] text-[#F5F1E8] p-6 sm:p-8 rounded-xl text-center border border-[#E8DFD1]/15 shadow-card relative overflow-hidden">
-          <p className="font-body text-sm sm:text-base leading-relaxed text-[#E8DFD1]/90 font-normal relative z-10">
-            {lang === 'en' ? (
-              <>
-                "Therefore, <strong className="font-heading text-[#F5F1E8] font-semibold">direct communication with the supplier</strong> is vital to ensure your technical requirements and schedules are met seamlessly."
-              </>
-            ) : (
-              <>
-                "Karena itu, <strong className="font-heading text-[#F5F1E8] font-semibold">komunikasi langsung dengan pemasok</strong> menjadi penting untuk memastikan kebutuhan bisnis dapat dibicarakan dengan jelas."
-              </>
-            )}
-          </p>
+        {/* Bottom Editorial Banner Copy: Kami Solusinya!! */}
+        <div className="mt-14 max-w-3xl mx-auto bg-[#2C241D] dark:bg-[#140E0A] text-[#F5F1E8] p-7 sm:p-9 rounded-2xl text-center border border-[#A66A3F]/30 shadow-card relative overflow-hidden space-y-4">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-[#A66A3F]/15 rounded-full blur-2xl pointer-events-none" />
+          <div className="relative z-10 space-y-3">
+            <span className="font-heading text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#A66A3F] tracking-wide block">
+              {t.problem.bannerHeadline}
+            </span>
+            <p className="font-body text-sm sm:text-base leading-relaxed text-[#E8DFD1]/90 font-normal max-w-2xl mx-auto">
+              "{t.problem.bannerDesc}"
+            </p>
+            <div className="pt-2">
+              <a
+                href={getWhatsAppUrl(lang === 'en' ? "Hello UD Fathan Cassia Jaya, I would like to consult on my spice sourcing needs." : "Halo UD Fathan Cassia Jaya, saya ingin berkonsultasi mengenai kebutuhan rempah dan meminta penawaran harga.")}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-body inline-flex items-center space-x-2 bg-[#A66A3F] hover:bg-[#8e5831] text-white px-6 py-3 rounded-xl text-xs sm:text-sm font-semibold uppercase tracking-wider transition-all duration-200 shadow-md hover:shadow-lg active:scale-98 cursor-pointer"
+              >
+                <MessageCircle className="w-4 h-4 shrink-0" />
+                <span>{lang === 'en' ? 'Consult With Us on WhatsApp' : 'Konsultasi Sekarang via WhatsApp'}</span>
+                <ArrowRight className="w-4 h-4 shrink-0" />
+              </a>
+            </div>
+          </div>
         </div>
 
       </div>
