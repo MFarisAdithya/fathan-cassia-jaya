@@ -16,7 +16,8 @@ export { TRANSLATIONS };
  * @returns {string}
  */
 export const getWhatsAppUrl = (customMessage = "Halo UD Fathan Cassia Jaya, saya ingin berkonsultasi dan meminta penawaran ketersediaan rempah untuk kebutuhan bisnis kami.") => {
-  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(customMessage)}`;
+  const cleanNumber = String(WHATSAPP_NUMBER).replace(/\D/g, '');
+  return `https://api.whatsapp.com/send?phone=${cleanNumber}&text=${encodeURIComponent(customMessage)}`;
 };
 
 export const SITE_INFO = {
