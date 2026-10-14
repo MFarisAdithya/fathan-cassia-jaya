@@ -154,7 +154,7 @@ export default function RfqDrawer() {
                 ? `Open Spice RFQ list, ${rfqCount} items selected`
                 : `Buka Daftar Penawaran Rempah, ${rfqCount} produk terpilih`
             }
-            className="group font-body flex items-center space-x-2.5 bg-[#2C241D]/95 dark:bg-[#9A5F36]/95 hover:bg-[#9A5F36] dark:hover:bg-[#844F2C] text-[#F5F1E8] px-4 py-2.5 sm:px-5 sm:py-3 rounded-full shadow-2xl backdrop-blur-md border border-white/20 transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer"
+            className="glass-chip glass-live group font-body transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer"
           >
             <div className="relative">
               <ClipboardList className="w-4 h-4 text-[#E28743] dark:text-[#F5F1E8]" />
@@ -175,7 +175,8 @@ export default function RfqDrawer() {
         <div className="fixed inset-0 z-50 flex justify-end">
           {/* Backdrop Overlay */}
           <div
-            className="fixed inset-0 bg-black/60 backdrop-blur-xs transition-opacity"
+            className="glass-scrim transition-opacity cursor-pointer"
+            data-state={isRfqDrawerOpen ? 'open' : 'closed'}
             onClick={closeRfqDrawer}
             aria-hidden="true"
           />
@@ -188,10 +189,11 @@ export default function RfqDrawer() {
             aria-modal="true"
             aria-labelledby="rfq-title"
             aria-describedby="rfq-desc"
-            className="relative w-full max-w-md bg-[#F5F1E8] dark:bg-[#1C1612] text-[#2C241D] dark:text-[#F5F1E8] shadow-2xl z-50 flex flex-col h-full border-l border-[#2C241D]/15 dark:border-[#E8DFD1]/15 overflow-hidden animate-in slide-in-from-right duration-300"
+            data-state={isRfqDrawerOpen ? 'open' : 'closed'}
+            className="glass-drawer z-50 flex flex-col h-full overflow-hidden"
           >
             {/* Header */}
-            <div className="p-4 sm:p-5 border-b border-[#2C241D]/10 dark:border-[#E8DFD1]/10 bg-[#E8DFD1]/30 dark:bg-[#16110D] flex items-center justify-between">
+            <div className="p-4 sm:p-5 border-b border-[var(--g-border)] bg-[var(--g-row-alt)] flex items-center justify-between">
               <div className="flex items-center space-x-3">
                 <div className="p-2 rounded-lg bg-[#A66A3F]/15 text-[#A66A3F] dark:text-[#E28743]">
                   <ClipboardList className="w-5 h-5" />
@@ -278,7 +280,7 @@ export default function RfqDrawer() {
                     {rfqList.map((item, index) => (
                       <div
                         key={item.id}
-                        className="p-3 rounded-xl bg-white/60 dark:bg-[#251E18]/60 border border-[#2C241D]/10 dark:border-[#E8DFD1]/10 space-y-2.5 transition-all hover:border-[#A66A3F]/40"
+                        className="p-3.5 rounded-2xl glass-card-primary space-y-2.5 transition-all"
                       >
                         <div className="flex items-start justify-between space-x-3">
                           <div className="flex items-center space-x-3 min-w-0">
@@ -335,7 +337,7 @@ export default function RfqDrawer() {
                               value={item.grade || ''}
                               onChange={(e) => updateRfqItem(item.id, { grade: e.target.value })}
                               placeholder={isEn ? 'e.g. KA VO 2.5' : 'Contoh: KA VO 2.5'}
-                              className="font-body w-full px-2.5 py-1.5 text-xs rounded-lg bg-[#F5F1E8] dark:bg-[#191410] border border-[#2C241D]/15 dark:border-[#E8DFD1]/15 text-[#2C241D] dark:text-[#F5F1E8] placeholder-[#2C241D]/40 dark:placeholder-[#E8DFD1]/40 focus:outline-none focus:ring-1 focus:ring-[#A66A3F]"
+                              className="glass-input text-xs"
                             />
                           </div>
 
@@ -351,7 +353,7 @@ export default function RfqDrawer() {
                               value={item.qty || ''}
                               onChange={(e) => updateRfqItem(item.id, { qty: e.target.value })}
                               placeholder={isEn ? 'e.g. 500 kg / 2 Ton' : 'Contoh: 500 kg'}
-                              className="font-body w-full px-2.5 py-1.5 text-xs rounded-lg bg-[#F5F1E8] dark:bg-[#191410] border border-[#2C241D]/15 dark:border-[#E8DFD1]/15 text-[#2C241D] dark:text-[#F5F1E8] placeholder-[#2C241D]/40 dark:placeholder-[#E8DFD1]/40 focus:outline-none focus:ring-1 focus:ring-[#A66A3F]"
+                              className="glass-input text-xs"
                             />
                           </div>
                         </div>
@@ -360,7 +362,7 @@ export default function RfqDrawer() {
                   </div>
 
                   {/* Customer / Logistics Details (Optional) */}
-                  <div className="p-4 rounded-xl bg-[#E8DFD1]/40 dark:bg-[#191410]/70 border border-[#2C241D]/10 dark:border-[#E8DFD1]/10 space-y-3">
+                  <div className="p-4 rounded-2xl glass-card-primary space-y-3">
                     <span className="font-body text-[11px] uppercase tracking-wider font-semibold text-[#6F7652] dark:text-[#A66A3F] block">
                       {isEn ? 'Delivery & Business Info (Optional)' : 'Detail Pengiriman & Usaha (Opsional)'}
                     </span>
@@ -378,7 +380,7 @@ export default function RfqDrawer() {
                           value={destinationCity}
                           onChange={(e) => setDestinationCity(e.target.value)}
                           placeholder={isEn ? 'e.g. Surabaya, Jakarta, Medan...' : 'Contoh: Surabaya, Semarang, Jakarta...'}
-                          className="font-body w-full px-3 py-2 text-xs rounded-lg bg-white dark:bg-[#251E18] border border-[#2C241D]/15 dark:border-[#E8DFD1]/15 text-[#2C241D] dark:text-[#F5F1E8] placeholder-[#2C241D]/40 dark:placeholder-[#E8DFD1]/40 focus:outline-none focus:ring-1.5 focus:ring-[#A66A3F]"
+                          className="glass-input text-xs"
                         />
                       </div>
 
@@ -394,7 +396,7 @@ export default function RfqDrawer() {
                           value={company}
                           onChange={(e) => setCompany(e.target.value)}
                           placeholder={isEn ? 'e.g. PT Spice Industries...' : 'Contoh: PT Rempah Sejahtera / Toko Bumbu Jaya...'}
-                          className="font-body w-full px-3 py-2 text-xs rounded-lg bg-white dark:bg-[#251E18] border border-[#2C241D]/15 dark:border-[#E8DFD1]/15 text-[#2C241D] dark:text-[#F5F1E8] placeholder-[#2C241D]/40 dark:placeholder-[#E8DFD1]/40 focus:outline-none focus:ring-1.5 focus:ring-[#A66A3F]"
+                          className="glass-input text-xs"
                         />
                       </div>
                     </div>
@@ -405,11 +407,11 @@ export default function RfqDrawer() {
 
             {/* Footer with WhatsApp CTA */}
             {rfqList.length > 0 && (
-              <div className="p-4 sm:p-5 border-t border-[#2C241D]/10 dark:border-[#E8DFD1]/10 bg-[#E8DFD1]/30 dark:bg-[#16110D] space-y-2">
+              <div className="p-4 sm:p-5 border-t border-[var(--g-border)] bg-[var(--g-row-alt)] space-y-2">
                 <button
                   type="button"
                   onClick={handleSendWa}
-                  className="font-body w-full inline-flex items-center justify-center space-x-2.5 bg-[#9A5F36] hover:bg-[#844F2C] text-white py-3.5 px-4 rounded-xl text-xs sm:text-sm font-semibold uppercase tracking-wider shadow-lg active:scale-98 transition-all duration-200 cursor-pointer"
+                  className="font-body w-full glass-btn-primary uppercase tracking-wider text-xs sm:text-sm shadow-lg active:scale-98 cursor-pointer"
                 >
                   <MessageCircle className="w-4 h-4 shrink-0" />
                   <span>{isEn ? 'Send Inquiry via WhatsApp' : 'Kirim via WhatsApp'}</span>

@@ -90,7 +90,8 @@ function CommodityDetail({ slug }) {
   return (
     <>
       <CommoditySeoHead commodity={commodity} lang={lang} activeGrade={activeGrade} />
-      <div className="min-h-screen bg-[#F5F1E8] dark:bg-[#191410] text-[#2C241D] dark:text-[#F5F1E8] font-sans selection:bg-[#A66A3F] selection:text-white transition-colors duration-300">
+      <div className="min-h-screen bg-[#F5F1E8] dark:bg-[#191410] text-[#2C241D] dark:text-[#F5F1E8] font-sans selection:bg-[#A66A3F] selection:text-white transition-colors duration-300 relative">
+        <div className="ambient-canvas" aria-hidden="true" />
         <Navbar />
 
         <main className="pt-24 sm:pt-28 pb-16 lg:pb-24">
@@ -122,7 +123,7 @@ function CommodityDetail({ slug }) {
               
               {/* Left Column: Product Visual & Grade Gallery */}
               <div className="lg:col-span-6 space-y-4">
-                <div className="relative rounded-2xl overflow-hidden bg-white dark:bg-[#231C16] border border-[#2C241D]/10 dark:border-[#E8DFD1]/15 shadow-card aspect-[4/3] flex items-center justify-center">
+                <div className="relative rounded-2xl overflow-hidden glass-card-primary aspect-[4/3] flex items-center justify-center">
                   <OptimizedImage
                     src={activeGrade.image || commodity.image}
                     alt={`${activeGrade.name[lang] || activeGrade.name.in} - UD Fathan Cassia Jaya`}
@@ -132,11 +133,11 @@ function CommodityDetail({ slug }) {
                     fetchPriority="high"
                     className="w-full h-full object-cover transition-opacity duration-300"
                   />
-                  <div className="absolute top-3 left-3 glass-badge px-3 py-1 rounded-md text-[11px] font-mono font-semibold text-[#2C241D] dark:text-[#F5F1E8] uppercase tracking-wider">
+                  <div className="absolute top-3 left-3 glass-badge px-3 py-1 rounded-full text-[11px] font-mono font-semibold uppercase tracking-wider">
                     {commodity.slug}
                   </div>
-                  <div className="absolute bottom-3 right-3 bg-[#2C241D]/80 dark:bg-black/75 backdrop-blur-md px-3 py-1 rounded-md text-[11px] font-body text-[#F5F1E8] flex items-center space-x-1.5">
-                    <ShieldCheck className="w-3.5 h-3.5 text-[#C47F4E]" />
+                  <div className="absolute bottom-3 right-3 glass-badge px-3 py-1 rounded-full text-[11px] font-body flex items-center space-x-1.5">
+                    <ShieldCheck className="w-3.5 h-3.5 text-[#9A5F36] dark:text-[#E28743]" />
                     <span>{isEn ? 'Direct Warehouse Stock' : 'Stok Asli Gudang'}</span>
                   </div>
                 </div>
@@ -202,7 +203,7 @@ function CommodityDetail({ slug }) {
                 </p>
 
                 {/* Indicative Price Card with Update Date */}
-                <div className="p-4 sm:p-5 rounded-xl bg-white dark:bg-[#231C16] border border-[#2C241D]/10 dark:border-[#E8DFD1]/15 shadow-sm space-y-2">
+                <div className="p-4 sm:p-5 rounded-2xl glass-card-primary glass-tempered glass-warm shadow-sm space-y-2">
                   <div className="flex items-center justify-between text-xs font-body text-[#6F7652] dark:text-[#A66A3F]">
                     <span className="font-semibold uppercase tracking-wider">
                       {isEn ? 'Indicative Wholesale Price' : 'Harga Indikatif Grosir'}
@@ -245,17 +246,15 @@ function CommodityDetail({ slug }) {
                           key={grade.id}
                           type="button"
                           onClick={() => setSelectedGradeIndex(idx)}
-                          className={`text-left p-3 rounded-xl border transition-all cursor-pointer ${
-                            isSelected
-                              ? 'bg-[#9A5F36]/10 dark:bg-[#9A5F36]/20 border-[#9A5F36] text-[#2C241D] dark:text-[#F5F1E8] shadow-xs'
-                              : 'bg-white/60 dark:bg-[#231C16]/60 border-[#2C241D]/10 dark:border-[#E8DFD1]/10 text-[#2C241D]/80 dark:text-[#F5F1E8]/80 hover:border-[#9A5F36]/50'
+                          className={`glass-tile text-left cursor-pointer transition-all ${
+                            isSelected ? 'active' : ''
                           }`}
                         >
                           <div className="flex items-center justify-between mb-1">
                             <span className="font-heading text-xs font-semibold truncate">
                               {grade.name[lang] || grade.name.in}
                             </span>
-                            {isSelected && <Check className="w-3.5 h-3.5 text-[#9A5F36] shrink-0" />}
+                            {isSelected && <Check className="w-3.5 h-3.5 text-[#9A5F36] dark:text-[#E28743] shrink-0" />}
                           </div>
                           <div className="font-heading text-xs font-bold text-[#9A5F36] dark:text-[#E28743]">
                             {grade.price} <span className="text-[10px] font-normal">{grade.unit}</span>
@@ -270,7 +269,7 @@ function CommodityDetail({ slug }) {
                 </div>
 
                 {/* Grade Description Detail */}
-                <div className="p-3.5 rounded-lg bg-[#E8DFD1]/40 dark:bg-[#241C16]/60 border border-[#2C241D]/08 dark:border-[#E8DFD1]/08 text-xs font-body text-[#2C241D]/80 dark:text-[#E8DFD1]/80 leading-relaxed">
+                <div className="p-3.5 rounded-xl glass-card-primary text-xs font-body text-[#2C241D]/80 dark:text-[#E8DFD1]/80 leading-relaxed">
                   <span className="font-semibold text-[#2C241D] dark:text-[#F5F1E8] block mb-1">
                     {isEn ? 'Selected Grade Specification:' : 'Karakteristik Grade Terpilih:'}
                   </span>
@@ -284,7 +283,7 @@ function CommodityDetail({ slug }) {
                   <WaButton
                     source={`produk-${commodity.slug}`}
                     customMessage={waCustomMessage}
-                    className="font-body flex-1 inline-flex items-center justify-center space-x-2.5 bg-[#9A5F36] hover:bg-[#844F2C] text-[#F5F1E8] px-6 py-3.5 rounded-xl font-semibold text-xs uppercase tracking-wider transition-all shadow-sm active:scale-98 cursor-pointer"
+                    className="font-body flex-1 inline-flex items-center justify-center space-x-2.5 glass-btn-primary uppercase tracking-wider text-xs shadow-sm cursor-pointer"
                   >
                     <MessageCircle className="w-4 h-4 shrink-0" />
                     <span>{isEn ? 'Inquire on WhatsApp' : 'Minta Penawaran via WhatsApp'}</span>
@@ -294,10 +293,10 @@ function CommodityDetail({ slug }) {
                   <button
                     type="button"
                     onClick={handleToggleRfq}
-                    className={`font-body inline-flex items-center justify-center space-x-2 px-5 py-3.5 rounded-xl text-xs font-semibold uppercase tracking-wider transition-all border cursor-pointer ${
+                    className={`font-body inline-flex items-center justify-center space-x-2 px-5 py-3.5 rounded-xl text-xs font-semibold uppercase tracking-wider transition-all cursor-pointer ${
                       inRfq
-                        ? 'bg-[#6F7652] hover:bg-[#5b6243] text-white border-transparent shadow-xs'
-                        : 'bg-white dark:bg-[#231C16] hover:bg-black/5 dark:hover:bg-white/5 text-[#9A5F36] dark:text-[#E28743] border-[#9A5F36]/40 hover:border-[#9A5F36]'
+                        ? 'bg-[#6F7652] hover:bg-[#5b6243] text-white shadow-xs'
+                        : 'glass-btn-ghost text-xs'
                     }`}
                   >
                     {inRfq ? (
@@ -350,28 +349,25 @@ function CommodityDetail({ slug }) {
                 </p>
               </div>
 
-              <div className="overflow-hidden rounded-xl border border-[#2C241D]/10 dark:border-[#E8DFD1]/15 bg-white dark:bg-[#231C16] shadow-sm">
-                <table className="w-full text-left border-collapse">
+              <div className="overflow-hidden rounded-2xl glass-card-primary glass-tempered shadow-sm">
+                <table className="glass-table">
                   <thead>
-                    <tr className="bg-[#E8DFD1]/60 dark:bg-[#1E1712] border-b border-[#2C241D]/10 dark:border-[#E8DFD1]/15 text-xs font-heading font-semibold text-[#2C241D] dark:text-[#F5F1E8]">
-                      <th className="py-3.5 px-4 sm:px-6 w-1/3 sm:w-1/4">
+                    <tr>
+                      <th className="w-1/3 sm:w-1/4">
                         {isEn ? 'Parameter' : 'Parameter Mutu'}
                       </th>
-                      <th className="py-3.5 px-4 sm:px-6">
+                      <th>
                         {isEn ? 'Standard Specification' : 'Spesifikasi Standar Gudang UD Fathan Cassia Jaya'}
                       </th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-[#2C241D]/08 dark:divide-[#E8DFD1]/10 text-xs sm:text-sm font-body">
+                  <tbody>
                     {commodity.specs.map((item, idx) => (
-                      <tr
-                        key={idx}
-                        className={idx % 2 === 0 ? 'bg-transparent' : 'bg-black/[0.015] dark:bg-white/[0.015]'}
-                      >
-                        <td className="py-3 px-4 sm:px-6 font-semibold text-[#2C241D] dark:text-[#F5F1E8] align-top">
+                      <tr key={idx} className="glass-table-row">
+                        <td>
                           {item.label[lang] || item.label.in}
                         </td>
-                        <td className="py-3 px-4 sm:px-6 text-[#2C241D]/80 dark:text-[#E8DFD1]/85">
+                        <td>
                           {item.value[lang] || item.value.in}
                         </td>
                       </tr>
@@ -402,7 +398,7 @@ function CommodityDetail({ slug }) {
                 {commodity.faq.map((item, idx) => (
                   <div
                     key={idx}
-                    className="p-6 rounded-2xl bg-white dark:bg-[#231C16] border border-[#2C241D]/10 dark:border-[#E8DFD1]/15 shadow-sm space-y-3 flex flex-col justify-between"
+                    className="p-6 rounded-2xl glass-card-primary glass-card-hover space-y-3 flex flex-col justify-between"
                   >
                     <div className="space-y-2.5">
                       <div className="w-7 h-7 rounded-full bg-[#9A5F36]/15 text-[#9A5F36] dark:text-[#E28743] flex items-center justify-center font-heading font-bold text-xs">
@@ -446,7 +442,7 @@ function CommodityDetail({ slug }) {
                   <Link
                     key={item.slug}
                     to={`/produk/${item.slug}`}
-                    className="p-3 rounded-xl bg-white dark:bg-[#231C16] border border-[#2C241D]/10 dark:border-[#E8DFD1]/15 hover:border-[#9A5F36] transition-all group block text-center"
+                    className="p-3 rounded-2xl glass-card-primary glass-card-hover group block text-center"
                   >
                     <OptimizedImage
                       src={item.image}

@@ -21,7 +21,8 @@ import SeoHead from '../components/SeoHead';
 
 function MainLayout() {
   return (
-    <div className="min-h-screen bg-[#F5F1E8] dark:bg-[#191410] text-[#2C241D] dark:text-[#F5F1E8] font-sans selection:bg-[#A66A3F] selection:text-white transition-colors duration-300">
+    <div className="min-h-screen bg-[#F5F1E8] dark:bg-[#191410] text-[#2C241D] dark:text-[#F5F1E8] font-sans selection:bg-[#A66A3F] selection:text-white transition-colors duration-300 relative">
+      <div className="ambient-canvas" aria-hidden="true" />
       <Navbar />
       <main>
         <HeroSection />

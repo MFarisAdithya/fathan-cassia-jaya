@@ -45,11 +45,11 @@ export default function ProductsSection() {
             return (
               <div
                 key={prod.id}
-                className="content-card content-card-hover rounded-xl overflow-hidden flex flex-col justify-between group"
+                className="glass-card-primary glass-card-hover rounded-2xl overflow-hidden flex flex-col justify-between group"
               >
                 <div>
                   {/* Large Product Studio Image linking to commodity page */}
-                  <Link to={`/produk/${commoditySlug}`} className="block relative h-40 sm:h-44 lg:h-48 overflow-hidden bg-[#E8DFD1]/30 dark:bg-[#191410]/50 rounded-t-xl cursor-pointer">
+                  <Link to={`/produk/${commoditySlug}`} className="block relative h-40 sm:h-44 lg:h-48 overflow-hidden bg-[#E8DFD1]/30 dark:bg-[#191410]/50 rounded-t-2xl cursor-pointer">
                     <OptimizedImage
                       src={prod.image}
                       alt={prod.name}
@@ -61,13 +61,13 @@ export default function ProductsSection() {
                     />
                     
                     {/* Subtle Number Badge */}
-                    <div className="absolute top-2.5 left-2.5 glass-badge px-2 py-0.5 rounded font-body text-[10px] font-mono font-medium text-[#2C241D] dark:text-[#E8DFD1]">
+                    <div className="absolute top-2.5 left-2.5 glass-badge px-2 py-0.5 rounded-full font-body text-[10px] font-mono font-medium">
                       {prod.id}
                     </div>
 
                     {/* Subtle Category Tag */}
                     {prod.tag && (
-                      <div className="absolute top-2.5 right-2.5 bg-[#6F7652]/90 text-white px-2 py-0.5 rounded font-body text-[9px] font-medium tracking-wide uppercase truncate max-w-[85px] sm:max-w-[95px]">
+                      <div className="absolute top-2.5 right-2.5 glass-badge glass-badge--olive px-2 py-0.5 rounded-full font-body text-[9px] font-medium tracking-wide uppercase truncate max-w-[85px] sm:max-w-[95px]">
                         {prod.tag}
                       </div>
                     )}
