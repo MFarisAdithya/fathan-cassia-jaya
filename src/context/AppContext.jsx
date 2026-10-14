@@ -2,23 +2,38 @@ import React, { createContext, useContext, useState, useEffect, useCallback } fr
 
 const AppContext = createContext();
 
-export function AppProvider({ children }) {
+export function AppProvider({ children, initialLang }) {
   // Language state: 'in' (Indonesian) or 'en' (English)
   const [lang, setLangState] = useState(() => {
+    if (initialLang) return initialLang;
     try {
-      const savedLang = localStorage.getItem('sayang_lang');
-      return savedLang === 'en' ? 'en' : 'in';
+      if (typeof window !== 'undefined') {
+        const path = window.location.pathname;
+        if (path.startsWith('/en')) return 'en';
+        if (path.startsWith('/id')) return 'in';
+        const savedLang = localStorage.getItem('sayang_lang');
+        return savedLang === 'en' ? 'en' : 'in';
+      }
+      return 'in';
     } catch {
       return 'in';
     }
   });
 
+  const [prevInitialLang, setPrevInitialLang] = useState(initialLang);
+  if (initialLang && initialLang !== prevInitialLang) {
+    setPrevInitialLang(initialLang);
+    setLangState(initialLang);
+  }
+
   // Theme state: 'light' or 'night'
   const [theme, setThemeState] = useState(() => {
     try {
-      const savedTheme = localStorage.getItem('sayang_theme');
-      if (savedTheme === 'night' || savedTheme === 'dark') return 'night';
-      if (savedTheme === 'light') return 'light';
+      if (typeof window !== 'undefined') {
+        const savedTheme = localStorage.getItem('sayang_theme');
+        if (savedTheme === 'night' || savedTheme === 'dark') return 'night';
+        if (savedTheme === 'light') return 'light';
+      }
       return 'light';
     } catch {
       return 'light';
@@ -28,8 +43,11 @@ export function AppProvider({ children }) {
   // RFQ (Request for Quotation) List state: [{ id, name, grade, qty, price, unit, image, tag }]
   const [rfqList, setRfqList] = useState(() => {
     try {
-      const savedRfq = localStorage.getItem('sayang_rfq');
-      return savedRfq ? JSON.parse(savedRfq) : [];
+      if (typeof window !== 'undefined') {
+        const savedRfq = localStorage.getItem('sayang_rfq');
+        return savedRfq ? JSON.parse(savedRfq) : [];
+      }
+      return [];
     } catch {
       return [];
     }
@@ -43,6 +61,7 @@ export function AppProvider({ children }) {
 
   // Persist theme to <html> and localStorage
   useEffect(() => {
+    if (typeof document === 'undefined') return;
     const root = document.documentElement;
     if (theme === 'night') {
       root.classList.add('dark');
@@ -52,7 +71,9 @@ export function AppProvider({ children }) {
       root.style.colorScheme = 'light';
     }
     try {
-      localStorage.setItem('sayang_theme', theme);
+      if (typeof localStorage !== 'undefined') {
+        localStorage.setItem('sayang_theme', theme);
+      }
     } catch {
       // ignore
     }
@@ -60,9 +81,12 @@ export function AppProvider({ children }) {
 
   // Persist lang to <html> and localStorage
   useEffect(() => {
+    if (typeof document === 'undefined') return;
     document.documentElement.lang = lang === 'en' ? 'en' : 'id';
     try {
-      localStorage.setItem('sayang_lang', lang);
+      if (typeof localStorage !== 'undefined') {
+        localStorage.setItem('sayang_lang', lang);
+      }
     } catch {
       // ignore
     }
@@ -71,7 +95,9 @@ export function AppProvider({ children }) {
   // Persist RFQ list to localStorage
   useEffect(() => {
     try {
-      localStorage.setItem('sayang_rfq', JSON.stringify(rfqList));
+      if (typeof localStorage !== 'undefined') {
+        localStorage.setItem('sayang_rfq', JSON.stringify(rfqList));
+      }
     } catch {
       // ignore
     }

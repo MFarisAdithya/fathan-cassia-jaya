@@ -19,8 +19,10 @@ export const getWhatsAppUrl = (customMessage = "Halo UD Fathan Cassia Jaya, saya
 
 export const SITE_INFO = {
   name: "UD FATHAN CASSIA JAYA",
+  siteUrl: "https://fathan-cassia-jaya.vercel.app",
   logoUrl: "./images/brand_logo.jpg",
   heroLogoUrl: "./images/logo.png",
+  ogImageUrl: "./images/about_warehouse_processing.jpg",
   subtitle: "Supplier & Pedagang Komoditas Rempah",
   tagline: "Beragam Rempah. Beragam Kebutuhan. Satu Solusi.",
   heroDescription: "UD Fathan Cassia Jaya menyediakan berbagai komoditas rempah untuk memenuhi kebutuhan perusahaan, industri, distributor, pedagang, dan berbagai sektor usaha.",

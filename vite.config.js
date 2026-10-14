@@ -8,5 +8,12 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
-  base: './', // Ensures relative assets loading for GitHub Pages deployment
+  base: '/',
+  ssgOptions: {
+    entry: 'src/main.jsx',
+    mock: true,
+    dirStyle: 'nested',
+    beastiesOptions: false,
+    crittersOptions: false,
+  },
 })

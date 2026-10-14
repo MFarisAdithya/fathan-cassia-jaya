@@ -1,12 +1,21 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Menu, X, MessageCircle, ArrowRight, ArrowUp, Sun, Moon, Globe } from 'lucide-react';
 import { SITE_INFO, TRANSLATIONS } from '../config/siteConfig';
 import { useApp } from '../context/AppContext';
 import WaButton from './WaButton';
+import OptimizedImage from './OptimizedImage';
 
 export default function Navbar() {
   const { lang, setLang, toggleTheme, isNight } = useApp();
+  const navigate = useNavigate();
   const t = TRANSLATIONS[lang] || TRANSLATIONS.in;
+
+  const handleLangChange = (targetLang) => {
+    setLang(targetLang);
+    const targetRoute = targetLang === 'en' ? '/en' : '/id';
+    navigate(targetRoute);
+  };
 
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -107,10 +116,14 @@ export default function Navbar() {
           <div className="flex items-center justify-between">
             
             {/* Brand Logo & Name */}
-            <a href="#" className="flex items-center space-x-2.5 sm:space-x-3 group shrink-0">
-              <img
+            <a href={lang === 'en' ? '/en' : '/id'} className="flex items-center space-x-2.5 sm:space-x-3 group shrink-0">
+              <OptimizedImage
                 src={SITE_INFO.logoUrl}
                 alt={t.siteInfo.name}
+                width={44}
+                height={44}
+                loading="eager"
+                fetchPriority="high"
                 className="w-10 h-10 sm:w-11 sm:h-11 rounded-lg object-cover border border-[#2C241D]/15 dark:border-[#E8DFD1]/20 shadow-xs shrink-0"
               />
               <div className="flex flex-col shrink-0">
@@ -157,8 +170,8 @@ export default function Navbar() {
               <div className="flex items-center bg-[#E8DFD1]/60 dark:bg-[#241C16] border border-[#2C241D]/08 dark:border-[#E8DFD1]/10 rounded-xl p-0.5 xl:p-1 text-xs font-body font-medium">
                 <button
                   type="button"
-                  onClick={() => setLang('in')}
-                  className={`px-2 xl:px-2.5 py-1 rounded-lg transition-all duration-200 ${
+                  onClick={() => handleLangChange('in')}
+                  className={`px-2 xl:px-2.5 py-1 rounded-lg transition-all duration-200 cursor-pointer ${
                     lang === 'in'
                       ? 'bg-[#2C241D] text-[#F5F1E8] dark:bg-[#A66A3F] dark:text-white font-semibold shadow-xs'
                       : 'text-[#2C241D]/70 dark:text-[#F5F1E8]/70 hover:text-[#2C241D] dark:hover:text-white'
@@ -169,8 +182,8 @@ export default function Navbar() {
                 </button>
                 <button
                   type="button"
-                  onClick={() => setLang('en')}
-                  className={`px-2 xl:px-2.5 py-1 rounded-lg transition-all duration-200 ${
+                  onClick={() => handleLangChange('en')}
+                  className={`px-2 xl:px-2.5 py-1 rounded-lg transition-all duration-200 cursor-pointer ${
                     lang === 'en'
                       ? 'bg-[#2C241D] text-[#F5F1E8] dark:bg-[#A66A3F] dark:text-white font-semibold shadow-xs'
                       : 'text-[#2C241D]/70 dark:text-[#F5F1E8]/70 hover:text-[#2C241D] dark:hover:text-white'
@@ -213,8 +226,8 @@ export default function Navbar() {
               {/* Quick Language Toggle on Mobile */}
               <button
                 type="button"
-                onClick={() => setLang(lang === 'in' ? 'en' : 'in')}
-                className="px-2 py-1 bg-[#E8DFD1]/70 dark:bg-[#241C16] border border-[#2C241D]/10 dark:border-[#E8DFD1]/10 rounded-lg text-[11px] font-body font-semibold text-[#2C241D] dark:text-[#F5F1E8] flex items-center space-x-1"
+                onClick={() => handleLangChange(lang === 'in' ? 'en' : 'in')}
+                className="px-2 py-1 bg-[#E8DFD1]/70 dark:bg-[#241C16] border border-[#2C241D]/10 dark:border-[#E8DFD1]/10 rounded-lg text-[11px] font-body font-semibold text-[#2C241D] dark:text-[#F5F1E8] flex items-center space-x-1 cursor-pointer"
                 aria-label="Toggle Language"
               >
                 <Globe className="w-3 h-3 text-[#6F7652] dark:text-[#A66A3F]" />

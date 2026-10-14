@@ -1,6 +1,7 @@
 import React from 'react';
 import { TRANSLATIONS } from '../config/siteConfig';
 import { useApp } from '../context/AppContext';
+import OptimizedImage from './OptimizedImage';
 
 export default function BrandStorySection() {
   const { lang } = useApp();
@@ -16,16 +17,22 @@ export default function BrandStorySection() {
           <div className="lg:col-span-7 grid grid-cols-2 gap-4 relative">
             <div className="space-y-4">
               <div className="rounded-xl overflow-hidden shadow-card border border-[#2C241D]/10 dark:border-[#E8DFD1]/15">
-                <img
+                <OptimizedImage
                   src="./images/about_warehouse_raw.jpg"
                   alt={lang === 'en' ? 'UD Fathan Cassia Jaya Raw Material Storage' : 'Gudang Bahan Baku UD Fathan Cassia Jaya'}
+                  width={600}
+                  height={450}
+                  loading="lazy"
                   className="w-full h-64 sm:h-80 object-cover transition-opacity duration-300 hover:opacity-90"
                 />
               </div>
               <div className="rounded-xl overflow-hidden shadow-card border border-[#2C241D]/10 dark:border-[#E8DFD1]/15">
-                <img
+                <OptimizedImage
                   src="./images/about_warehouse_processing.jpg"
                   alt={lang === 'en' ? 'Warehouse Processing Facility' : 'Fasilitas Pengolahan & Sortir Gudang'}
+                  width={600}
+                  height={300}
+                  loading="lazy"
                   className="w-full h-44 object-cover transition-opacity duration-300 hover:opacity-90"
                 />
               </div>
@@ -33,16 +40,22 @@ export default function BrandStorySection() {
 
             <div className="space-y-4 pt-8">
               <div className="rounded-xl overflow-hidden shadow-card border border-[#2C241D]/10 dark:border-[#E8DFD1]/15">
-                <img
+                <OptimizedImage
                   src="./images/about_spices_assortment.jpg"
                   alt={lang === 'en' ? 'Indonesian Spice Commodities Assortment' : 'Koleksi Aneka Rempah Unggulan Nusantara'}
+                  width={600}
+                  height={300}
+                  loading="lazy"
                   className="w-full h-44 object-cover transition-opacity duration-300 hover:opacity-90"
                 />
               </div>
               <div className="rounded-xl overflow-hidden shadow-card border border-[#2C241D]/10 dark:border-[#E8DFD1]/15">
-                <img
+                <OptimizedImage
                   src="./images/about_warehouse_storage.jpg"
                   alt={lang === 'en' ? 'Finished Spice Stock Ready for Shipment' : 'Stok Karung Rempah Siap Kirim'}
+                  width={600}
+                  height={450}
+                  loading="lazy"
                   className="w-full h-64 sm:h-80 object-cover transition-opacity duration-300 hover:opacity-90"
                 />
               </div>

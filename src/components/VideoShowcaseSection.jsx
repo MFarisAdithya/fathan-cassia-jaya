@@ -9,7 +9,7 @@ export default function VideoShowcaseSection() {
   const t = TRANSLATIONS[lang] || TRANSLATIONS.in;
 
   const videoRef = useRef(null);
-  const [isPlaying, setIsPlaying] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
 
   const togglePlay = () => {
@@ -84,21 +84,23 @@ export default function VideoShowcaseSection() {
               {/* Outer Aspect Box */}
               <div className="relative w-full bg-[#191410] flex items-center justify-center min-h-[360px] sm:min-h-[480px] lg:min-h-[520px]">
                 
-                {/* Background Ambient Video Blur */}
+                {/* Background Ambient Video Blur (Desktop only) */}
                 <video
                   src="./videos/company_video.mov"
-                  autoPlay
+                  poster="./images/about_warehouse_processing.webp"
+                  preload="none"
                   loop
                   muted
                   playsInline
-                  className="absolute inset-0 w-full h-full object-cover blur-2xl opacity-25 pointer-events-none scale-110"
+                  className="hidden md:block absolute inset-0 w-full h-full object-cover blur-2xl opacity-25 pointer-events-none scale-110"
                 />
 
                 {/* Main Video */}
                 <video
                   ref={videoRef}
                   src="./videos/company_video.mov"
-                  autoPlay
+                  poster="./images/about_warehouse_processing.webp"
+                  preload="none"
                   loop
                   muted={isMuted}
                   playsInline

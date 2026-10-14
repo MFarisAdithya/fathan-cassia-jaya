@@ -3,6 +3,7 @@ import { SITE_INFO, TRANSLATIONS } from '../config/siteConfig';
 import { useApp } from '../context/AppContext';
 import { MessageCircle, Mail, MapPin, ArrowUpRight } from 'lucide-react';
 import WaButton from './WaButton';
+import OptimizedImage from './OptimizedImage';
 
 export default function Footer() {
   const { lang } = useApp();
@@ -17,9 +18,12 @@ export default function Footer() {
           {/* Brand Info with Logo Image */}
           <div className="lg:col-span-4 space-y-4">
             <div className="flex items-center space-x-3">
-              <img
+              <OptimizedImage
                 src={SITE_INFO.logoUrl}
                 alt={t.siteInfo.name}
+                width={48}
+                height={48}
+                loading="lazy"
                 className="w-12 h-12 rounded-lg object-cover border border-[#F5F1E8]/15 shadow-sm"
               />
               <div>

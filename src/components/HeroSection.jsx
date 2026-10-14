@@ -3,6 +3,7 @@ import { MessageCircle, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { SITE_INFO, TRANSLATIONS } from '../config/siteConfig';
 import { useApp } from '../context/AppContext';
 import WaButton from './WaButton';
+import OptimizedImage from './OptimizedImage';
 
 export default function HeroSection() {
   const { lang } = useApp();
@@ -80,9 +81,14 @@ export default function HeroSection() {
           {/* Right Column: Original PNG Logo */}
           <div className="lg:col-span-5 relative flex items-center justify-center">
             <div className="relative mx-auto max-w-sm sm:max-w-md lg:max-w-none w-full flex items-center justify-center p-2 sm:p-4">
-              <img
+              <OptimizedImage
                 src={SITE_INFO.heroLogoUrl || SITE_INFO.logoUrl}
                 alt={t.siteInfo.name}
+                width={460}
+                height={460}
+                fetchPriority="high"
+                loading="eager"
+                decoding="async"
                 className="w-full max-w-[340px] sm:max-w-[420px] lg:max-w-[460px] h-auto object-contain"
               />
             </div>

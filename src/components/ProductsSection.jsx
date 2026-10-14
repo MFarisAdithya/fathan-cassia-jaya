@@ -2,6 +2,7 @@ import React from 'react';
 import { TRANSLATIONS } from '../config/siteConfig';
 import { useApp } from '../context/AppContext';
 import WaButton from './WaButton';
+import OptimizedImage from './OptimizedImage';
 import { MessageCircle, ArrowUpRight, Plus, Check } from 'lucide-react';
 
 export default function ProductsSection() {
@@ -47,11 +48,14 @@ export default function ProductsSection() {
                 <div>
                   {/* Large Product Studio Image */}
                   <div className="relative h-40 sm:h-44 lg:h-48 overflow-hidden bg-[#E8DFD1]/30 dark:bg-[#191410]/50 rounded-t-xl">
-                    <img
+                    <OptimizedImage
                       src={prod.image}
                       alt={prod.name}
+                      width={400}
+                      height={320}
                       className="w-full h-full object-cover transition-opacity duration-300 group-hover:opacity-90"
                       loading="lazy"
+                      decoding="async"
                     />
                     
                     {/* Subtle Number Badge */}

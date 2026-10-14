@@ -14,6 +14,7 @@ import {
   Layers,
   ArrowRight,
 } from 'lucide-react';
+import OptimizedImage from './OptimizedImage';
 
 export default function RfqDrawer() {
   const {
@@ -282,9 +283,12 @@ export default function RfqDrawer() {
                         <div className="flex items-start justify-between space-x-3">
                           <div className="flex items-center space-x-3 min-w-0">
                             {item.image ? (
-                              <img
+                              <OptimizedImage
                                 src={item.image}
                                 alt={item.name}
+                                width={48}
+                                height={48}
+                                loading="lazy"
                                 className="w-12 h-12 rounded-lg object-cover bg-[#E8DFD1]/50 shrink-0"
                               />
                             ) : (
