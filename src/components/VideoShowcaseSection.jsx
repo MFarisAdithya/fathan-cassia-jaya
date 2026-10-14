@@ -1,7 +1,8 @@
 import React, { useRef, useState } from 'react';
 import { Play, Pause, Volume2, VolumeX, Maximize2, ShieldCheck, Truck, CheckCircle2 } from 'lucide-react';
-import { getWhatsAppUrl, TRANSLATIONS } from '../config/siteConfig';
+import { TRANSLATIONS } from '../config/siteConfig';
 import { useApp } from '../context/AppContext';
+import WaButton from './WaButton';
 
 export default function VideoShowcaseSection() {
   const { lang } = useApp();
@@ -168,14 +169,17 @@ export default function VideoShowcaseSection() {
 
             {/* Quick Action Link */}
             <div className="pt-2">
-              <a
-                href={getWhatsAppUrl(lang === 'en' ? "Hello UD Fathan Cassia Jaya, I watched your warehouse video and would like to request spice samples and a quote." : "Halo UD Fathan Cassia Jaya, saya telah melihat video produk Anda dan ingin menanyakan sampel fisik & penawaran komoditas.")}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-body w-full inline-flex items-center justify-center space-x-2 bg-[#2C241D] hover:bg-[#A66A3F] text-[#F5F1E8] dark:bg-[#A66A3F] dark:hover:bg-[#8e5831] py-3.5 px-4 rounded-lg text-xs font-semibold uppercase tracking-wider transition-all shadow-xs"
+              <WaButton
+                source="video"
+                customMessage={
+                  lang === 'en'
+                    ? "Hello UD Fathan Cassia Jaya, I watched your warehouse video and would like to request spice samples and a quote."
+                    : "Halo UD Fathan Cassia Jaya, saya telah melihat video produk Anda dan ingin menanyakan sampel fisik & penawaran komoditas."
+                }
+                className="font-body w-full inline-flex items-center justify-center space-x-2 bg-[#2C241D] hover:bg-[#A66A3F] text-[#F5F1E8] dark:bg-[#A66A3F] dark:hover:bg-[#8e5831] py-3.5 px-4 rounded-lg text-xs font-semibold uppercase tracking-wider transition-all shadow-xs cursor-pointer"
               >
                 <span>{lang === 'en' ? 'Request Specific Sample Video' : 'Minta Video Sampel Spesifik'}</span>
-              </a>
+              </WaButton>
             </div>
 
           </div>

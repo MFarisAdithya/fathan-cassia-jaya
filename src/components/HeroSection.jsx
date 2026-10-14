@@ -1,7 +1,8 @@
 import React from 'react';
 import { MessageCircle, ArrowRight, CheckCircle2 } from 'lucide-react';
-import { getWhatsAppUrl, SITE_INFO, TRANSLATIONS } from '../config/siteConfig';
+import { SITE_INFO, TRANSLATIONS } from '../config/siteConfig';
 import { useApp } from '../context/AppContext';
+import WaButton from './WaButton';
 
 export default function HeroSection() {
   const { lang } = useApp();
@@ -46,15 +47,14 @@ export default function HeroSection() {
 
             {/* CTA Buttons */}
             <div className="font-body flex flex-col sm:flex-row items-stretch sm:items-center space-y-4 sm:space-y-0 sm:space-x-4 pt-2">
-              <a
-                href={getWhatsAppUrl(t.hero.waMessage)}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center space-x-2.5 bg-[#A66A3F] hover:bg-[#8e5831] text-[#F5F1E8] px-7 py-3.5 rounded-lg font-semibold text-xs tracking-wider uppercase transition-all shadow-xs"
+              <WaButton
+                source="hero"
+                customMessage={t.hero.waMessage}
+                className="inline-flex items-center justify-center space-x-2.5 bg-[#A66A3F] hover:bg-[#8e5831] text-[#F5F1E8] px-7 py-3.5 rounded-lg font-semibold text-xs tracking-wider uppercase transition-all shadow-xs cursor-pointer"
               >
                 <MessageCircle className="w-4 h-4" />
                 <span>{t.hero.requestQuoteBtn}</span>
-              </a>
+              </WaButton>
 
               <a
                 href="#produk"

@@ -1,7 +1,8 @@
 import React from 'react';
-import { getWhatsAppUrl, TRANSLATIONS } from '../config/siteConfig';
+import { TRANSLATIONS } from '../config/siteConfig';
 import { useApp } from '../context/AppContext';
 import { MessageCircle } from 'lucide-react';
+import WaButton from './WaButton';
 
 export default function OfferSection() {
   const { lang } = useApp();
@@ -64,15 +65,14 @@ export default function OfferSection() {
 
               {/* Direct CTA */}
               <div className="pt-8 mt-6">
-                <a
-                  href={getWhatsAppUrl(offer.waMessage)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-body w-full inline-flex items-center justify-center space-x-2 bg-[#2C241D] hover:bg-[#A66A3F] text-white py-3 px-4 rounded-lg text-xs font-semibold uppercase tracking-wider transition-all duration-300 shadow-sm"
+                <WaButton
+                  source={`offer-${offer.num}`}
+                  customMessage={offer.waMessage}
+                  className="font-body w-full inline-flex items-center justify-center space-x-2 bg-[#2C241D] hover:bg-[#A66A3F] text-white py-3 px-4 rounded-lg text-xs font-semibold uppercase tracking-wider transition-all duration-300 shadow-sm cursor-pointer"
                 >
                   <MessageCircle className="w-4 h-4" />
                   <span>{t.nav.requestQuote}</span>
-                </a>
+                </WaButton>
               </div>
             </div>
           ))}

@@ -1,7 +1,8 @@
 import React from 'react';
-import { SITE_INFO, getWhatsAppUrl, TRANSLATIONS } from '../config/siteConfig';
+import { SITE_INFO, TRANSLATIONS } from '../config/siteConfig';
 import { useApp } from '../context/AppContext';
 import { MessageCircle, Mail, MapPin, ArrowUpRight } from 'lucide-react';
+import WaButton from './WaButton';
 
 export default function Footer() {
   const { lang } = useApp();
@@ -36,16 +37,15 @@ export default function Footer() {
             </p>
 
             <div className="pt-2">
-              <a
-                href={getWhatsAppUrl(t.hero.waMessage)}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-body inline-flex items-center space-x-2 text-xs text-[#A66A3F] hover:text-[#F5F1E8] font-semibold uppercase tracking-wider transition-colors"
+              <WaButton
+                source="footer"
+                customMessage={t.hero.waMessage}
+                className="font-body inline-flex items-center space-x-2 text-xs text-[#A66A3F] hover:text-[#F5F1E8] font-semibold uppercase tracking-wider transition-colors cursor-pointer"
               >
                 <MessageCircle className="w-4 h-4 text-[#A66A3F]" />
                 <span>{lang === 'en' ? 'Contact via WhatsApp' : 'Hubungi Kami via WhatsApp'}</span>
                 <ArrowUpRight className="w-4 h-4 text-[#A66A3F]" />
-              </a>
+              </WaButton>
             </div>
           </div>
 

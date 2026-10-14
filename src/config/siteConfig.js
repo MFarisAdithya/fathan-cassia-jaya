@@ -3,12 +3,10 @@
  * Single source of truth for business contact details, WhatsApp variable, products, and landing page content.
  */
 
-// Global WhatsApp Variable - All CTAs connect to this number
-export const WHATSAPP_NUMBER = "6282374173430";
-
 import { TRANSLATIONS } from './translations';
+import { buildWaLink, WHATSAPP_NUMBER } from '../lib/whatsapp';
 
-export { TRANSLATIONS };
+export { TRANSLATIONS, buildWaLink, WHATSAPP_NUMBER };
 
 /**
  * Generate formatted WhatsApp link with auto-populated message
@@ -16,8 +14,7 @@ export { TRANSLATIONS };
  * @returns {string}
  */
 export const getWhatsAppUrl = (customMessage = "Halo UD Fathan Cassia Jaya, saya ingin berkonsultasi dan meminta penawaran ketersediaan rempah untuk kebutuhan bisnis kami.") => {
-  const cleanNumber = String(WHATSAPP_NUMBER).replace(/\D/g, '');
-  return `https://api.whatsapp.com/send?phone=${cleanNumber}&text=${encodeURIComponent(customMessage)}`;
+  return buildWaLink({ customMessage, source: 'direct' });
 };
 
 export const SITE_INFO = {

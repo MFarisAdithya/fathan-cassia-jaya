@@ -1,10 +1,11 @@
 import React from 'react';
-import { getWhatsAppUrl, TRANSLATIONS } from '../config/siteConfig';
+import { TRANSLATIONS } from '../config/siteConfig';
 import { useApp } from '../context/AppContext';
-import { MessageCircle, ArrowUpRight, PackageCheck } from 'lucide-react';
+import WaButton from './WaButton';
+import { MessageCircle, ArrowUpRight, Plus, Check } from 'lucide-react';
 
 export default function ProductsSection() {
-  const { lang } = useApp();
+  const { lang, toggleRfq, isInRfq } = useApp();
   const t = TRANSLATIONS[lang] || TRANSLATIONS.in;
 
   return (
@@ -35,71 +36,103 @@ export default function ProductsSection() {
 
         {/* Products Grid - 6x2 Balanced Layout (6 Atas - 6 Bawah) */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 sm:gap-5 lg:gap-4 xl:gap-5 mt-14">
-          {t.products.list.map((prod) => (
-            <div
-              key={prod.id}
-              className="glass-panel glass-panel-hover rounded-xl overflow-hidden flex flex-col justify-between group"
-            >
-              <div>
-                {/* Large Product Studio Image */}
-                <div className="relative h-40 sm:h-44 lg:h-48 overflow-hidden bg-[#E8DFD1]/30 dark:bg-[#191410]/50 rounded-t-xl">
-                  <img
-                    src={prod.image}
-                    alt={prod.name}
-                    className="w-full h-full object-cover transition-opacity duration-300 group-hover:opacity-90"
-                    loading="lazy"
-                  />
-                  
-                  {/* Subtle Number Badge */}
-                  <div className="absolute top-2.5 left-2.5 glass-badge px-2 py-0.5 rounded font-body text-[10px] font-mono font-medium text-[#2C241D] dark:text-[#E8DFD1]">
-                    {prod.id}
-                  </div>
+          {t.products.list.map((prod) => {
+            const inList = isInRfq(prod.id);
 
-                  {/* Subtle Category Tag */}
-                  {prod.tag && (
-                    <div className="absolute top-2.5 right-2.5 bg-[#6F7652]/90 text-white px-2 py-0.5 rounded font-body text-[9px] font-medium tracking-wide uppercase truncate max-w-[85px] sm:max-w-[95px]">
-                      {prod.tag}
+            return (
+              <div
+                key={prod.id}
+                className="glass-panel glass-panel-hover rounded-xl overflow-hidden flex flex-col justify-between group"
+              >
+                <div>
+                  {/* Large Product Studio Image */}
+                  <div className="relative h-40 sm:h-44 lg:h-48 overflow-hidden bg-[#E8DFD1]/30 dark:bg-[#191410]/50 rounded-t-xl">
+                    <img
+                      src={prod.image}
+                      alt={prod.name}
+                      className="w-full h-full object-cover transition-opacity duration-300 group-hover:opacity-90"
+                      loading="lazy"
+                    />
+                    
+                    {/* Subtle Number Badge */}
+                    <div className="absolute top-2.5 left-2.5 glass-badge px-2 py-0.5 rounded font-body text-[10px] font-mono font-medium text-[#2C241D] dark:text-[#E8DFD1]">
+                      {prod.id}
                     </div>
-                  )}
-                </div>
 
-                {/* Minimal Product Information */}
-                <div className="p-3.5 sm:p-4 space-y-2">
-                  <h3 className="font-heading text-sm sm:text-base font-semibold text-[#2C241D] dark:text-[#F5F1E8] group-hover:text-[#A66A3F] transition-colors leading-snug min-h-[2.5rem] flex items-center">
-                    {prod.name}
-                  </h3>
-
-                  {/* Clean Price Tag */}
-                  <div className="flex items-baseline space-x-1 pt-0.5">
-                    <span className="font-heading text-sm sm:text-base font-semibold text-[#A66A3F] dark:text-[#C47F4E]">
-                      {prod.price}
-                    </span>
-                    <span className="font-body text-[10px] font-medium text-[#6F7652] dark:text-[#E8DFD1]/70">
-                      {prod.unit}
-                    </span>
+                    {/* Subtle Category Tag */}
+                    {prod.tag && (
+                      <div className="absolute top-2.5 right-2.5 bg-[#6F7652]/90 text-white px-2 py-0.5 rounded font-body text-[9px] font-medium tracking-wide uppercase truncate max-w-[85px] sm:max-w-[95px]">
+                        {prod.tag}
+                      </div>
+                    )}
                   </div>
 
-                  <p className="font-body text-[11px] text-[#2C241D]/70 dark:text-[#E8DFD1]/70 leading-relaxed font-normal line-clamp-2">
-                    {prod.description}
-                  </p>
+                  {/* Minimal Product Information */}
+                  <div className="p-3.5 sm:p-4 space-y-2">
+                    <h3 className="font-heading text-sm sm:text-base font-semibold text-[#2C241D] dark:text-[#F5F1E8] group-hover:text-[#A66A3F] transition-colors leading-snug min-h-[2.5rem] flex items-center">
+                      {prod.name}
+                    </h3>
+
+                    {/* Clean Price Tag */}
+                    <div className="flex items-baseline space-x-1 pt-0.5">
+                      <span className="font-heading text-sm sm:text-base font-semibold text-[#A66A3F] dark:text-[#C47F4E]">
+                        {prod.price}
+                      </span>
+                      <span className="font-body text-[10px] font-medium text-[#6F7652] dark:text-[#E8DFD1]/70">
+                        {prod.unit}
+                      </span>
+                    </div>
+
+                    <p className="font-body text-[11px] text-[#2C241D]/70 dark:text-[#E8DFD1]/70 leading-relaxed font-normal line-clamp-2">
+                      {prod.description}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Minimal Action Buttons: Toggle RFQ + Direct WA Consultation */}
+                <div className="p-3 sm:p-3.5 pt-0 space-y-1.5">
+                  {/* RFQ Toggle Button */}
+                  <button
+                    type="button"
+                    onClick={() => toggleRfq(prod)}
+                    aria-label={
+                      inList
+                        ? (lang === 'en' ? `Remove ${prod.name} from RFQ list` : `Hapus ${prod.name} dari daftar penawaran`)
+                        : (lang === 'en' ? `Add ${prod.name} to RFQ list` : `Tambah ${prod.name} ke daftar penawaran`)
+                    }
+                    className={`font-body w-full inline-flex items-center justify-center space-x-1.5 py-1.5 px-2 rounded-lg text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider transition-all duration-200 cursor-pointer ${
+                      inList
+                        ? 'bg-[#6F7652] text-white hover:bg-[#5b6243] shadow-xs'
+                        : 'bg-[#A66A3F]/10 hover:bg-[#A66A3F]/20 text-[#A66A3F] dark:text-[#E28743] border border-[#A66A3F]/30 hover:border-[#A66A3F]/60'
+                    }`}
+                  >
+                    {inList ? (
+                      <>
+                        <Check className="w-3 h-3 sm:w-3.5 sm:h-3.5 shrink-0" />
+                        <span className="truncate">{lang === 'en' ? '✓ In RFQ List' : '✓ Di Daftar'}</span>
+                      </>
+                    ) : (
+                      <>
+                        <Plus className="w-3 h-3 sm:w-3.5 sm:h-3.5 shrink-0" />
+                        <span className="truncate">{lang === 'en' ? '+ Add to RFQ' : '+ Tambah ke daftar'}</span>
+                      </>
+                    )}
+                  </button>
+
+                  {/* Direct WhatsApp Consultation Button */}
+                  <WaButton
+                    source={`product-${prod.id}`}
+                    customMessage={prod.waMessage}
+                    className="font-body w-full inline-flex items-center justify-center space-x-1.5 bg-[#F5F1E8] hover:bg-[#2C241D] text-[#2C241D] hover:text-[#F5F1E8] dark:bg-[#191410] dark:hover:bg-[#A66A3F] dark:text-[#F5F1E8] dark:hover:text-white border border-[#2C241D]/15 dark:border-[#E8DFD1]/15 py-1.5 px-2 rounded-lg text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider transition-all duration-200 shadow-xs cursor-pointer"
+                  >
+                    <MessageCircle className="w-3 h-3 sm:w-3.5 sm:h-3.5 shrink-0" />
+                    <span className="truncate">{t.products.askStockBtn}</span>
+                    <ArrowUpRight className="w-3 h-3 shrink-0 opacity-70" />
+                  </WaButton>
                 </div>
               </div>
-
-              {/* Minimal Action Button */}
-              <div className="p-3.5 sm:p-4 pt-0">
-                <a
-                  href={getWhatsAppUrl(prod.waMessage)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-body w-full inline-flex items-center justify-center space-x-1.5 bg-[#F5F1E8] hover:bg-[#2C241D] text-[#2C241D] hover:text-[#F5F1E8] dark:bg-[#191410] dark:hover:bg-[#A66A3F] dark:text-[#F5F1E8] dark:hover:text-white border border-[#2C241D]/15 dark:border-[#E8DFD1]/15 py-2 px-2 rounded-lg text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider transition-all duration-200 shadow-xs"
-                >
-                  <MessageCircle className="w-3 h-3 sm:w-3.5 sm:h-3.5 flex-shrink-0" />
-                  <span className="truncate">{t.products.askStockBtn}</span>
-                  <ArrowUpRight className="w-3 h-3 flex-shrink-0 opacity-70" />
-                </a>
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* Note Below Catalog */}
@@ -111,4 +144,3 @@ export default function ProductsSection() {
     </section>
   );
 }
-

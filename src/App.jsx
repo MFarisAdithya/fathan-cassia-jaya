@@ -15,6 +15,7 @@ import CommitmentSection from './components/CommitmentSection';
 import FaqSection from './components/FaqSection';
 import FinalCtaSection from './components/FinalCtaSection';
 import Footer from './components/Footer';
+import RfqDrawer from './components/RfqDrawer';
 
 function MainContent() {
   return (
@@ -36,6 +37,7 @@ function MainContent() {
         <FinalCtaSection />
       </main>
       <Footer />
+      <RfqDrawer />
     </div>
   );
 }

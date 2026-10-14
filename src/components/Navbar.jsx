@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, MessageCircle, ArrowRight, ArrowUp, Sun, Moon, Globe } from 'lucide-react';
-import { getWhatsAppUrl, SITE_INFO, TRANSLATIONS } from '../config/siteConfig';
+import { SITE_INFO, TRANSLATIONS } from '../config/siteConfig';
 import { useApp } from '../context/AppContext';
+import WaButton from './WaButton';
 
 export default function Navbar() {
-  const { lang, setLang, theme, toggleTheme, isNight } = useApp();
+  const { lang, setLang, toggleTheme, isNight } = useApp();
   const t = TRANSLATIONS[lang] || TRANSLATIONS.in;
 
   const [isOpen, setIsOpen] = useState(false);
@@ -196,16 +197,15 @@ export default function Navbar() {
               </button>
 
               {/* Primary Header CTA */}
-              <a
-                href={getWhatsAppUrl(t.hero.waMessage)}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-body inline-flex items-center space-x-1.5 xl:space-x-2 bg-[#2C241D] hover:bg-[#A66A3F] text-[#F5F1E8] dark:bg-[#A66A3F] dark:hover:bg-[#8e5831] px-3 xl:px-4 py-2 xl:py-2.5 rounded-lg text-xs font-semibold tracking-wide uppercase transition-all shadow-xs shrink-0"
+              <WaButton
+                source="navbar"
+                customMessage={t.hero.waMessage}
+                className="font-body inline-flex items-center space-x-1.5 xl:space-x-2 bg-[#2C241D] hover:bg-[#A66A3F] text-[#F5F1E8] dark:bg-[#A66A3F] dark:hover:bg-[#8e5831] px-3 xl:px-4 py-2 xl:py-2.5 rounded-lg text-xs font-semibold tracking-wide uppercase transition-all shadow-xs shrink-0 cursor-pointer"
               >
                 <MessageCircle className="w-3.5 h-3.5 xl:w-4 xl:h-4 shrink-0" />
                 <span className="hidden xl:inline">{t.nav.requestQuote}</span>
                 <span className="inline xl:hidden">{lang === 'en' ? 'Quote' : 'Penawaran'}</span>
-              </a>
+              </WaButton>
             </div>
 
             {/* Mobile Controls (Language, Theme & Hamburger) */}
@@ -313,16 +313,15 @@ export default function Navbar() {
                 );
               })}
               <div className="pt-3">
-                <a
-                  href={getWhatsAppUrl(t.hero.waMessage)}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <WaButton
+                  source="navbar-mobile"
+                  customMessage={t.hero.waMessage}
                   onClick={() => setIsOpen(false)}
-                  className="font-body w-full flex items-center justify-center space-x-2 bg-[#2C241D] hover:bg-[#A66A3F] text-[#F5F1E8] dark:bg-[#A66A3F] py-3 rounded-lg text-xs font-semibold uppercase tracking-wider shadow-xs"
+                  className="font-body w-full flex items-center justify-center space-x-2 bg-[#2C241D] hover:bg-[#A66A3F] text-[#F5F1E8] dark:bg-[#A66A3F] py-3 rounded-lg text-xs font-semibold uppercase tracking-wider shadow-xs cursor-pointer"
                 >
                   <MessageCircle className="w-4 h-4" />
                   <span>{t.nav.requestQuote}</span>
-                </a>
+                </WaButton>
               </div>
             </div>
           </div>
@@ -353,11 +352,10 @@ export default function Navbar() {
 
       {/* Floating Bottom WhatsApp CTA Bar for Mobile Users */}
       <div className="md:hidden fixed bottom-4 left-4 right-4 z-40">
-        <a
-          href={getWhatsAppUrl(t.hero.waMessage)}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center justify-between bg-[#2C241D] dark:bg-[#A66A3F] text-[#F5F1E8] px-5 py-3.5 rounded-xl shadow-xl active:scale-98 transition-transform border border-white/10"
+        <WaButton
+          source="floating"
+          customMessage={t.hero.waMessage}
+          className="flex items-center justify-between bg-[#2C241D] dark:bg-[#A66A3F] text-[#F5F1E8] px-5 py-3.5 rounded-xl shadow-xl active:scale-98 transition-transform border border-white/10 cursor-pointer"
         >
           <div className="flex items-center space-x-3">
             <div className="bg-white/10 p-2 rounded-lg">
@@ -369,7 +367,7 @@ export default function Navbar() {
             </div>
           </div>
           <ArrowRight className="w-4 h-4 text-[#F5F1E8]/90" />
-        </a>
+        </WaButton>
       </div>
     </>
   );

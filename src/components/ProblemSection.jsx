@@ -1,7 +1,8 @@
 import React from 'react';
-import { getWhatsAppUrl, TRANSLATIONS } from '../config/siteConfig';
+import { TRANSLATIONS } from '../config/siteConfig';
 import { useApp } from '../context/AppContext';
 import { MessageCircle, Sparkles, ArrowRight } from 'lucide-react';
+import WaButton from './WaButton';
 
 export default function ProblemSection() {
   const { lang } = useApp();
@@ -95,20 +96,19 @@ export default function ProblemSection() {
 
             {/* WhatsApp CTA Button */}
             <div className="pt-3">
-              <a
-                href={getWhatsAppUrl(
+              <WaButton
+                source="solusi"
+                customMessage={
                   lang === 'en'
                     ? "Hello UD Fathan Cassia Jaya, I would like to consult on spice supplies for my business."
                     : "Halo UD Fathan Cassia Jaya, saya ingin berkonsultasi mengenai kebutuhan rempah dan meminta penawaran harga."
-                )}
-                target="_blank"
-                rel="noopener noreferrer"
+                }
                 className="group/btn font-body inline-flex items-center space-x-2.5 bg-gradient-to-r from-[#A66A3F] to-[#8e5831] hover:from-[#8e5831] hover:to-[#734321] text-white px-8 py-3.5 sm:py-4 rounded-xl text-xs sm:text-sm font-semibold uppercase tracking-wider shadow-lg hover:shadow-xl active:scale-98 transition-all duration-300 cursor-pointer"
               >
                 <MessageCircle className="w-4 h-4 shrink-0 transition-transform group-hover/btn:scale-110" />
                 <span>{t.problem.ctaBtn}</span>
                 <ArrowRight className="w-4 h-4 shrink-0 transition-transform group-hover/btn:translate-x-1" />
-              </a>
+              </WaButton>
             </div>
           </div>
         </div>

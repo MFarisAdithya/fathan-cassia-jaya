@@ -1,7 +1,8 @@
 import React from 'react';
 import { MessageCircle, ArrowRight } from 'lucide-react';
-import { getWhatsAppUrl, TRANSLATIONS } from '../config/siteConfig';
+import { TRANSLATIONS } from '../config/siteConfig';
 import { useApp } from '../context/AppContext';
+import WaButton from './WaButton';
 
 export default function FinalCtaSection() {
   const { lang } = useApp();
@@ -38,16 +39,15 @@ export default function FinalCtaSection() {
 
         {/* WhatsApp Button */}
         <div className="pt-4 flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-          <a
-            href={getWhatsAppUrl(t.finalCta.waMessage)}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center space-x-3 bg-[#A66A3F] hover:bg-[#8e4f33] text-white px-9 py-4 rounded-lg text-xs sm:text-sm font-semibold uppercase tracking-wider shadow-lg hover:shadow-[#A66A3F]/30 transition-all duration-300 hover:-translate-y-0.5 group"
+          <WaButton
+            source="final-cta"
+            customMessage={t.finalCta.waMessage}
+            className="inline-flex items-center justify-center space-x-3 bg-[#A66A3F] hover:bg-[#8e4f33] text-white px-9 py-4 rounded-lg text-xs sm:text-sm font-semibold uppercase tracking-wider shadow-lg hover:shadow-[#A66A3F]/30 transition-all duration-300 hover:-translate-y-0.5 group cursor-pointer"
           >
             <MessageCircle className="w-4 h-4 text-white" />
             <span>{t.finalCta.chatBtn}</span>
             <ArrowRight className="w-4 h-4 text-white/80 group-hover:translate-x-1 transition-transform" />
-          </a>
+          </WaButton>
         </div>
 
         {/* Supporting Text */}
