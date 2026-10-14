@@ -1,5 +1,7 @@
 import React from 'react';
 import { IndonesianPage, EnglishPage, RootPage } from './pages/LandingPage';
+import CommodityPage from './pages/CommodityPage';
+import { COMMODITY_SLUGS } from './config/commodities';
 
 export const routes = [
   {
@@ -13,6 +15,14 @@ export const routes = [
   {
     path: '/en',
     element: <EnglishPage />,
+  },
+  ...COMMODITY_SLUGS.map((slug) => ({
+    path: `/produk/${slug}`,
+    element: <CommodityPage slug={slug} />,
+  })),
+  {
+    path: '/produk/:slug',
+    element: <CommodityPage />,
   },
 ];
 

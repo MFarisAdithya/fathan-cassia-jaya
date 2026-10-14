@@ -1,9 +1,10 @@
 import React from 'react';
-import { TRANSLATIONS } from '../config/siteConfig';
+import { Link } from 'react-router-dom';
+import { TRANSLATIONS, PRODUCT_TO_COMMODITY_MAP } from '../config/siteConfig';
 import { useApp } from '../context/AppContext';
 import WaButton from './WaButton';
 import OptimizedImage from './OptimizedImage';
-import { MessageCircle, ArrowUpRight, Plus, Check } from 'lucide-react';
+import { MessageCircle, ArrowUpRight, Plus, Check, ArrowRight } from 'lucide-react';
 
 export default function ProductsSection() {
   const { lang, toggleRfq, isInRfq } = useApp();
@@ -39,6 +40,7 @@ export default function ProductsSection() {
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 sm:gap-5 lg:gap-4 xl:gap-5 mt-14">
           {t.products.list.map((prod) => {
             const inList = isInRfq(prod.id);
+            const commoditySlug = PRODUCT_TO_COMMODITY_MAP[prod.id] || 'kayu-manis';
 
             return (
               <div
@@ -46,14 +48,14 @@ export default function ProductsSection() {
                 className="content-card content-card-hover rounded-xl overflow-hidden flex flex-col justify-between group"
               >
                 <div>
-                  {/* Large Product Studio Image */}
-                  <div className="relative h-40 sm:h-44 lg:h-48 overflow-hidden bg-[#E8DFD1]/30 dark:bg-[#191410]/50 rounded-t-xl">
+                  {/* Large Product Studio Image linking to commodity page */}
+                  <Link to={`/produk/${commoditySlug}`} className="block relative h-40 sm:h-44 lg:h-48 overflow-hidden bg-[#E8DFD1]/30 dark:bg-[#191410]/50 rounded-t-xl cursor-pointer">
                     <OptimizedImage
                       src={prod.image}
                       alt={prod.name}
                       width={400}
                       height={320}
-                      className="w-full h-full object-cover transition-opacity duration-300 group-hover:opacity-90"
+                      className="w-full h-full object-cover transition-opacity duration-300 group-hover:opacity-90 group-hover:scale-102"
                       loading="lazy"
                       decoding="async"
                     />
@@ -69,13 +71,15 @@ export default function ProductsSection() {
                         {prod.tag}
                       </div>
                     )}
-                  </div>
+                  </Link>
 
                   {/* Minimal Product Information */}
                   <div className="p-3.5 sm:p-4 space-y-2">
-                    <h3 className="font-heading text-sm sm:text-base font-semibold text-[#2C241D] dark:text-[#F5F1E8] group-hover:text-[#9A5F36] transition-colors leading-snug min-h-[2.5rem] flex items-center">
-                      {prod.name}
-                    </h3>
+                    <Link to={`/produk/${commoditySlug}`} className="block group/title">
+                      <h3 className="font-heading text-sm sm:text-base font-semibold text-[#2C241D] dark:text-[#F5F1E8] group-hover/title:text-[#9A5F36] transition-colors leading-snug min-h-[2.5rem] flex items-center">
+                        {prod.name}
+                      </h3>
+                    </Link>
 
                     {/* Clean Price Tag */}
                     <div className="flex items-baseline space-x-1 pt-0.5">
@@ -90,6 +94,14 @@ export default function ProductsSection() {
                     <p className="font-body text-[11px] text-[#2C241D]/70 dark:text-[#E8DFD1]/70 leading-relaxed font-normal line-clamp-2">
                       {prod.description}
                     </p>
+
+                    <Link
+                      to={`/produk/${commoditySlug}`}
+                      className="inline-flex items-center space-x-1 text-[10px] font-body font-semibold text-[#9A5F36] dark:text-[#E28743] hover:underline pt-0.5"
+                    >
+                      <span>{lang === 'en' ? 'Specs & Grades' : 'Lihat Spesifikasi'}</span>
+                      <ArrowRight className="w-3 h-3" />
+                    </Link>
                   </div>
                 </div>
 

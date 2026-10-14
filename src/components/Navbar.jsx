@@ -13,8 +13,14 @@ export default function Navbar() {
 
   const handleLangChange = (targetLang) => {
     setLang(targetLang);
-    const targetRoute = targetLang === 'en' ? '/en' : '/id';
-    navigate(targetRoute);
+    if (typeof window !== 'undefined') {
+      const path = window.location.pathname;
+      if (path === '/' || path.startsWith('/id') || path.startsWith('/en')) {
+        const targetRoute = targetLang === 'en' ? '/en' : '/id';
+        navigate(targetRoute);
+      }
+      // If on /produk/<slug>, language is toggled in place without route change
+    }
   };
 
   const [isOpen, setIsOpen] = useState(false);
@@ -39,6 +45,7 @@ export default function Navbar() {
     const targetId = href.replace('#', '');
     if (!targetId) {
       window.scrollTo({ top: 0, behavior: 'smooth' });
+      setIsOpen(false);
       return;
     }
     const targetEl = document.getElementById(targetId);
@@ -46,6 +53,9 @@ export default function Navbar() {
       const yOffset = -72;
       const y = targetEl.getBoundingClientRect().top + window.pageYOffset + yOffset;
       window.scrollTo({ top: y, behavior: 'smooth' });
+    } else {
+      const targetHome = (lang === 'en' ? '/en' : '/id') + href;
+      navigate(targetHome);
     }
     setIsOpen(false);
   };

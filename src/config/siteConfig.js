@@ -5,8 +5,9 @@
 
 import { TRANSLATIONS } from './translations';
 import { buildWaLink, WHATSAPP_NUMBER } from '../lib/whatsapp';
+import { COMMODITIES, COMMODITY_SLUGS, getCommodity, PRODUCT_TO_COMMODITY_MAP } from './commodities';
 
-export { TRANSLATIONS, buildWaLink, WHATSAPP_NUMBER };
+export { TRANSLATIONS, buildWaLink, WHATSAPP_NUMBER, COMMODITIES, COMMODITY_SLUGS, getCommodity, PRODUCT_TO_COMMODITY_MAP };
 
 /**
  * Generate formatted WhatsApp link with auto-populated message
