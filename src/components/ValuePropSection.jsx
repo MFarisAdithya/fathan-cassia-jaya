@@ -17,8 +17,8 @@ export default function ValuePropSection() {
   return (
     <section id="keunggulan" className="bg-[#F5F1E8] dark:bg-[#191410] text-[#2C241D] dark:text-[#F5F1E8] py-16 sm:py-20 lg:py-24 relative overflow-hidden border-b border-[#2C241D]/08 dark:border-[#E8DFD1]/10 grain-overlay transition-colors duration-300">
       {/* Ambient Warm Spice Glow Orbs */}
-      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[480px] h-[480px] bg-gradient-to-tr from-[#A66A3F]/20 via-[#E28743]/12 to-transparent rounded-full blur-3xl pointer-events-none z-0" />
-      <div className="absolute bottom-0 right-1/4 w-[420px] h-[420px] bg-gradient-to-bl from-[#D97706]/16 via-[#C47F4E]/12 to-transparent rounded-full blur-3xl pointer-events-none z-0" />
+      <div className="hidden md:block absolute top-1/2 left-1/4 -translate-y-1/2 w-[480px] h-[480px] bg-gradient-to-tr from-[#A66A3F]/20 via-[#E28743]/12 to-transparent rounded-full blur-3xl pointer-events-none z-0" />
+      <div className="hidden md:block absolute bottom-0 right-1/4 w-[420px] h-[420px] bg-gradient-to-bl from-[#D97706]/16 via-[#C47F4E]/12 to-transparent rounded-full blur-3xl pointer-events-none z-0" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
@@ -46,13 +46,13 @@ export default function ValuePropSection() {
           {t.valueProp.items.map((item, idx) => (
             <div
               key={item.num}
-              className="glass-panel glass-panel-hover p-8 rounded-xl space-y-6 group"
+              className="content-card content-card-hover p-8 rounded-xl space-y-6 group"
             >
               <div className="flex items-center justify-between">
                 <div className="w-11 h-11 rounded-lg glass-badge glass-badge-interactive flex items-center justify-center">
                   {icons[idx]}
                 </div>
-                <span className="font-heading text-2xl font-medium text-[#2C241D]/25 dark:text-[#F5F1E8]/25 group-hover:text-[#A66A3F] transition-colors">
+                <span className="font-heading text-2xl font-medium text-[#2C241D]/25 dark:text-[#F5F1E8]/25 group-hover:text-[#9A5F36] transition-colors">
                   {item.num}
                 </span>
               </div>

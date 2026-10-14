@@ -10,8 +10,8 @@ export default function TestimonialsSection() {
   return (
     <section id="testimoni" className="bg-[#E8DFD1]/40 dark:bg-[#140E0A] text-[#2C241D] dark:text-[#F5F1E8] py-16 sm:py-20 lg:py-24 relative overflow-hidden border-b border-[#2C241D]/08 dark:border-[#E8DFD1]/10 grain-overlay transition-colors duration-300">
       {/* Ambient Warm Spice Glow Orbs */}
-      <div className="absolute top-1/2 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[520px] h-[520px] bg-gradient-to-tr from-[#A66A3F]/22 via-[#D97706]/14 to-transparent rounded-full blur-3xl pointer-events-none z-0" />
-      <div className="absolute bottom-10 right-1/4 w-[450px] h-[450px] bg-gradient-to-bl from-[#E28743]/18 via-[#C47F4E]/12 to-transparent rounded-full blur-3xl pointer-events-none z-0" />
+      <div className="hidden md:block absolute top-1/2 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[520px] h-[520px] bg-gradient-to-tr from-[#A66A3F]/22 via-[#D97706]/14 to-transparent rounded-full blur-3xl pointer-events-none z-0" />
+      <div className="hidden md:block absolute bottom-10 right-1/4 w-[450px] h-[450px] bg-gradient-to-bl from-[#E28743]/18 via-[#C47F4E]/12 to-transparent rounded-full blur-3xl pointer-events-none z-0" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
@@ -39,14 +39,14 @@ export default function TestimonialsSection() {
           {t.testimonials.items.map((item) => (
             <div
               key={item.id}
-              className="glass-panel glass-panel-hover rounded-xl p-8 flex flex-col justify-between space-y-6 group"
+              className="content-card content-card-hover rounded-xl p-8 flex flex-col justify-between space-y-6 group"
             >
               <div className="space-y-4">
                 {/* Header: Rating & Tag */}
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-1">
                     {[...Array(item.rating)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-[#A66A3F] text-[#A66A3F]" />
+                      <Star key={i} className="w-4 h-4 fill-[#9A5F36] text-[#9A5F36]" />
                     ))}
                   </div>
                   <span className="glass-badge font-body text-[10px] tracking-wider uppercase px-2.5 py-1 rounded text-[#6F7652] dark:text-[#A66A3F] font-semibold">

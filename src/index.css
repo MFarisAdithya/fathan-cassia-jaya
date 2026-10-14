@@ -4,23 +4,33 @@
 
 @theme {
   --font-sans: 'Manrope', system-ui, -apple-system, sans-serif;
-  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-heading: 'Fraunces', Georgia, serif;
   --font-body: 'Manrope', system-ui, -apple-system, sans-serif;
-  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-serif: 'Fraunces', Georgia, serif;
+
+  --color-cinnamon-action: #9A5F36;
+  --color-cinnamon-action-hover: #844F2C;
+  --color-cinnamon: #A66A3F;
+  --color-warm-ivory: #F5F1E8;
+  --color-deep-brown: #2C241D;
+  --color-muted-olive: #6F7652;
+  --color-soft-beige: #E8DFD1;
 }
 
 @layer base {
   :root {
+    --color-cinnamon-action: #9A5F36;
+    --color-cinnamon-action-hover: #844F2C;
+    --color-cinnamon: #A66A3F;
     --color-warm-ivory: #F5F1E8;
     --color-deep-brown: #2C241D;
     --color-muted-olive: #6F7652;
-    --color-cinnamon: #A66A3F;
     --color-soft-beige: #E8DFD1;
 
     /* Backward compatible tokens */
     --color-espresso: #2C241D;
     --color-cream: #F5F1E8;
-    --color-terracotta: #A66A3F;
+    --color-terracotta: #9A5F36;
     --color-sand: #E8DFD1;
     --color-sage: #6F7652;
     --color-dark-olive: #2C241D;
@@ -28,10 +38,12 @@
   }
 
   .dark {
+    --color-cinnamon-action: #B87343;
+    --color-cinnamon-action-hover: #C47F4E;
+    --color-cinnamon: #C47F4E;
     --color-warm-ivory: #F5F1E8;
     --color-deep-brown: #191410;
     --color-muted-olive: #8E966B;
-    --color-cinnamon: #C47F4E;
     --color-soft-beige: #241C16;
 
     --color-espresso: #F5F1E8;
@@ -59,14 +71,16 @@
   }
 
   h1, h2, h3, h4, h5, h6, .font-heading {
-    font-family: 'Playfair Display', Georgia, serif !important;
+    font-family: 'Fraunces', Georgia, serif !important;
+    font-optical-sizing: auto;
     letter-spacing: -0.015em;
   }
 }
 
 /* Custom Design System Classes */
 .font-heading {
-  font-family: 'Playfair Display', Georgia, serif !important;
+  font-family: 'Fraunces', Georgia, serif !important;
+  font-optical-sizing: auto;
 }
 
 .font-body {
@@ -243,12 +257,52 @@
 }
 
 /* ============================================================
-   GLASSMORPHISM + AMBIENT WARM GLOW (Gaya No. 2 - Final Choice)
+   SOLID CONTENT CARDS (Refined Design: 1px hairline border & shadow tipis)
+   ============================================================ */
+.content-card {
+  background-color: #FFFFFF;
+  border: 1px solid rgba(44, 36, 29, 0.08);
+  box-shadow: 0 1px 3px 0 rgba(44, 36, 29, 0.04), 0 1px 2px -1px rgba(44, 36, 29, 0.02);
+  border-radius: 0.875rem;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.dark .content-card {
+  background-color: #221A14;
+  border: 1px solid rgba(232, 223, 209, 0.09);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.35);
+}
+
+.content-card-hover {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.content-card-hover:hover {
+  transform: translateY(-2px);
+  border-color: rgba(154, 95, 54, 0.35);
+  box-shadow: 0 6px 16px -2px rgba(44, 36, 29, 0.07);
+}
+
+.dark .content-card-hover:hover {
+  border-color: rgba(196, 127, 78, 0.4);
+  box-shadow: 0 6px 20px -2px rgba(0, 0, 0, 0.45);
+}
+
+/* Cinnamon Action Tokens Utility Classes (Contrast >= 4.5:1) */
+.bg-cinnamon-action { background-color: #9A5F36; }
+.text-cinnamon-action { color: #9A5F36; }
+.border-cinnamon-action { border-color: #9A5F36; }
+.hover\:bg-cinnamon-action:hover { background-color: #844F2C; }
+
+/* ============================================================
+   GLASSMORPHISM (Restricted strictly to Navbar & Floating Bar)
    ============================================================ */
 .glass-panel {
-  background: rgba(255, 255, 255, 0.65);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.85);
   box-shadow:
     0 4px 20px -2px rgba(44, 36, 29, 0.05),
@@ -261,9 +315,9 @@
 }
 
 .dark .glass-panel {
-  background: rgba(30, 22, 16, 0.7);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
+  background: rgba(30, 22, 16, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow:
     0 4px 24px -2px rgba(0, 0, 0, 0.4),
@@ -288,23 +342,23 @@
 }
 
 .glass-panel-hover:hover {
-  background: rgba(255, 255, 255, 0.86);
-  border-color: rgba(166, 106, 63, 0.45);
+  background: rgba(255, 255, 255, 0.88);
+  border-color: rgba(154, 95, 54, 0.45);
   box-shadow:
     0 14px 36px -4px rgba(44, 36, 29, 0.08),
     0 0 35px 2px rgba(166, 106, 63, 0.22),
     inset 0 1px 1px 0 rgba(255, 255, 255, 1);
-  transform: translateY(-4px) translateZ(0);
+  transform: translateY(-3px) translateZ(0);
 }
 
 .dark .glass-panel-hover:hover {
-  background: rgba(42, 30, 22, 0.85);
+  background: rgba(42, 30, 22, 0.9);
   border-color: rgba(196, 127, 78, 0.55);
   box-shadow:
     0 14px 36px -4px rgba(0, 0, 0, 0.5),
     0 0 35px 2px rgba(196, 127, 78, 0.28),
     inset 0 1px 0 0 rgba(255, 255, 255, 0.15);
-  transform: translateY(-4px) translateZ(0);
+  transform: translateY(-3px) translateZ(0);
 }
 
 .glass-badge {
@@ -340,11 +394,11 @@
 .group:hover .glass-badge-interactive,
 .glass-badge-interactive:hover,
 .glass-badge-interactive.active {
-  background: #A66A3F !important;
-  background-color: #A66A3F !important;
-  border-color: #A66A3F !important;
+  background: #9A5F36 !important;
+  background-color: #9A5F36 !important;
+  border-color: #9A5F36 !important;
   color: #FFFFFF !important;
-  box-shadow: 0 4px 16px -2px rgba(166, 106, 63, 0.45) !important;
+  box-shadow: 0 4px 16px -2px rgba(154, 95, 54, 0.45) !important;
 }
 
 .group:hover .glass-badge-interactive svg,
@@ -357,8 +411,8 @@
 .dark .group:hover .glass-badge-interactive,
 .dark .glass-badge-interactive:hover,
 .dark .glass-badge-interactive.active {
-  background: #A66A3F !important;
-  background-color: #A66A3F !important;
+  background: #B87343 !important;
+  background-color: #B87343 !important;
   border-color: #C47F4E !important;
   color: #FFFFFF !important;
   box-shadow: 0 4px 20px -2px rgba(196, 127, 78, 0.5) !important;
@@ -376,6 +430,40 @@
   border-radius: 9999px;
   filter: blur(64px);
   pointer-events: none;
+}
+
+/* ============================================================
+   AMBIENT GLOW ORBS & MOTION (Disabled on <768px and prefers-reduced-motion)
+   ============================================================ */
+@media (max-width: 767.98px) {
+  .ambient-glow-spice,
+  .spice-orb,
+  [class*="blur-3xl"],
+  [class*="blur-2xl"] {
+    display: none !important;
+    visibility: hidden !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ambient-glow-spice,
+  .spice-orb,
+  [class*="blur-3xl"],
+  [class*="blur-2xl"] {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+    opacity: 0.04 !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 

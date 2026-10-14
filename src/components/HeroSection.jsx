@@ -11,12 +11,12 @@ export default function HeroSection() {
   return (
     <section className="relative bg-[#2C241D] dark:bg-[#140E0A] text-[#F5F1E8] pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden grain-overlay-light vignette-dark transition-colors duration-300">
       {/* Subtle Ambient Background Gradients */}
-      <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-[#A66A3F]/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-96 h-96 bg-[#6F7652]/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="hidden md:block absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-[#A66A3F]/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="hidden md:block absolute bottom-0 left-0 -ml-20 -mb-20 w-96 h-96 bg-[#6F7652]/10 rounded-full blur-3xl pointer-events-none" />
 
       {/* Ambient Warm Spice Orbs */}
-      <div className="absolute top-1/4 left-10 w-[450px] h-[450px] bg-gradient-to-tr from-[#A66A3F]/25 via-[#E28743]/18 to-transparent rounded-full blur-3xl pointer-events-none z-0" />
-      <div className="absolute bottom-10 right-10 w-[400px] h-[400px] bg-gradient-to-bl from-[#D97706]/20 via-[#A66A3F]/15 to-transparent rounded-full blur-3xl pointer-events-none z-0" />
+      <div className="hidden md:block absolute top-1/4 left-10 w-[450px] h-[450px] bg-gradient-to-tr from-[#A66A3F]/25 via-[#E28743]/18 to-transparent rounded-full blur-3xl pointer-events-none z-0" />
+      <div className="hidden md:block absolute bottom-10 right-10 w-[400px] h-[400px] bg-gradient-to-bl from-[#D97706]/20 via-[#A66A3F]/15 to-transparent rounded-full blur-3xl pointer-events-none z-0" />
 
       {/* Subtle Geometric Corner Lines */}
       <div className="absolute top-0 right-0 w-48 h-48 border-r border-t border-[#E8DFD1]/10 pointer-events-none z-0" />
@@ -50,7 +50,7 @@ export default function HeroSection() {
               <WaButton
                 source="hero"
                 customMessage={t.hero.waMessage}
-                className="inline-flex items-center justify-center space-x-2.5 bg-[#A66A3F] hover:bg-[#8e5831] text-[#F5F1E8] px-7 py-3.5 rounded-lg font-semibold text-xs tracking-wider uppercase transition-all shadow-xs cursor-pointer"
+                className="inline-flex items-center justify-center space-x-2.5 bg-[#9A5F36] hover:bg-[#844F2C] text-[#F5F1E8] px-7 py-3.5 rounded-lg font-semibold text-xs tracking-wider uppercase transition-all shadow-xs cursor-pointer"
               >
                 <MessageCircle className="w-4 h-4" />
                 <span>{t.hero.requestQuoteBtn}</span>
@@ -69,7 +69,7 @@ export default function HeroSection() {
             <div className="font-body pt-6 border-t border-[#E8DFD1]/15 flex flex-wrap items-center gap-y-2 gap-x-6 text-xs text-[#E8DFD1]/85">
               {t.hero.trustPills.map((pill, idx) => (
                 <div key={idx} className="flex items-center space-x-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#A66A3F]" />
+                  <CheckCircle2 className="w-4 h-4 text-[#9A5F36] dark:text-[#C47F4E]" />
                   <span>{pill}</span>
                 </div>
               ))}

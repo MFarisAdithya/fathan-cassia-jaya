@@ -11,9 +11,9 @@ export default function ProblemSection() {
   return (
     <section id="solusi" className="bg-[#F5F1E8] dark:bg-[#191410] text-[#2C241D] dark:text-[#F5F1E8] py-16 sm:py-20 lg:py-24 relative overflow-hidden border-b border-[#2C241D]/08 dark:border-[#E8DFD1]/10 grain-overlay transition-colors duration-300">
       {/* Ambient Warm Spice Glow Orbs */}
-      <div className="absolute top-1/4 -left-20 w-[500px] h-[500px] bg-gradient-to-r from-[#A66A3F]/20 via-[#E28743]/12 to-transparent rounded-full blur-3xl pointer-events-none z-0" />
-      <div className="absolute bottom-10 -right-20 w-[520px] h-[520px] bg-gradient-to-l from-[#D97706]/18 via-[#C47F4E]/12 to-transparent rounded-full blur-3xl pointer-events-none z-0" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-gradient-to-t from-[#A66A3F]/10 via-[#6F7652]/08 to-transparent rounded-full blur-3xl pointer-events-none z-0" />
+      <div className="hidden md:block absolute top-1/4 -left-20 w-[500px] h-[500px] bg-gradient-to-r from-[#A66A3F]/20 via-[#E28743]/12 to-transparent rounded-full blur-3xl pointer-events-none z-0" />
+      <div className="hidden md:block absolute bottom-10 -right-20 w-[520px] h-[520px] bg-gradient-to-l from-[#D97706]/18 via-[#C47F4E]/12 to-transparent rounded-full blur-3xl pointer-events-none z-0" />
+      <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-gradient-to-t from-[#A66A3F]/10 via-[#6F7652]/08 to-transparent rounded-full blur-3xl pointer-events-none z-0" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
@@ -37,14 +37,14 @@ export default function ProblemSection() {
           {t.problem.items.map((item) => (
             <div
               key={item.id}
-              className="glass-panel glass-panel-hover rounded-2xl p-8 sm:p-10 flex flex-col justify-between relative overflow-hidden group min-h-[220px] sm:min-h-[250px]"
+              className="content-card content-card-hover rounded-2xl p-8 sm:p-10 flex flex-col justify-between relative overflow-hidden group min-h-[220px] sm:min-h-[250px]"
             >
               {/* Top ambient glow accent line */}
               <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-transparent via-[#A66A3F]/60 to-transparent group-hover:via-[#A66A3F] transition-all duration-500" />
 
               {/* Top Badge & Number */}
               <div className="flex items-center justify-between relative z-10">
-                <span className="font-mono text-xs font-semibold text-[#A66A3F] tracking-widest glass-badge px-3 py-1 rounded-full">
+                <span className="font-mono text-xs font-semibold text-[#9A5F36] dark:text-[#C47F4E] tracking-widest glass-badge px-3 py-1 rounded-full">
                   {item.id}
                 </span>
                 <span className="text-[#A66A3F]/40 group-hover:text-[#A66A3F] transition-colors duration-300 font-serif text-lg italic">
@@ -54,7 +54,7 @@ export default function ProblemSection() {
 
               {/* Question Text (Large, Bold, Editorial & Simple) */}
               <div className="py-6 sm:py-8 flex items-center justify-center text-center relative z-10">
-                <h3 className="font-heading text-xl sm:text-2xl font-medium text-[#2C241D] dark:text-[#F5F1E8] leading-snug group-hover:text-[#A66A3F] transition-colors duration-300">
+                <h3 className="font-heading text-xl sm:text-2xl font-medium text-[#2C241D] dark:text-[#F5F1E8] leading-snug group-hover:text-[#9A5F36] transition-colors duration-300">
                   "{item.question}"
                 </h3>
               </div>
@@ -73,7 +73,7 @@ export default function ProblemSection() {
         {/* Bottom Solution Callout Banner (Refined Editorial Style) */}
         <div className="mt-14 sm:mt-18 max-w-3xl mx-auto relative rounded-2xl p-8 sm:p-11 text-center overflow-hidden border border-[#A66A3F]/35 shadow-card bg-gradient-to-b from-[#2C241D] to-[#1E1712] text-[#F5F1E8]">
           {/* Inner Warm Glow */}
-          <div className="absolute -top-16 left-1/2 -translate-x-1/2 w-80 h-80 bg-[#A66A3F]/25 rounded-full blur-3xl pointer-events-none" />
+          <div className="hidden md:block absolute -top-16 left-1/2 -translate-x-1/2 w-80 h-80 bg-[#A66A3F]/25 rounded-full blur-3xl pointer-events-none" />
 
           <div className="relative z-10 space-y-4">
             {/* Brand Pill Badge */}
@@ -103,7 +103,7 @@ export default function ProblemSection() {
                     ? "Hello UD Fathan Cassia Jaya, I would like to consult on spice supplies for my business."
                     : "Halo UD Fathan Cassia Jaya, saya ingin berkonsultasi mengenai kebutuhan rempah dan meminta penawaran harga."
                 }
-                className="group/btn font-body inline-flex items-center space-x-2.5 bg-gradient-to-r from-[#A66A3F] to-[#8e5831] hover:from-[#8e5831] hover:to-[#734321] text-white px-8 py-3.5 sm:py-4 rounded-xl text-xs sm:text-sm font-semibold uppercase tracking-wider shadow-lg hover:shadow-xl active:scale-98 transition-all duration-300 cursor-pointer"
+                className="group/btn font-body inline-flex items-center space-x-2.5 bg-gradient-to-r from-[#9A5F36] to-[#844F2C] hover:from-[#844F2C] hover:to-[#6F4022] text-white px-8 py-3.5 sm:py-4 rounded-xl text-xs sm:text-sm font-semibold uppercase tracking-wider shadow-lg hover:shadow-xl active:scale-98 transition-all duration-300 cursor-pointer"
               >
                 <MessageCircle className="w-4 h-4 shrink-0 transition-transform group-hover/btn:scale-110" />
                 <span>{t.problem.ctaBtn}</span>

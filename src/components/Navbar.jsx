@@ -200,7 +200,7 @@ export default function Navbar() {
               <WaButton
                 source="navbar"
                 customMessage={t.hero.waMessage}
-                className="font-body inline-flex items-center space-x-1.5 xl:space-x-2 bg-[#2C241D] hover:bg-[#A66A3F] text-[#F5F1E8] dark:bg-[#A66A3F] dark:hover:bg-[#8e5831] px-3 xl:px-4 py-2 xl:py-2.5 rounded-lg text-xs font-semibold tracking-wide uppercase transition-all shadow-xs shrink-0 cursor-pointer"
+                className="font-body inline-flex items-center space-x-1.5 xl:space-x-2 bg-[#2C241D] hover:bg-[#9A5F36] text-[#F5F1E8] dark:bg-[#9A5F36] dark:hover:bg-[#844F2C] px-3 xl:px-4 py-2 xl:py-2.5 rounded-lg text-xs font-semibold tracking-wide uppercase transition-all shadow-xs shrink-0 cursor-pointer"
               >
                 <MessageCircle className="w-3.5 h-3.5 xl:w-4 xl:h-4 shrink-0" />
                 <span className="hidden xl:inline">{t.nav.requestQuote}</span>
@@ -317,7 +317,7 @@ export default function Navbar() {
                   source="navbar-mobile"
                   customMessage={t.hero.waMessage}
                   onClick={() => setIsOpen(false)}
-                  className="font-body w-full flex items-center justify-center space-x-2 bg-[#2C241D] hover:bg-[#A66A3F] text-[#F5F1E8] dark:bg-[#A66A3F] py-3 rounded-lg text-xs font-semibold uppercase tracking-wider shadow-xs cursor-pointer"
+                  className="font-body w-full flex items-center justify-center space-x-2 bg-[#2C241D] hover:bg-[#9A5F36] text-[#F5F1E8] dark:bg-[#9A5F36] dark:hover:bg-[#844F2C] py-3 rounded-lg text-xs font-semibold uppercase tracking-wider shadow-xs cursor-pointer"
                 >
                   <MessageCircle className="w-4 h-4" />
                   <span>{t.nav.requestQuote}</span>
@@ -330,7 +330,7 @@ export default function Navbar() {
         {/* Real-time Scroll & Reading Progress Bar */}
         <div className="absolute bottom-0 left-0 right-0 h-[2.5px] bg-black/5 dark:bg-white/5 overflow-hidden">
           <div
-            className="h-full bg-gradient-to-r from-[#A66A3F] via-[#E28743] to-[#C47F4E] transition-all duration-75 ease-out"
+            className="h-full bg-gradient-to-r from-[#9A5F36] via-[#C47F4E] to-[#E28743] transition-all duration-75 ease-out"
             style={{ width: `${scrollProgress}%` }}
           />
         </div>
@@ -341,7 +341,7 @@ export default function Navbar() {
         <button
           type="button"
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="fixed bottom-20 md:bottom-6 right-4 md:right-6 z-40 flex items-center space-x-2 bg-[#2C241D]/92 dark:bg-[#A66A3F]/92 hover:bg-[#A66A3F] dark:hover:bg-[#8e5831] text-[#F5F1E8] px-3.5 py-2 rounded-full shadow-xl backdrop-blur-md border border-white/15 transition-all duration-300 hover:scale-105 cursor-pointer text-xs font-body font-semibold group"
+          className="fixed bottom-20 md:bottom-6 right-4 md:right-6 z-40 flex items-center space-x-2 bg-[#2C241D]/92 dark:bg-[#9A5F36]/92 hover:bg-[#9A5F36] dark:hover:bg-[#844F2C] text-[#F5F1E8] px-3.5 py-2 rounded-full shadow-xl backdrop-blur-md border border-white/15 transition-all duration-300 hover:scale-105 cursor-pointer text-xs font-body font-semibold group"
           aria-label="Kembali ke atas"
           title="Kembali ke atas"
         >
@@ -355,7 +355,7 @@ export default function Navbar() {
         <WaButton
           source="floating"
           customMessage={t.hero.waMessage}
-          className="flex items-center justify-between bg-[#2C241D] dark:bg-[#A66A3F] text-[#F5F1E8] px-5 py-3.5 rounded-xl shadow-xl active:scale-98 transition-transform border border-white/10 cursor-pointer"
+          className="flex items-center justify-between bg-[#2C241D] dark:bg-[#9A5F36] text-[#F5F1E8] px-5 py-3.5 rounded-xl shadow-xl active:scale-98 transition-transform border border-white/10 cursor-pointer"
         >
           <div className="flex items-center space-x-3">
             <div className="bg-white/10 p-2 rounded-lg">

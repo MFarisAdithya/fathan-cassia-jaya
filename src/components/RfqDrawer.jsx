@@ -153,7 +153,7 @@ export default function RfqDrawer() {
                 ? `Open Spice RFQ list, ${rfqCount} items selected`
                 : `Buka Daftar Penawaran Rempah, ${rfqCount} produk terpilih`
             }
-            className="group font-body flex items-center space-x-2.5 bg-[#2C241D]/95 dark:bg-[#A66A3F]/95 hover:bg-[#A66A3F] dark:hover:bg-[#8e5831] text-[#F5F1E8] px-4 py-2.5 sm:px-5 sm:py-3 rounded-full shadow-2xl backdrop-blur-md border border-white/20 transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer"
+            className="group font-body flex items-center space-x-2.5 bg-[#2C241D]/95 dark:bg-[#9A5F36]/95 hover:bg-[#9A5F36] dark:hover:bg-[#844F2C] text-[#F5F1E8] px-4 py-2.5 sm:px-5 sm:py-3 rounded-full shadow-2xl backdrop-blur-md border border-white/20 transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer"
           >
             <div className="relative">
               <ClipboardList className="w-4 h-4 text-[#E28743] dark:text-[#F5F1E8]" />
@@ -405,7 +405,7 @@ export default function RfqDrawer() {
                 <button
                   type="button"
                   onClick={handleSendWa}
-                  className="font-body w-full inline-flex items-center justify-center space-x-2.5 bg-[#A66A3F] hover:bg-[#8e5831] text-white py-3.5 px-4 rounded-xl text-xs sm:text-sm font-semibold uppercase tracking-wider shadow-lg active:scale-98 transition-all duration-200 cursor-pointer"
+                  className="font-body w-full inline-flex items-center justify-center space-x-2.5 bg-[#9A5F36] hover:bg-[#844F2C] text-white py-3.5 px-4 rounded-xl text-xs sm:text-sm font-semibold uppercase tracking-wider shadow-lg active:scale-98 transition-all duration-200 cursor-pointer"
                 >
                   <MessageCircle className="w-4 h-4 shrink-0" />
                   <span>{isEn ? 'Send Inquiry via WhatsApp' : 'Kirim via WhatsApp'}</span>

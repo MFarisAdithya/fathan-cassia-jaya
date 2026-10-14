@@ -36,11 +36,11 @@ export default function ProcessSection() {
             {t.process.items.map((step, idx) => (
               <div
                 key={step.step}
-                className="glass-panel glass-panel-hover p-8 rounded-xl flex flex-col justify-between group space-y-6"
+                className="content-card content-card-hover p-8 rounded-xl flex flex-col justify-between group space-y-6"
               >
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
-                    <span className="font-heading text-3xl sm:text-4xl font-medium text-[#A66A3F]">
+                    <span className="font-heading text-3xl sm:text-4xl font-medium text-[#9A5F36] dark:text-[#C47F4E]">
                       {step.step}
                     </span>
                     <div className="w-8 h-8 rounded-full glass-badge glass-badge-interactive flex items-center justify-center text-[#6F7652] dark:text-[#A66A3F]">
@@ -48,7 +48,7 @@ export default function ProcessSection() {
                     </div>
                   </div>
 
-                  <h3 className="font-heading text-lg font-medium text-[#2C241D] dark:text-[#F5F1E8] group-hover:text-[#A66A3F] transition-colors">
+                  <h3 className="font-heading text-lg font-medium text-[#2C241D] dark:text-[#F5F1E8] group-hover:text-[#9A5F36] transition-colors">
                     {step.title}
                   </h3>
 

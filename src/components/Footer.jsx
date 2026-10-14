@@ -40,11 +40,11 @@ export default function Footer() {
               <WaButton
                 source="footer"
                 customMessage={t.hero.waMessage}
-                className="font-body inline-flex items-center space-x-2 text-xs text-[#A66A3F] hover:text-[#F5F1E8] font-semibold uppercase tracking-wider transition-colors cursor-pointer"
+                className="font-body inline-flex items-center space-x-2 text-xs text-[#9A5F36] hover:text-[#F5F1E8] font-semibold uppercase tracking-wider transition-colors cursor-pointer"
               >
-                <MessageCircle className="w-4 h-4 text-[#A66A3F]" />
+                <MessageCircle className="w-4 h-4 text-[#9A5F36]" />
                 <span>{lang === 'en' ? 'Contact via WhatsApp' : 'Hubungi Kami via WhatsApp'}</span>
-                <ArrowUpRight className="w-4 h-4 text-[#A66A3F]" />
+                <ArrowUpRight className="w-4 h-4 text-[#9A5F36]" />
               </WaButton>
             </div>
           </div>

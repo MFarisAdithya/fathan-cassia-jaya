@@ -74,7 +74,7 @@ export default function BrandStorySection() {
               {t.brandStory.p1}
             </p>
 
-            <div className="glass-panel p-6 rounded-xl space-y-2">
+            <div className="content-card p-6 rounded-xl space-y-2">
               <h4 className="font-body text-xs font-semibold text-[#6F7652] dark:text-[#A66A3F] uppercase tracking-wider">
                 {t.brandStory.addressLabel}
               </h4>

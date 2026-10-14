@@ -42,7 +42,7 @@ export default function CommitmentSection() {
           {t.commitment.items.map((item, idx) => (
             <div
               key={item.id}
-              className="glass-panel glass-panel-hover rounded-xl p-8 space-y-4 group relative overflow-hidden"
+              className="content-card content-card-hover rounded-xl p-8 space-y-4 group relative overflow-hidden"
             >
               <div className="flex items-center justify-between">
                 <div className="w-11 h-11 rounded-lg glass-badge glass-badge-interactive flex items-center justify-center">
@@ -54,7 +54,7 @@ export default function CommitmentSection() {
               </div>
 
               <div className="space-y-2">
-                <h3 className="font-heading text-lg font-medium text-[#2C241D] dark:text-[#F5F1E8] group-hover:text-[#A66A3F] transition-colors">
+                <h3 className="font-heading text-lg font-medium text-[#2C241D] dark:text-[#F5F1E8] group-hover:text-[#9A5F36] transition-colors">
                   {item.title}
                 </h3>
                 <p className="font-body text-xs sm:text-sm text-[#2C241D]/75 dark:text-[#E8DFD1]/80 leading-relaxed font-normal">

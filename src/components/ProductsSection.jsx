@@ -11,9 +11,9 @@ export default function ProductsSection() {
   return (
     <section id="produk" className="bg-[#E8DFD1]/40 dark:bg-[#1E1712] text-[#2C241D] dark:text-[#F5F1E8] py-16 sm:py-20 lg:py-24 relative overflow-hidden border-b border-[#2C241D]/08 dark:border-[#E8DFD1]/10 grain-overlay transition-colors duration-300">
       {/* Ambient Warm Spice Glow Orbs */}
-      <div className="absolute top-1/3 -left-20 w-[550px] h-[550px] bg-gradient-to-r from-[#A66A3F]/20 via-[#E28743]/15 to-transparent rounded-full blur-3xl pointer-events-none z-0" />
-      <div className="absolute bottom-10 -right-20 w-[600px] h-[600px] bg-gradient-to-l from-[#D97706]/18 via-[#C47F4E]/12 to-transparent rounded-full blur-3xl pointer-events-none z-0" />
-      <div className="absolute top-2/3 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-gradient-to-t from-[#A66A3F]/15 via-[#6F7652]/10 to-transparent rounded-full blur-3xl pointer-events-none z-0" />
+      <div className="hidden md:block absolute top-1/3 -left-20 w-[550px] h-[550px] bg-gradient-to-r from-[#A66A3F]/20 via-[#E28743]/15 to-transparent rounded-full blur-3xl pointer-events-none z-0" />
+      <div className="hidden md:block absolute bottom-10 -right-20 w-[600px] h-[600px] bg-gradient-to-l from-[#D97706]/18 via-[#C47F4E]/12 to-transparent rounded-full blur-3xl pointer-events-none z-0" />
+      <div className="hidden md:block absolute top-2/3 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-gradient-to-t from-[#A66A3F]/15 via-[#6F7652]/10 to-transparent rounded-full blur-3xl pointer-events-none z-0" />
 
       <div className="max-w-7xl 2xl:max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
         
@@ -42,7 +42,7 @@ export default function ProductsSection() {
             return (
               <div
                 key={prod.id}
-                className="glass-panel glass-panel-hover rounded-xl overflow-hidden flex flex-col justify-between group"
+                className="content-card content-card-hover rounded-xl overflow-hidden flex flex-col justify-between group"
               >
                 <div>
                   {/* Large Product Studio Image */}
@@ -69,13 +69,13 @@ export default function ProductsSection() {
 
                   {/* Minimal Product Information */}
                   <div className="p-3.5 sm:p-4 space-y-2">
-                    <h3 className="font-heading text-sm sm:text-base font-semibold text-[#2C241D] dark:text-[#F5F1E8] group-hover:text-[#A66A3F] transition-colors leading-snug min-h-[2.5rem] flex items-center">
+                    <h3 className="font-heading text-sm sm:text-base font-semibold text-[#2C241D] dark:text-[#F5F1E8] group-hover:text-[#9A5F36] transition-colors leading-snug min-h-[2.5rem] flex items-center">
                       {prod.name}
                     </h3>
 
                     {/* Clean Price Tag */}
                     <div className="flex items-baseline space-x-1 pt-0.5">
-                      <span className="font-heading text-sm sm:text-base font-semibold text-[#A66A3F] dark:text-[#C47F4E]">
+                      <span className="font-heading text-sm sm:text-base font-semibold text-[#9A5F36] dark:text-[#C47F4E]">
                         {prod.price}
                       </span>
                       <span className="font-body text-[10px] font-medium text-[#6F7652] dark:text-[#E8DFD1]/70">
@@ -103,7 +103,7 @@ export default function ProductsSection() {
                     className={`font-body w-full inline-flex items-center justify-center space-x-1.5 py-1.5 px-2 rounded-lg text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider transition-all duration-200 cursor-pointer ${
                       inList
                         ? 'bg-[#6F7652] text-white hover:bg-[#5b6243] shadow-xs'
-                        : 'bg-[#A66A3F]/10 hover:bg-[#A66A3F]/20 text-[#A66A3F] dark:text-[#E28743] border border-[#A66A3F]/30 hover:border-[#A66A3F]/60'
+                        : 'bg-[#9A5F36]/10 hover:bg-[#9A5F36]/20 text-[#9A5F36] dark:text-[#E28743] border border-[#9A5F36]/30 hover:border-[#9A5F36]/60'
                     }`}
                   >
                     {inList ? (

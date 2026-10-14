@@ -12,7 +12,7 @@ export default function FinalCtaSection() {
     <section id="kontak" className="relative bg-[#2C241D] dark:bg-[#140E0A] text-[#F5F1E8] py-20 sm:py-24 lg:py-28 overflow-hidden border-t border-[#2C241D]/20 grain-overlay-light transition-colors duration-300">
       
       {/* Background Subtle Ambience */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
+      <div className="hidden md:block absolute inset-0 z-0 pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[#A66A3F]/12 rounded-full blur-3xl" />
       </div>
 
@@ -42,7 +42,7 @@ export default function FinalCtaSection() {
           <WaButton
             source="final-cta"
             customMessage={t.finalCta.waMessage}
-            className="inline-flex items-center justify-center space-x-3 bg-[#A66A3F] hover:bg-[#8e4f33] text-white px-9 py-4 rounded-lg text-xs sm:text-sm font-semibold uppercase tracking-wider shadow-lg hover:shadow-[#A66A3F]/30 transition-all duration-300 hover:-translate-y-0.5 group cursor-pointer"
+            className="inline-flex items-center justify-center space-x-3 bg-[#9A5F36] hover:bg-[#844F2C] text-white px-9 py-4 rounded-lg text-xs sm:text-sm font-semibold uppercase tracking-wider shadow-lg hover:shadow-[#9A5F36]/30 transition-all duration-300 hover:-translate-y-0.5 group cursor-pointer"
           >
             <MessageCircle className="w-4 h-4 text-white" />
             <span>{t.finalCta.chatBtn}</span>

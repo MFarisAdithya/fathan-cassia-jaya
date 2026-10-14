@@ -11,8 +11,8 @@ export default function OfferSection() {
   return (
     <section className="bg-[#F5F1E8] dark:bg-[#191410] text-[#2C241D] dark:text-[#F5F1E8] py-16 sm:py-20 lg:py-24 relative overflow-hidden border-b border-[#2C241D]/08 dark:border-[#E8DFD1]/10 grain-overlay transition-colors duration-300">
       {/* Ambient Warm Spice Glow Orbs */}
-      <div className="absolute top-1/3 right-1/4 w-[500px] h-[500px] bg-gradient-to-bl from-[#A66A3F]/22 via-[#D97706]/15 to-transparent rounded-full blur-3xl pointer-events-none z-0" />
-      <div className="absolute bottom-10 left-10 w-[420px] h-[420px] bg-gradient-to-tr from-[#E28743]/18 via-[#C47F4E]/10 to-transparent rounded-full blur-3xl pointer-events-none z-0" />
+      <div className="hidden md:block absolute top-1/3 right-1/4 w-[500px] h-[500px] bg-gradient-to-bl from-[#A66A3F]/22 via-[#D97706]/15 to-transparent rounded-full blur-3xl pointer-events-none z-0" />
+      <div className="hidden md:block absolute bottom-10 left-10 w-[420px] h-[420px] bg-gradient-to-tr from-[#E28743]/18 via-[#C47F4E]/10 to-transparent rounded-full blur-3xl pointer-events-none z-0" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
@@ -40,11 +40,11 @@ export default function OfferSection() {
           {t.offer.items.map((offer) => (
             <div
               key={offer.num}
-              className="glass-panel glass-panel-hover p-8 rounded-xl flex flex-col justify-between group"
+              className="content-card content-card-hover p-8 rounded-xl flex flex-col justify-between group"
             >
               <div className="space-y-6">
                 <div className="flex items-center justify-between border-b border-[#2C241D]/06 dark:border-[#E8DFD1]/10 pb-4">
-                  <span className="font-heading text-2xl font-medium text-[#A66A3F]">
+                  <span className="font-heading text-2xl font-medium text-[#9A5F36] dark:text-[#C47F4E]">
                     {offer.num}
                   </span>
                   <span className="font-body text-[11px] font-semibold tracking-wider text-[#6F7652] dark:text-[#A66A3F] uppercase glass-badge px-2.5 py-1 rounded">
@@ -53,7 +53,7 @@ export default function OfferSection() {
                 </div>
 
                 <div className="space-y-3">
-                  <h3 className="font-heading text-xl font-medium text-[#2C241D] dark:text-[#F5F1E8] group-hover:text-[#A66A3F] transition-colors">
+                  <h3 className="font-heading text-xl font-medium text-[#2C241D] dark:text-[#F5F1E8] group-hover:text-[#9A5F36] transition-colors">
                     {offer.category}
                   </h3>
 
@@ -68,7 +68,7 @@ export default function OfferSection() {
                 <WaButton
                   source={`offer-${offer.num}`}
                   customMessage={offer.waMessage}
-                  className="font-body w-full inline-flex items-center justify-center space-x-2 bg-[#2C241D] hover:bg-[#A66A3F] text-white py-3 px-4 rounded-lg text-xs font-semibold uppercase tracking-wider transition-all duration-300 shadow-sm cursor-pointer"
+                  className="font-body w-full inline-flex items-center justify-center space-x-2 bg-[#2C241D] hover:bg-[#9A5F36] text-white py-3 px-4 rounded-lg text-xs font-semibold uppercase tracking-wider transition-all duration-300 shadow-sm cursor-pointer"
                 >
                   <MessageCircle className="w-4 h-4" />
                   <span>{t.nav.requestQuote}</span>
@@ -79,7 +79,7 @@ export default function OfferSection() {
         </div>
 
         {/* Bottom Transparency Card */}
-        <div className="mt-12 glass-panel p-6 rounded-xl text-center max-w-2xl mx-auto">
+        <div className="mt-12 content-card p-6 rounded-xl text-center max-w-2xl mx-auto">
           <p className="font-body text-xs text-[#2C241D]/70 dark:text-[#E8DFD1]/70 leading-relaxed font-normal">
             {lang === 'en' ? (
               <>

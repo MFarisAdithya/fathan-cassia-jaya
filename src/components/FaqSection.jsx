@@ -42,8 +42,8 @@ export default function FaqSection() {
             return (
               <div
                 key={idx}
-                className={`glass-panel rounded-xl overflow-hidden transition-all duration-300 ${
-                  isOpen ? 'border-[#A66A3F]/40 dark:border-[#A66A3F]/50 shadow-card-hover' : 'hover:border-[#A66A3F]/30'
+                className={`content-card rounded-xl overflow-hidden transition-all duration-300 ${
+                  isOpen ? 'border-[#9A5F36]/50 dark:border-[#9A5F36]/60 shadow-md' : 'hover:border-[#9A5F36]/30'
                 }`}
               >
                 <button
@@ -52,7 +52,7 @@ export default function FaqSection() {
                   aria-expanded={isOpen}
                 >
                   <span className="font-heading text-base sm:text-lg font-medium text-[#2C241D] dark:text-[#F5F1E8] flex items-center space-x-3">
-                    <span className="text-[#A66A3F] text-xs font-semibold glass-badge px-2.5 py-0.5 rounded font-body">
+                    <span className="text-[#9A5F36] dark:text-[#C47F4E] text-xs font-semibold glass-badge px-2.5 py-0.5 rounded font-body">
                       Q{idx + 1}
                     </span>
                     <span>{faq.question}</span>

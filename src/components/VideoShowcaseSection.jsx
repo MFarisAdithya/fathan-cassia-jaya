@@ -153,9 +153,9 @@ export default function VideoShowcaseSection() {
             {t.videoShowcase.features.map((feat, idx) => (
               <div
                 key={idx}
-                className="glass-panel glass-panel-hover p-6 rounded-xl space-y-2.5"
+                className="content-card content-card-hover p-6 rounded-xl space-y-2.5"
               >
-                <div className="w-10 h-10 rounded-lg bg-[#A66A3F]/15 border border-[#A66A3F]/30 flex items-center justify-center text-[#A66A3F]">
+                <div className="w-10 h-10 rounded-lg bg-[#9A5F36]/15 border border-[#9A5F36]/30 flex items-center justify-center text-[#9A5F36] dark:text-[#C47F4E]">
                   {idx === 0 ? <ShieldCheck className="w-5 h-5" /> : idx === 1 ? <Truck className="w-5 h-5" /> : <CheckCircle2 className="w-5 h-5" />}
                 </div>
                 <h3 className="font-heading text-base font-semibold text-[#2C241D] dark:text-[#F5F1E8]">
@@ -176,7 +176,7 @@ export default function VideoShowcaseSection() {
                     ? "Hello UD Fathan Cassia Jaya, I watched your warehouse video and would like to request spice samples and a quote."
                     : "Halo UD Fathan Cassia Jaya, saya telah melihat video produk Anda dan ingin menanyakan sampel fisik & penawaran komoditas."
                 }
-                className="font-body w-full inline-flex items-center justify-center space-x-2 bg-[#2C241D] hover:bg-[#A66A3F] text-[#F5F1E8] dark:bg-[#A66A3F] dark:hover:bg-[#8e5831] py-3.5 px-4 rounded-lg text-xs font-semibold uppercase tracking-wider transition-all shadow-xs cursor-pointer"
+                className="font-body w-full inline-flex items-center justify-center space-x-2 bg-[#2C241D] hover:bg-[#9A5F36] text-[#F5F1E8] dark:bg-[#9A5F36] dark:hover:bg-[#844F2C] py-3.5 px-4 rounded-lg text-xs font-semibold uppercase tracking-wider transition-all shadow-xs cursor-pointer"
               >
                 <span>{lang === 'en' ? 'Request Specific Sample Video' : 'Minta Video Sampel Spesifik'}</span>
               </WaButton>

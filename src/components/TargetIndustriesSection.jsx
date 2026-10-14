@@ -42,14 +42,14 @@ export default function TargetIndustriesSection() {
           {t.targetIndustries.items.map((ind, idx) => (
             <div
               key={ind.title}
-              className="glass-panel glass-panel-hover p-8 rounded-xl space-y-5 flex flex-col justify-between group"
+              className="content-card content-card-hover p-8 rounded-xl space-y-5 flex flex-col justify-between group"
             >
               <div className="space-y-4">
                 <div className="w-11 h-11 rounded-lg glass-badge glass-badge-interactive flex items-center justify-center">
                   {icons[idx]}
                 </div>
 
-                <h3 className="font-heading text-lg font-medium text-[#2C241D] dark:text-[#F5F1E8] group-hover:text-[#A66A3F] transition-colors">
+                <h3 className="font-heading text-lg font-medium text-[#2C241D] dark:text-[#F5F1E8] group-hover:text-[#9A5F36] transition-colors">
                   {ind.title}
                 </h3>
 
