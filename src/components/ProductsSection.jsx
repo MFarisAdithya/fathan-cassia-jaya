@@ -9,6 +9,14 @@ export default function ProductsSection() {
   const { lang, toggleRfq, isInRfq } = useApp();
   const t = TRANSLATIONS[lang] || TRANSLATIONS.in;
 
+  const handleProductNavigation = () => {
+    try {
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    } catch {
+      window.scrollTo(0, 0);
+    }
+  };
+
   return (
     <section id="produk" className="bg-[#E8DFD1]/40 dark:bg-[#1E1712] text-[#2C241D] dark:text-[#F5F1E8] py-16 sm:py-20 lg:py-24 relative overflow-hidden border-b border-[#2C241D]/08 dark:border-[#E8DFD1]/10 grain-overlay transition-colors duration-300">
       {/* Ambient Warm Spice Glow Orbs */}
@@ -48,7 +56,11 @@ export default function ProductsSection() {
               >
                 <div>
                   {/* Large Product Studio Image linking to commodity page */}
-                  <Link to={`/produk/${commoditySlug}`} className="block relative h-40 sm:h-44 lg:h-48 overflow-hidden bg-[#E8DFD1]/30 dark:bg-[#191410]/50 rounded-t-2xl cursor-pointer">
+                  <Link
+                    to={`/produk/${commoditySlug}`}
+                    onClick={handleProductNavigation}
+                    className="block relative h-40 sm:h-44 lg:h-48 overflow-hidden bg-[#E8DFD1]/30 dark:bg-[#191410]/50 rounded-t-2xl cursor-pointer"
+                  >
                     <OptimizedImage
                       src={prod.image}
                       alt={prod.name}
@@ -74,7 +86,11 @@ export default function ProductsSection() {
 
                   {/* Minimal Product Information */}
                   <div className="p-3.5 sm:p-4 space-y-2">
-                    <Link to={`/produk/${commoditySlug}`} className="block group/title">
+                    <Link
+                      to={`/produk/${commoditySlug}`}
+                      onClick={handleProductNavigation}
+                      className="block group/title"
+                    >
                       <h3 className="font-heading text-sm sm:text-base font-semibold text-[#2C241D] dark:text-[#F5F1E8] group-hover/title:text-[#9A5F36] transition-colors leading-snug min-h-[2.5rem] flex items-center">
                         {prod.name}
                       </h3>
@@ -86,6 +102,7 @@ export default function ProductsSection() {
 
                     <Link
                       to={`/produk/${commoditySlug}`}
+                      onClick={handleProductNavigation}
                       className="inline-flex items-center space-x-1 text-[10px] font-body font-semibold text-[#9A5F36] dark:text-[#E28743] hover:underline pt-0.5"
                     >
                       <span>{lang === 'en' ? 'Specs & Grades' : 'Lihat Spesifikasi'}</span>

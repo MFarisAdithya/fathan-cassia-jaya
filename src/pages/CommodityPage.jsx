@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { AppProvider, useApp } from '../context/AppContext';
 import { getCommodity, COMMODITIES, COMMODITY_SLUGS } from '../config/siteConfig';
@@ -32,6 +32,15 @@ function CommodityDetail({ slug }) {
 
   // Active Grade State - must be called unconditionally before early return
   const [selectedGradeIndex, setSelectedGradeIndex] = useState(0);
+
+  // Guarantee scroll to top when mounting or navigating commodities
+  useEffect(() => {
+    try {
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    } catch {
+      window.scrollTo(0, 0);
+    }
+  }, [effectiveSlug]);
 
   if (!commodity) {
     return (
@@ -442,6 +451,13 @@ function CommodityDetail({ slug }) {
                   <Link
                     key={item.slug}
                     to={`/produk/${item.slug}`}
+                    onClick={() => {
+                      try {
+                        window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+                      } catch {
+                        window.scrollTo(0, 0);
+                      }
+                    }}
                     className="p-3 rounded-2xl glass-card-primary glass-card-hover group block text-center"
                   >
                     <OptimizedImage
@@ -474,9 +490,11 @@ function CommodityDetail({ slug }) {
 }
 
 export default function CommodityPage({ slug }) {
+  const params = useParams();
+  const effectiveSlug = slug || params?.slug || 'kayu-manis';
   return (
     <AppProvider initialLang="in">
-      <CommodityDetail slug={slug} />
+      <CommodityDetail key={effectiveSlug} slug={effectiveSlug} />
     </AppProvider>
   );
 }

@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
+import ScrollToTop from '../components/ScrollToTop';
 
 const AppContext = createContext();
 
@@ -225,6 +226,7 @@ export function AppProvider({ children, initialLang }) {
         rfqAnnouncement,
       }}
     >
+      <ScrollToTop />
       {children}
     </AppContext.Provider>
   );
