@@ -89,7 +89,7 @@ export const TRANSLATIONS = {
       badge: "Katalog Komoditas Rempah",
       title: "Beragam Rempah untuk Berbagai Kebutuhan",
       subtitle: "Dari satu pemasok, temukan berbagai komoditas rempah untuk kebutuhan bisnis Anda.",
-      priceNote: "*Harga tertera merupakan acuan per kg. Spesifikasi grade, jumlah pemesanan grosir/industri, serta pengemasan dapat didiskusikan langsung via WhatsApp.",
+      priceNote: "*Pilih komoditas rempah dan klik \"+ Tambah ke Daftar\" untuk mengajukan penawaran terpadu via WhatsApp, atau klik \"Lihat Spesifikasi\" untuk detail grade.",
       askStockBtn: "Tanya Stok",
       unit: "/ kg",
       list: [
@@ -532,7 +532,7 @@ export const TRANSLATIONS = {
       badge: "Spice Commodities Catalog",
       title: "Diverse Spices for Diverse Business Needs",
       subtitle: "From a single trusted supplier, discover a complete range of Indonesian spices for your business.",
-      priceNote: "*Listed prices serve as a reference per kg. Specific grades, bulk/wholesale volumes, and packaging requirements can be customized via WhatsApp.",
+      priceNote: "*Select spice commodities and click \"+ Add to RFQ\" to request a consolidated quotation via WhatsApp, or click \"Specs & Grades\" for technical details.",
       askStockBtn: "Inquire Stock",
       unit: "/ kg",
       list: [

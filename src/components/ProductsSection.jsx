@@ -2,9 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { TRANSLATIONS, PRODUCT_TO_COMMODITY_MAP } from '../config/siteConfig';
 import { useApp } from '../context/AppContext';
-import WaButton from './WaButton';
 import OptimizedImage from './OptimizedImage';
-import { MessageCircle, ArrowUpRight, Plus, Check, ArrowRight } from 'lucide-react';
+import { Plus, Check, ArrowRight } from 'lucide-react';
 
 export default function ProductsSection() {
   const { lang, toggleRfq, isInRfq } = useApp();
@@ -81,16 +80,6 @@ export default function ProductsSection() {
                       </h3>
                     </Link>
 
-                    {/* Clean Price Tag */}
-                    <div className="flex items-baseline space-x-1 pt-0.5">
-                      <span className="font-heading text-sm sm:text-base font-semibold text-[#9A5F36] dark:text-[#C47F4E]">
-                        {prod.price}
-                      </span>
-                      <span className="font-body text-[10px] font-medium text-[#6F7652] dark:text-[#E8DFD1]/70">
-                        {prod.unit}
-                      </span>
-                    </div>
-
                     <p className="font-body text-[11px] text-[#2C241D]/70 dark:text-[#E8DFD1]/70 leading-relaxed font-normal line-clamp-2">
                       {prod.description}
                     </p>
@@ -105,9 +94,8 @@ export default function ProductsSection() {
                   </div>
                 </div>
 
-                {/* Minimal Action Buttons: Toggle RFQ + Direct WA Consultation */}
-                <div className="p-3 sm:p-3.5 pt-0 space-y-1.5">
-                  {/* RFQ Toggle Button */}
+                {/* Single Action Button: Toggle RFQ */}
+                <div className="p-3 sm:p-3.5 pt-0">
                   <button
                     type="button"
                     onClick={() => toggleRfq(prod)}
@@ -116,35 +104,24 @@ export default function ProductsSection() {
                         ? (lang === 'en' ? `Remove ${prod.name} from RFQ list` : `Hapus ${prod.name} dari daftar penawaran`)
                         : (lang === 'en' ? `Add ${prod.name} to RFQ list` : `Tambah ${prod.name} ke daftar penawaran`)
                     }
-                    className={`font-body w-full inline-flex items-center justify-center space-x-1.5 py-1.5 px-2 rounded-lg text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider transition-all duration-200 cursor-pointer ${
+                    className={`font-body w-full inline-flex items-center justify-center space-x-1.5 py-2 px-3 rounded-xl text-xs font-semibold uppercase tracking-wider transition-all duration-200 cursor-pointer ${
                       inList
                         ? 'bg-[#6F7652] text-white hover:bg-[#5b6243] shadow-xs'
-                        : 'bg-[#9A5F36]/10 hover:bg-[#9A5F36]/20 text-[#9A5F36] dark:text-[#E28743] border border-[#9A5F36]/30 hover:border-[#9A5F36]/60'
+                        : 'glass-btn-ghost text-xs'
                     }`}
                   >
                     {inList ? (
                       <>
-                        <Check className="w-3 h-3 sm:w-3.5 sm:h-3.5 shrink-0" />
+                        <Check className="w-3.5 h-3.5 shrink-0" />
                         <span className="truncate">{lang === 'en' ? '✓ In RFQ List' : '✓ Di Daftar'}</span>
                       </>
                     ) : (
                       <>
-                        <Plus className="w-3 h-3 sm:w-3.5 sm:h-3.5 shrink-0" />
-                        <span className="truncate">{lang === 'en' ? '+ Add to RFQ' : '+ Tambah ke daftar'}</span>
+                        <Plus className="w-3.5 h-3.5 shrink-0" />
+                        <span className="truncate">{lang === 'en' ? '+ Add to RFQ' : '+ Tambah ke Daftar'}</span>
                       </>
                     )}
                   </button>
-
-                  {/* Direct WhatsApp Consultation Button */}
-                  <WaButton
-                    source={`product-${prod.id}`}
-                    customMessage={prod.waMessage}
-                    className="font-body w-full inline-flex items-center justify-center space-x-1.5 bg-[#F5F1E8] hover:bg-[#2C241D] text-[#2C241D] hover:text-[#F5F1E8] dark:bg-[#191410] dark:hover:bg-[#A66A3F] dark:text-[#F5F1E8] dark:hover:text-white border border-[#2C241D]/15 dark:border-[#E8DFD1]/15 py-1.5 px-2 rounded-lg text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider transition-all duration-200 shadow-xs cursor-pointer"
-                  >
-                    <MessageCircle className="w-3 h-3 sm:w-3.5 sm:h-3.5 shrink-0" />
-                    <span className="truncate">{t.products.askStockBtn}</span>
-                    <ArrowUpRight className="w-3 h-3 shrink-0 opacity-70" />
-                  </WaButton>
                 </div>
               </div>
             );
